@@ -211,8 +211,38 @@ ul.plain li { padding: 10px 0; border-bottom: 1px solid var(--line); }
 
 .contact { margin-top: 40px; font-size: clamp(18px, 2vw, 22px); }
 .contact a { color: var(--amber); }
-.cover .sub .rate { text-decoration: none; }
-.cover .sub .rate b { color: var(--amber); font-weight: 700; margin-right: 4px; }
+/* обложка-оффер (Артур 21.10 вечер) */
+.cover::before { background: linear-gradient(180deg, rgba(20, 18, 16, .2) 0%, rgba(20, 18, 16, .45) 40%, rgba(20, 18, 16, .9) 100%); }
+.cover .cv { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(24px, 4vw, 56px); align-items: end; }
+.cover .wordmark { font-size: clamp(56px, 10vw, 150px); }
+.cover .pos { margin: 22px 0 0; font-size: clamp(13px, 1.3vw, 15px); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(244, 239, 231, .85); max-width: 34em; }
+.cover .claim { margin: 10px 0 0; font-family: "Prata", Georgia, serif; font-size: clamp(24px, 2.8vw, 38px); line-height: 1.18; max-width: 15em; }
+.cover .rate { display: inline-block; margin-top: 18px; font-size: 15px; text-decoration: none; color: #f4efe7; }
+.cover .rate b { color: var(--amber); font-weight: 700; margin-right: 4px; }
+.offer { background: rgba(20, 18, 16, .8); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-top: 3px solid var(--rouge); padding: clamp(20px, 2.6vw, 32px); }
+.offer .ask { margin: 0; font-size: clamp(16px, 1.5vw, 18px); color: rgba(244, 239, 231, .88); }
+.offer .apr { margin: 4px 0 0; font-family: "Prata", Georgia, serif; font-size: clamp(42px, 5vw, 68px); line-height: 1.02; color: var(--amber); }
+.offer .sum { margin: 8px 0 14px; font-size: 16px; color: rgba(244, 239, 231, .75); }
+.offer .sum b { color: #f4efe7; font-weight: 700; }
+.offer .pts { list-style: none; padding: 0; margin: 0; }
+.offer .pts li { position: relative; padding: 9px 0 9px 18px; border-top: 1px solid rgba(244, 239, 231, .16); font-size: 15px; line-height: 1.45; }
+.offer .pts li::before { content: ""; position: absolute; left: 0; top: 17px; width: 6px; height: 6px; background: var(--rouge); }
+.offer .pts b { color: var(--amber); font-weight: 700; }
+.offer .more { display: inline-block; margin-top: 14px; font-size: 15px; font-weight: 600; color: var(--amber); text-decoration: none; }
+
+/* врезки: почему копились долги, спрос на площадь */
+.why { padding: clamp(20px, 2.6vw, 28px); background: var(--paper); border-left: 4px solid var(--rouge); }
+.page:not(.panel) .why { background: var(--panel); margin-top: clamp(24px, 3vw, 36px); }
+.why h3 { margin: 0 0 10px; font-size: 18px; }
+.why p { margin: 0 0 10px; font-size: 15px; line-height: 1.5; color: var(--stone); }
+.why p:last-child { margin-bottom: 0; }
+.why b { color: var(--ink); }
+
+/* почему доходность такая высокая */
+.yield .ywhy { margin-top: 28px; padding-top: 22px; border-top: 1px solid rgba(237, 232, 225, .18); }
+.yield .ywhy ul { list-style: none; padding: 0; margin: 14px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 32px; }
+.yield .ywhy li { position: relative; padding-left: 18px; font-size: 15px; line-height: 1.5; }
+.yield .ywhy li::before { content: ""; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; background: var(--amber); }
 .links { list-style: none; padding: 0; margin: 28px 0 0; }
 .links li { border-top: 1px solid rgba(244, 239, 231, .22); }
 .links li:last-child { border-bottom: 1px solid rgba(244, 239, 231, .22); }
@@ -225,7 +255,7 @@ footer.end { padding: 28px clamp(20px, 6vw, 96px); font-size: 12px; color: var(-
   .grid > [class^="c"] { grid-column: 1 / -1; }
   .figs { grid-template-columns: 1fr 1fr; }
   .pairs { grid-template-columns: 1fr 1fr; }
-  .scen, .steps, .steps.four, .risks, .yield .yrow { grid-template-columns: 1fr; }
+  .scen, .steps, .steps.four, .risks, .yield .yrow, .yield .ywhy ul, .cover .cv { grid-template-columns: 1fr; }
   .sc .what { min-height: 0; }
   .people { grid-template-columns: 1fr; }
   .story li { grid-template-columns: 1fr; gap: 6px; }
