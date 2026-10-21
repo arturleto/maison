@@ -209,6 +209,8 @@ ul.plain li { padding: 10px 0; border-bottom: 1px solid var(--line); }
 .risk h3 { font-size: 22px; }
 .risk p { font-size: 15px; color: var(--stone); margin: 0; }
 
+.cta-line { margin: 0; font-size: clamp(18px, 1.8vw, 21px); line-height: 1.45; color: var(--night-text); }
+.night .btn { margin-top: 20px; }
 .contact { margin-top: 40px; font-size: clamp(18px, 2vw, 22px); }
 .contact a { color: var(--amber); }
 /* обложка-оффер (Артур 21.10 вечер) */
