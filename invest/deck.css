@@ -253,6 +253,14 @@ ul.plain li { padding: 10px 0; border-bottom: 1px solid var(--line); }
 .wine .pno { color: rgba(246, 239, 230, .6); }
 .panel .nextpay { background: var(--paper); }
 .wine .cap { color: rgba(246, 239, 230, .65); }
+/* здание: план и характеристики */
+.bld { align-items: start; }
+.bld .chart-h { margin-top: 0; }
+.plan { display: block; width: 100%; height: auto; margin: 4px 0 clamp(24px, 3vw, 36px); }
+.specs { list-style: none; padding: 0; margin: 0; }
+.specs li { padding: 14px 0; border-top: 1px solid var(--line); font-size: 16px; line-height: 1.45; color: var(--stone); }
+.specs li:last-child { border-bottom: 1px solid var(--line); }
+.specs b { color: var(--ink); font-weight: 700; }
 /* Instagram */
 .ig { align-items: center; }
 .ig .shot { display: block; width: 100%; border-radius: 6px; box-shadow: 0 24px 64px rgba(0, 0, 0, .35); }
