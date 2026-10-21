@@ -261,15 +261,19 @@ ul.plain li { padding: 10px 0; border-bottom: 1px solid var(--line); }
 .specs li { padding: 14px 0; border-top: 1px solid var(--line); font-size: 16px; line-height: 1.45; color: var(--stone); }
 .specs li:last-child { border-bottom: 1px solid var(--line); }
 .specs b { color: var(--ink); font-weight: 700; }
-/* зал внутри */
+/* зал внутри: два широких кадра слева, высокий справа */
 .zal { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: clamp(14px, 2vw, 24px); margin-top: clamp(32px, 5vw, 56px); }
 .zal figure { margin: 0; }
-.zal img { display: block; width: 100%; height: clamp(300px, 38vw, 540px); object-fit: cover; }
+.zal img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
 .zal figcaption { margin-top: 10px; font-size: 13px; color: var(--night-muted); }
+.zal .tall { grid-column: 2; grid-row: 1 / span 2; position: relative; }
+.zal .tall img { position: absolute; top: 0; left: 0; height: calc(100% - 30px); aspect-ratio: auto; }
+.zal .tall figcaption { position: absolute; bottom: 0; left: 0; }
 @media (max-width: 820px) {
   .zal { grid-template-columns: 1fr; }
-  .zal img { height: auto; aspect-ratio: 16 / 10; }
-  .zal figure:last-child img { aspect-ratio: 4 / 5; }
+  .zal .tall { grid-column: auto; grid-row: auto; position: static; }
+  .zal .tall img { position: static; height: auto; aspect-ratio: 4 / 5; }
+  .zal .tall figcaption { position: static; }
 }
 /* Instagram */
 .ig { align-items: center; }
