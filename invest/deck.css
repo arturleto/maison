@@ -53,7 +53,7 @@ ul.plain li { padding: 10px 0; border-bottom: 1px solid var(--line); }
 .c4 { grid-column: span 4; } .c5 { grid-column: span 5; } .c6 { grid-column: span 6; } .c7 { grid-column: span 7; } .c8 { grid-column: span 8; } .c12 { grid-column: 1 / -1; }
 
 /* обложка */
-.cover { min-height: 100svh; display: flex; align-items: flex-end; color: #f4efe7; background: #1f1c1a url(img/fasad-vecher.jpg) center 40% / cover no-repeat; position: relative; }
+.cover { min-height: 100svh; display: flex; align-items: flex-end; color: #f4efe7; background: #1f1c1a url(img/fasad-glavnoe.jpg) center 45% / cover no-repeat; position: relative; }
 .cover::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20, 18, 16, .15) 0%, rgba(20, 18, 16, .25) 45%, rgba(20, 18, 16, .88) 100%); }
 .cover .inner { position: relative; width: 100%; }
 .wordmark { font-family: "Prata", Georgia, serif; font-size: clamp(64px, 15vw, 210px); line-height: .88; letter-spacing: -.02em; margin: 0; }
