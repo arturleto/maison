@@ -251,6 +251,14 @@ ul.plain li { padding: 10px 0; border-bottom: 1px solid var(--line); }
 .wine .fig .when-f { color: rgba(246, 239, 230, .7); }
 .wine .pno { color: rgba(246, 239, 230, .6); }
 .panel .nextpay { background: var(--paper); }
+.wine .cap { color: rgba(246, 239, 230, .65); }
+/* Instagram */
+.ig { align-items: center; }
+.ig .shot { display: block; width: 100%; border-radius: 6px; box-shadow: 0 24px 64px rgba(0, 0, 0, .35); }
+.ig .fig + .fig { margin-top: clamp(24px, 3vw, 36px); }
+.ig .fig .n { font-size: clamp(44px, 5vw, 72px); }
+.btn { display: inline-block; margin-top: clamp(28px, 3vw, 40px); padding: 15px 24px; background: #f6efe6; color: #6f1118; font-weight: 700; font-size: 16px; text-decoration: none; border-radius: 2px; }
+.btn:hover { background: #fff; }
 .chart.wide { max-width: 980px; }
 .chart.wide text { font-size: 11px; }
 .chart-scroll { margin-top: 0; }
