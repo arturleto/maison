@@ -238,6 +238,13 @@ ul.plain li { padding: 10px 0; border-bottom: 1px solid var(--line); }
 .why p:last-child { margin-bottom: 0; }
 .why b { color: var(--ink); }
 
+/* одна мысль на экран (Артур 21.10): крупные пары цифр, доходность без рамки на тёмной странице */
+.figs.two { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(32px, 6vw, 88px); margin-top: clamp(44px, 6vw, 80px); }
+.figs.two .n { font-size: clamp(34px, 4vw, 60px); }
+.figs.two .t { max-width: 40ch; font-size: 16px; margin-top: 14px; }
+.fig .when-f { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--night-muted); margin-bottom: 14px; }
+.yield.bare { background: none; padding: 0; margin-top: clamp(40px, 6vw, 72px); }
+
 /* почему доходность такая высокая */
 .yield .ywhy { margin-top: 28px; padding-top: 22px; border-top: 1px solid rgba(237, 232, 225, .18); }
 .yield .ywhy ul { list-style: none; padding: 0; margin: 14px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 32px; }
@@ -254,6 +261,7 @@ footer.end { padding: 28px clamp(20px, 6vw, 96px); font-size: 12px; color: var(-
 @media (max-width: 820px) {
   .grid > [class^="c"] { grid-column: 1 / -1; }
   .figs { grid-template-columns: 1fr 1fr; }
+  .figs.two { grid-template-columns: 1fr; }
   .pairs { grid-template-columns: 1fr 1fr; }
   .scen, .steps, .steps.four, .risks, .yield .yrow, .yield .ywhy ul, .cover .cv { grid-template-columns: 1fr; }
   .sc .what { min-height: 0; }
