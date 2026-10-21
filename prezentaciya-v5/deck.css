@@ -244,15 +244,23 @@ ul.plain li { padding: 10px 0; border-bottom: 1px solid var(--line); }
 .figs.two .t { max-width: 40ch; font-size: 16px; margin-top: 14px; }
 .fig .when-f { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--night-muted); margin-bottom: 14px; }
 .yield.bare { background: none; padding: 0; margin-top: clamp(40px, 6vw, 72px); }
+/* соседние экраны всегда на разном фоне (Артур 21.10) */
+.page.wine { background: #6f1118; color: #f6efe6; }
+.wine .lede, .wine .muted { color: rgba(246, 239, 230, .78); }
+.wine .fig .t { color: rgba(246, 239, 230, .85); }
+.wine .fig .when-f { color: rgba(246, 239, 230, .7); }
+.wine .pno { color: rgba(246, 239, 230, .6); }
+.panel .nextpay { background: var(--paper); }
 .chart.wide { max-width: 980px; }
 .chart.wide text { font-size: 11px; }
 .chart-scroll { margin-top: 0; }
-.chart-scroll .chart.wide { min-width: 600px; }
-.chart.pay-h { display: none; }
-.chart.pay-h text { font-size: 11px; }
-@media (max-width: 600px) {
-  .chart-scroll { display: none; }
-  .chart.pay-h { display: block; }
+.chart-scroll .chart.wide { min-width: 640px; }
+/* на телефоне график листается, открывается с правого края: там неоплаченные месяцы */
+.swipe { display: none; font-size: 12px; color: var(--stone); margin-top: 6px; }
+@media (max-width: 700px) {
+  .swipe { display: block; }
+  .chart-scroll { direction: rtl; }
+  .chart-scroll .chart { direction: ltr; }
 }
 
 /* почему доходность такая высокая */
