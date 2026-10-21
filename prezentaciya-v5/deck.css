@@ -256,6 +256,8 @@ ul.plain li { padding: 10px 0; border-bottom: 1px solid var(--line); }
 .ig { align-items: center; }
 .ig .shot { display: block; width: 100%; border-radius: 6px; box-shadow: 0 24px 64px rgba(0, 0, 0, .35); }
 .ig .fig + .fig { margin-top: clamp(24px, 3vw, 36px); }
+.stack .fig + .fig { margin-top: clamp(28px, 4vw, 44px); }
+.stack .fig .n { font-size: clamp(40px, 4.6vw, 64px); }
 .ig .fig .n { font-size: clamp(44px, 5vw, 72px); }
 .btn { display: inline-block; margin-top: clamp(28px, 3vw, 40px); padding: 15px 24px; background: #f6efe6; color: #6f1118; font-weight: 700; font-size: 16px; text-decoration: none; border-radius: 2px; }
 .btn:hover { background: #fff; }
