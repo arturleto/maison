@@ -388,3 +388,11 @@ footer.end { padding: 28px clamp(20px, 6vw, 96px); font-size: 12px; color: var(-
 /* видеопрезентация (Артур 22.10) */
 .vtitle { font-size: clamp(32px, 8.2vw, 112px); line-height: 1.05; max-width: none; overflow-wrap: anywhere; }
 .vid.big { display: block; width: 100%; max-width: 100%; aspect-ratio: 16 / 9; height: auto; margin-top: clamp(28px, 4vw, 48px); background: #000; border-radius: 6px; }
+.vwrap { position: relative; margin-top: clamp(28px, 4vw, 48px); }
+.vwrap .vid.big { margin-top: 0; }
+.vplay { position: absolute; inset: 0; margin: auto; width: clamp(88px, 12vw, 136px); height: clamp(88px, 12vw, 136px); border: 0; border-radius: 50%;
+  background: rgba(163, 20, 30, .94); display: grid; place-items: center; cursor: pointer; box-shadow: 0 12px 44px rgba(0, 0, 0, .5); transition: transform .2s ease; }
+.vplay:hover { transform: scale(1.07); }
+.vplay:focus-visible { outline: 3px solid var(--amber); outline-offset: 4px; }
+.vplay svg { width: 42%; height: 42%; margin-left: 7%; fill: #f4ece6; }
+.vplay[hidden] { display: none; }

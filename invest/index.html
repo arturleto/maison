@@ -106,7 +106,21 @@
 <section class="page wine" id="s3" data-toc="Видеопрезентация">
   <div class="inner">
     <h2 class="vtitle">Видеопрезентация</h2>
-    <video class="vid big" src="video/investor-v1.mp4" poster="video/investor-v1.jpg" controls playsinline preload="none"></video>
+    <div class="vwrap">
+      <video id="pv" class="vid big" src="video/investor-v1.mp4" poster="video/investor-v1.jpg" playsinline preload="none"></video>
+      <button class="vplay" id="pv-play" type="button" aria-label="Смотреть видео со звуком"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></button>
+    </div>
+    <script>
+    (function () {   // большая кнопка, звук сразу со стартом
+      var v = document.getElementById('pv'), b = document.getElementById('pv-play');
+      b.addEventListener('click', function () {
+        v.muted = false; v.volume = 1; v.controls = true; b.hidden = true;
+        var p = v.play();
+        if (p && p.catch) p.catch(function () { b.hidden = false; });
+      });
+      v.addEventListener('ended', function () { v.controls = false; b.hidden = false; });
+    })();
+    </script>
   </div>
   <div class="pno">03 / 38</div>
 </section>
