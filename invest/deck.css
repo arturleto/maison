@@ -408,3 +408,21 @@ footer.end { padding: 28px clamp(20px, 6vw, 96px); font-size: 12px; color: var(-
 .ex-r span { color: rgba(244, 239, 231, .85); }
 .ex-r b { font-weight: 700; color: #f4ece6; white-space: nowrap; font-variant-numeric: tabular-nums; }
 @media (max-width: 700px) { .ex-grid { grid-template-columns: 1fr; } }
+
+/* сравнение вложений: вариант А три карточки, вариант Б график (Артур 22.10) */
+.cmp-grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cmp-grid.three .cmp-row { grid-template-columns: 1fr; gap: 4px; }
+.cmp-chart { margin-top: clamp(28px, 4vw, 44px); max-width: 680px; }
+.chart.cmpc text { fill: var(--night-muted); font-size: 10.5px; }
+.chart.cmpc .cn { fill: var(--night-text); font-size: 13px; font-weight: 700; }
+.chart.cmpc .cn.us, .chart.cmpc .cv.us { fill: var(--amber); }
+.chart.cmpc .cv { fill: var(--night-text); font-size: 13.5px; font-weight: 700; }
+.chart.cmpc .cv.in { fill: #f4ece6; }
+.chart.cmpc .cnote { fill: var(--night-muted); font-size: 11px; }
+.chart.cmpc .cb-hi { fill: rgba(237, 232, 225, .22); }
+.chart.cmpc .cb-lo { fill: rgba(237, 232, 225, .62); }
+.chart.cmpc .cb-hi.us { fill: rgba(216, 164, 90, .38); }
+.chart.cmpc .cb-lo.us { fill: var(--amber); }
+.chart.cmpc .inv { stroke: var(--rouge); stroke-width: 1.4; stroke-dasharray: 4 3; }
+.chart.cmpc .inv-t { fill: #e2626a; font-size: 11px; font-weight: 700; }
+@media (max-width: 900px) { .cmp-grid.three { grid-template-columns: 1fr; } }
