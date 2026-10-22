@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Maison Sauvage: план на 90 дней</title>
+<meta property="og:title" content="Maison Sauvage: план на 90 дней и куда мы идём">
+<meta property="og:image" content="https://arturleto.github.io/maison/invest/img/zdanie-2.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* План магазина как страница журнала: одна колонка, крупные цифры приоритетов. Бетон, графит, красный, бордо. */
+:root {
+  --bg: #f7f6f3;
+  --panel: #ebe8e3;
+  --card: #ffffff;
+  --ink: #26221f;
+  --muted: #746e67;
+  --line: rgba(38, 34, 31, .13);
+  --rouge: #a3141e;
+  --wine: #6f1118;
+  --wine-ink: #f4ece6;
+  --amber: #a4701f;
+  --ok: #3d6b48;
+  --display: "Prata", "Didot", "Bodoni 72", Georgia, serif;
+  --body: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1c1917; --panel: #26221f; --card: #2b2724; --ink: #ede8e1; --muted: #a59d93;
+    --line: rgba(237, 232, 225, .14); --rouge: #e2626a; --wine: #5a1016; --wine-ink: #f4ece6;
+    --amber: #e0b26c; --ok: #8cc59a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1c1917; --panel: #26221f; --card: #2b2724; --ink: #ede8e1; --muted: #a59d93;
+  --line: rgba(237, 232, 225, .14); --rouge: #e2626a; --wine: #5a1016; --wine-ink: #f4ece6;
+  --amber: #e0b26c; --ok: #8cc59a; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.55 var(--body); -webkit-text-size-adjust: 100%; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-align: left; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--rouge); outline-offset: 2px; border-radius: 4px; }
+a { color: inherit; }
+.wrap { max-width: 780px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; text-wrap: balance; }
+.eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.band { padding-block: 40px; }
+.band.panel { background: var(--panel); }
+.band.wine { background: var(--wine); color: var(--wine-ink); }
+.band.wine .eyebrow, .band.wine .muted { color: rgba(244, 236, 230, .72); }
+.muted { color: var(--muted); }
+
+header.top { padding-block: 44px 34px; }
+header.top h1 { font-size: clamp(36px, 8vw, 58px); line-height: 1.04; margin-top: 10px; }
+.sub { margin: 16px 0 0; color: var(--muted); max-width: 58ch; }
+.prog { margin-top: 26px; display: grid; gap: 8px; }
+.prog .nums { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; font-variant-numeric: tabular-nums; }
+.prog .nums b { font-size: 22px; font-weight: 700; }
+.bar { height: 5px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.bar i { display: block; height: 100%; width: 0; background: var(--rouge); transition: width .4s ease; }
+.sync { font-size: 13px; color: var(--muted); }
+
+/* амбиции */
+.goal { display: grid; gap: 6px; margin-top: 18px; }
+.goal .big { font-family: var(--display); font-size: clamp(46px, 11vw, 84px); line-height: 1; }
+.goal .usd { font-size: 15px; color: rgba(244, 236, 230, .8); }
+.goal p { margin: 10px 0 0; max-width: 60ch; }
+.fact { margin-top: 22px; padding-top: 16px; border-top: 1px solid rgba(244, 236, 230, .22); font-size: 15px; max-width: 62ch; }
+
+.horizon { list-style: none; margin: 22px 0 0; padding: 0; display: grid; }
+.horizon li { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.horizon li:last-child { border-bottom: 0; }
+.horizon .when { font-weight: 700; font-size: 14px; color: var(--rouge); padding-top: 3px; }
+.horizon h3 { font-size: 21px; line-height: 1.25; }
+.horizon p { margin: 6px 0 0; color: var(--muted); max-width: 58ch; }
+
+.principles { list-style: none; margin: 20px 0 0; padding: 0; display: grid; gap: 14px; }
+.principles li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 8px; max-width: 64ch; }
+.principles li::before { content: ""; width: 8px; height: 8px; margin-top: .6em; background: var(--rouge); border-radius: 50%; }
+.principles b { font-weight: 700; }
+
+section.sec { padding-block: 36px; }
+section.sec > h2, .h2 { font-size: clamp(28px, 6vw, 40px); line-height: 1.1; margin-top: 6px; }
+
+/* приоритеты */
+.prio { padding-block: 34px 18px; border-top: 1px solid var(--line); }
+.prio-h { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 14px; align-items: start; }
+.prio-n { font-family: var(--display); font-size: 58px; line-height: .9; color: var(--rouge); }
+.prio-h h3 { font-size: clamp(23px, 4.6vw, 30px); line-height: 1.15; }
+.prio-when { margin-top: 6px; font-size: 14px; font-weight: 600; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 12px; font-variant-numeric: tabular-nums; }
+.prio-why { margin: 10px 0 0; color: var(--muted); max-width: 60ch; }
+.prio .bar { margin-top: 12px; height: 3px; }
+
+ul.steps { list-style: none; margin: 14px 0 0; padding: 0; }
+.step { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 8px; padding: 11px 0; border-bottom: 1px dashed var(--line); }
+.step:last-child { border-bottom: 0; }
+.tick { width: 26px; height: 26px; border: 1.6px solid var(--muted); border-radius: 7px; display: grid; place-items: center; background: var(--card); }
+.tick svg { width: 15px; height: 15px; opacity: 0; }
+.step.done .tick { background: var(--ok); border-color: var(--ok); }
+.step.done .tick svg { opacity: 1; stroke: var(--bg); }
+.tick[disabled] { cursor: default; }
+.step .txt { font-weight: 500; padding-top: 2px; }
+.step.done .txt { color: var(--muted); }
+.meta { display: flex; flex-wrap: wrap; gap: 4px 10px; margin-top: 4px; font-size: 13px; color: var(--muted); }
+.tag { font-size: 12px; font-weight: 600; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--line); }
+.donemark { color: var(--ok); font-weight: 700; }
+
+footer { padding-block: 34px 60px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); }
+footer p { margin: 0 0 8px; max-width: 70ch; }
+
+@media (max-width: 520px) {
+  .horizon li { grid-template-columns: 1fr; gap: 4px; }
+  .prio-h { grid-template-columns: 48px minmax(0, 1fr); gap: 10px; }
+  .prio-n { font-size: 46px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+
+<header class="top wrap">
+  <div class="eyebrow">Maison Sauvage · Умалас, Бали</div>
+  <h1>План на 90 дней и куда мы идём</h1>
+  <p class="sub">С 22 октября 2026 по 20 января 2027. Пять приоритетов по очереди: сначала то, без чего не работает всё остальное. Сделанный шаг отмечаем галочкой, он остаётся на своём месте.</p>
+  <div class="prog">
+    <div class="nums"><span><b id="p-done">0</b> из <span id="p-all">0</span> шагов сделано</span><span class="muted">обновлено 22.10.2026</span></div>
+    <div class="bar"><i id="p-bar"></i></div>
+    <div class="sync" id="sync">Подключаю отметки…</div>
+  </div>
+</header>
+
+<div class="band wine">
+  <section class="wrap">
+    <div class="eyebrow">Главная цель</div>
+    <div class="goal">
+      <div class="big">2 млрд IDR</div>
+      <div class="usd">выручки в месяц, около $111 000</div>
+      <p>Столько магазин может делать на полном ходу. К октябрю 2027 года, к началу следующего сезона, выходим хотя бы на 70% от цели: 1,5 млрд IDR в месяц, около $83 000.</p>
+    </div>
+    <p class="fact">Опора на факт: в декабре 2025 года магазин продал на 500 млн IDR, около $27 800. Тогда он только открылся, посреди стройки, без открытия, без рекламы и без вывески.</p>
+  </section>
+</div>
+
+<section class="sec wrap">
+  <div class="eyebrow">Амбиции</div>
+  <h2>Куда мы идём</h2>
+  <ul class="horizon" id="horizon"></ul>
+</section>
+
+<div class="band panel">
+  <section class="wrap">
+    <div class="eyebrow">Как мы работаем</div>
+    <h2 class="h2">Принципы</h2>
+    <ul class="principles" id="principles"></ul>
+  </section>
+</div>
+
+<main class="wrap">
+  <section class="sec" style="padding-bottom:0">
+    <div class="eyebrow">22.10.2026 - 20.01.2027</div>
+    <h2>План на 90 дней</h2>
+  </section>
+  <div id="prios"></div>
+</main>
+
+<footer class="wrap">
+  <p>План собран по рабочему созвону основателя и управляющего 22.10.2026. Он обновляется: новые шаги добавляем, сделанные отмечаем.</p>
+  <p>Расчёт для инвестора: <a href="https://arturleto.github.io/maison/invest/" target="_blank" rel="noopener">страница инвестиционного предложения</a>.</p>
+  <p id="foot-sync"></p>
+</footer>
+
+<script type="application/json" id="data">
+{
+ "horizon": [
+  ["90 дней", "к 20 января 2027", "Полный магазин и первый сезон на полном ходу", "Полки заполнены, вход и вывеска видны с дороги, новогодние события, база клиентов с рассылками, сайт и первые онлайн-продажи."],
+  ["Лето 2027", "", "Собственный бренд", "Свой парфюм и первая капсульная коллекция. На своих вещах магазин оставляет до 70% цены, на вещах брендов 45%. Собственное швейное производство: партии от 20 штук."],
+  ["Октябрь 2027", "к сезону", "1,5 млрд IDR выручки в месяц", "Онлайн-продажи по Индонезии и миру: сайт, Tokopedia, Shopee, заявка на Farfetch. Кофе и десерты прямо в магазине."],
+  ["Новый год 2028", "", "Второй бутик в торговом центре", "Место с большим потоком: Icon Bali или Beachwalk в Куте."],
+  ["Дальше", "", "Сеть", "Магазин в Улувату. Свой бренд в мультибрендовых бутиках Бали. Затем Джакарта, Сингапур, Дубай, Вьетнам и Пхукет."]
+ ],
+ "principles": [
+  ["Не вслепую.", "Прежде чем тратить на рекламу, берём консультации у практиков: у владелицы сети из 9 мультибрендовых магазинов на Бали и у других. Делаем то, что уже работает здесь."],
+  ["4 события в неделю.", "Каждую неделю 2 события у себя (воскресный pop-up маркет, вечеринка нового бренда) и 2 снаружи, как партнёр мероприятий."],
+  ["Весь Бали, а не одна диаспора.", "Европейцы, австралийцы, гости из Азии и русскоязычные. Под каждую аудиторию свои партнёры и свои каналы."],
+  ["Выручка из трёх чисел.", "Посетители в день, доля купивших и средний чек. Каждый шаг плана двигает одно из этих чисел."],
+  ["Деньги по фондам.", "Часть выручки каждый месяц идёт в фонды рекламы и обновления зала. Сразу видно, где добавить, а где сократить."]
+ ],
+ "prios": [
+  {"t": "Сохранить магазин и вернуть товар", "when": "сейчас, до 1 ноября", "why": "Аренда внесена, бренды знают, когда получат деньги и что привезти. Без этого остальное не начинается.", "steps": [
+   ["p1-1", "Внести аренду за ноябрь, 150 млн IDR", "до 1 ноября", "Деньги"],
+   ["p1-2", "Договориться с брендами о сроке оплаты и новых поставках", "до 1 ноября", "Бренды"],
+   ["p1-3", "Провести воскресный pop-up маркет", "24-25 октября", "События"],
+   ["p1-4", "Каждый день открывать двери и выносить вещи и мебель на улицу", "каждый день", "Магазин"],
+   ["p1-5", "Начать набор новых брендов: подарок с письмом и промоутеры по карте бутиков", "до 1 ноября", "Бренды"],
+   ["p1-6", "Привлечь инвестиционного партнёра", "ноябрь", "Деньги"],
+   ["p1-7", "Рассчитаться с брендами за проданные вещи", "ноябрь", "Бренды"]
+  ]},
+  {"t": "Полные полки и понятный вход", "when": "ноябрь, до 1 декабря", "why": "Человек с улицы понимает, что здесь стильная одежда, заходит и находит свой размер.", "steps": [
+   ["p2-1", "Промоутеры обходят бутики по карте, через неделю собираем ответы и звоним повторно", "ноябрь", "Бренды"],
+   ["p2-2", "Заполнить витрины: отпарить вещи, повесить бирки, занести в кассу", "до 1 декабря", "Магазин"],
+   ["p2-3", "Сделать входную группу и баннеры у дороги", "ноябрь, около недели", "Магазин"],
+   ["p2-4", "Взять консультацию у владелицы сети из 9 магазинов на Бали", "ноябрь", "Стратегия"],
+   ["p2-5", "Купить манекены и доделать зеркала, каркасы уже готовы", "ноябрь", "Магазин"],
+   ["p2-6", "Подобрать аромат магазина", "ноябрь", "Магазин"],
+   ["p2-7", "Поставить CRM и занести клиентов, которые уже покупали", "ноябрь", "Маркетинг"],
+   ["p2-8", "Каждую новую коллекцию отправлять клиентам рассылкой с фото", "с ноября", "Маркетинг"],
+   ["p2-9", "Блогер каждый день: вещи для съёмки дают бренды", "с ноября", "Маркетинг"],
+   ["p2-10", "Провести Чёрную пятницу", "27 ноября", "События"]
+  ]},
+  {"t": "Новогодний сезон", "when": "декабрь", "why": "Самый сильный месяц года на Бали. Магазин нарядный, о нём говорят, в нём каждую неделю что-то происходит.", "steps": [
+   ["p3-1", "Новогодний декор здания, подарки и акции", "до 1 декабря", "Магазин"],
+   ["p3-2", "Реклама по базе Bali Delivery и обмен аудиториями с партнёрами: визовые и туристические агентства, аренда вилл и байков", "до 1 декабря, дальше постоянно", "Маркетинг"],
+   ["p3-3", "Встретиться с организатором вечеринок и выставок на Бали", "ноябрь", "События"],
+   ["p3-4", "Вечеринки брендов, модные показы, конкурс «Мисс и Мистер Чангу»", "декабрь", "События"],
+   ["p3-5", "Одевать ведущих концертов, стендапов и игр в наши вещи, с QR-кодом и промокодом", "с декабря", "Маркетинг"],
+   ["p3-6", "Стилисты, гиды, встречающие и туры приводят клиентов за 10%", "декабрь", "Маркетинг"],
+   ["p3-7", "Найти SMM-специалиста и постоянную модель в эстетике магазина", "декабрь", "Команда"],
+   ["p3-8", "Мерчендайзинг: стилист собирает на полках готовые образы, чтобы рос средний чек", "декабрь", "Магазин"]
+  ]},
+  {"t": "Онлайн и выездной шопинг", "when": "январь", "why": "После праздников туристы ещё здесь, а магазин начинает продавать и за своими стенами.", "steps": [
+   ["p4-1", "Заполнить сайт, запустить рекламу по Индонезии, сделать первые доставки", "январь", "Онлайн"],
+   ["p4-2", "Выставить те же товары на Tokopedia и Shopee", "январь", "Онлайн"],
+   ["p4-3", "Акции первых двух недель после Нового года", "январь", "События"],
+   ["p4-4", "Выездной шопинг на площадках отелей и ресторанов", "январь", "События"],
+   ["p4-5", "Билборды и листовки по Чангу и Шорткату вокруг магазина", "январь", "Маркетинг"],
+   ["p4-6", "Таргет, Google Ads и сообщения по геолокации в Instagram", "январь", "Маркетинг"],
+   ["p4-7", "Через месяц после старта сайта реклама на весь мир", "февраль", "Онлайн"]
+  ]},
+  {"t": "Выше средний чек и сильнее команда", "when": "параллельно, к февралю", "why": "Больше причин зайти и больше вещей в одном чеке. Команда, которая держит рост без нас в каждой мелочи.", "steps": [
+   ["p5-1", "Подключить бренд обуви", "январь", "Бренды"],
+   ["p5-2", "Полка повседневных товаров: косметика и уход за волосами на реализации", "январь-февраль", "Бренды"],
+   ["p5-3", "Промоутер или менеджер для гостей из Азии на 2-3 месяца", "январь", "Команда"],
+   ["p5-4", "Ответственный за бренды с опытом в fashion-ритейле", "по мере роста", "Команда"],
+   ["p5-5", "Кофе и десерты в магазине на оборудовании, которое даёт собственник здания", "февраль", "Магазин"],
+   ["p5-6", "Начать собственный бренд: парфюм и первая капсульная коллекция", "к лету 2027", "Свой бренд"],
+   ["p5-7", "Подать заявку на Farfetch", "2027", "Онлайн"]
+  ]}
+ ]
+}
+</script>
+<script>
+(function () {
+  "use strict";
+  var K = JSON.parse(document.getElementById("data").textContent);
+  var ALL = [];
+  K.prios.forEach(function (p) { p.steps.forEach(function (s) { ALL.push(s[0]); }); });
+  var KNOWN = {}; ALL.forEach(function (id) { KNOWN[id] = true; });
+  var ticks = {}, db = null, ready = false, canWrite = false, busy = {};
+  var CHECK = '<svg viewBox="0 0 16 16" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5"/></svg>';
+
+  function esc(t) {
+    return String(t == null ? "" : t).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; })
+      .replace(/(\d) (?=\d{3}\b)/g, "$1 ").replace(/(\d) (млн|млрд|IDR|дней)/g, "$1 $2");
+  }
+
+  document.getElementById("horizon").innerHTML = K.horizon.map(function (h) {
+    return '<li><div class="when">' + esc(h[0]) + (h[1] ? '<div class="muted" style="font-weight:500">' + esc(h[1]) + '</div>' : '') + '</div><div><h3>' + esc(h[2]) + '</h3><p>' + esc(h[3]) + '</p></div></li>';
+  }).join("");
+  document.getElementById("principles").innerHTML = K.principles.map(function (p) {
+    return '<li><span><b>' + esc(p[0]) + '</b> ' + esc(p[1]) + '</span></li>';
+  }).join("");
+
+  function render() {
+    var done = 0;
+    document.getElementById("prios").innerHTML = K.prios.map(function (p, i) {
+      var d = p.steps.filter(function (s) { return ticks[s[0]]; }).length; done += d;
+      return '<section class="prio"><div class="prio-h"><div class="prio-n">' + (i + 1) + '</div><div><h3>' + esc(p.t) + '</h3>' +
+        '<div class="prio-when"><span>' + esc(p.when) + '</span><span>' + (d === p.steps.length ? '<span class="donemark">всё сделано</span>' : d + ' из ' + p.steps.length) + '</span></div>' +
+        '<p class="prio-why">' + esc(p.why) + '</p><div class="bar"><i style="width:' + Math.round(d / p.steps.length * 100) + '%"></i></div></div></div>' +
+        '<ul class="steps">' + p.steps.map(function (s) {
+          var on = !!ticks[s[0]];
+          return '<li class="step' + (on ? ' done' : '') + '"><button class="tick" data-tick="' + s[0] + '" aria-pressed="' + on + '" aria-label="Сделано: ' + esc(s[1]) + '"' + (ready && canWrite ? '' : ' disabled') + '>' + CHECK + '</button>' +
+            '<div style="min-width:0"><div class="txt">' + esc(s[1]) + '</div><div class="meta"><span>' + esc(s[2]) + '</span><span class="tag">' + esc(s[3]) + '</span></div></div></li>';
+        }).join("") + '</ul></section>';
+    }).join("");
+    document.getElementById("p-done").textContent = done;
+    document.getElementById("p-all").textContent = ALL.length;
+    document.getElementById("p-bar").style.width = (done / ALL.length * 100) + "%";
+  }
+  function setSync(t) { document.getElementById("sync").textContent = t; document.getElementById("foot-sync").textContent = t; }
+
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("button[data-tick]");
+    if (!b || !ready || !canWrite) return;
+    var id = b.dataset.tick;
+    if (busy[id]) return;
+    var was = !!ticks[id];
+    busy[id] = true;
+    if (was) delete ticks[id]; else ticks[id] = true;
+    render();
+    var ref = db.collection("ticks").doc(id);
+    (was ? ref.delete() : ref.set({ done: true, at: new Date().toISOString() })).catch(function (err) {
+      if (was) ticks[id] = true; else delete ticks[id];
+      if (err && err.code === "invalid_argument") { canWrite = false; setSync("Отметки ставит команда магазина. Вам они видны, но менять их нельзя."); }
+      else setSync("Отметка не сохранилась. Попробуйте ещё раз.");
+      render();
+    }).then(function () { busy[id] = false; });
+  });
+
+  var BAKED = [];
+  BAKED.forEach(function (id) { if (KNOWN[id]) ticks[id] = true; });
+  render();
+  setSync("Отметки на 22.10.2026.");
+  return;
+  Promise.all([window.claude.use("db"), window.claude.use("user")]).then(function (r) {
+    db = r[0];
+    var user = r[1];
+    if (!db) { setSync("Отметки команды видны после входа на claude.ai."); return; }
+    (user && user.can ? user.can("data.write") : Promise.resolve(null)).then(function (c) {
+      canWrite = c !== false;
+      db.collection("ticks").onSnapshot(function (snap) {
+        var next = {};
+        snap.docs.forEach(function (d) { if (d.exists && KNOWN[d.id]) next[d.id] = true; });
+        Object.keys(busy).forEach(function (id) { if (busy[id]) { if (ticks[id]) next[id] = true; else delete next[id]; } });
+        ticks = next; ready = true;
+        setSync(canWrite ? "Отметки общие: их видят все, у кого есть ссылка, и Claude." : "Отметки ставит команда магазина.");
+        render();
+      }, function () { setSync("Связь с отметками потеряна. Обновите страницу."); });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
