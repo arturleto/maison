@@ -384,3 +384,7 @@ footer.end { padding: 28px clamp(20px, 6vw, 96px); font-size: 12px; color: var(-
 /* контраст мелкого текста на тёмном и бордовом фоне (Артур 22.10: читать без напряжения) */
 .night .risk p, .night .fig .t, .night .cap, .night .lede, .night .muted, .night .small, .yield .ycap, .yield .yn { color: var(--night-muted); }
 .wine .risk p, .wine .fig .t, .wine .cap, .wine .lede, .wine .muted { color: rgba(244, 239, 231, .9); }
+
+/* видеопрезентация (Артур 22.10) */
+.vtitle { font-size: clamp(32px, 8.2vw, 112px); line-height: 1.05; max-width: none; overflow-wrap: anywhere; }
+.vid.big { display: block; width: 100%; max-width: 100%; aspect-ratio: 16 / 9; height: auto; margin-top: clamp(28px, 4vw, 48px); background: #000; border-radius: 6px; }
