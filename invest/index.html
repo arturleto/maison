@@ -15,9 +15,12 @@
 <link rel="stylesheet" href="deck.css">
 </head>
 <body>
+<header class="topbar"><button class="burger" id="toc-btn" aria-expanded="false" aria-controls="toc" aria-label="Оглавление"><span></span><span></span><span></span></button><a class="tb-name" href="#s1">Maison Sauvage</a><a class="tb-tg" href="https://t.me/maison_sauvage" target="_blank" rel="noopener">Telegram</a></header>
+<div class="toc-veil" id="toc-veil"></div>
+<nav class="toc" id="toc" aria-label="Оглавление"><div class="toc-head"><span>Оглавление</span><button class="toc-x" id="toc-x" aria-label="Закрыть оглавление">✕</button></div><div class="toc-g"><div class="toc-gt">Магазин</div><a href="#s1"><span class="tn">01</span>Главное</a><a href="#s2"><span class="tn">02</span>Здание: два этажа, 300 м²</a><a href="#s3"><span class="tn">03</span>Так магазин выглядит внутри</a><a href="#s4"><span class="tn">04</span>История магазина</a><a href="#s5"><span class="tn">05</span>Сейчас тяжело. Дальше легко</a><a href="#s6"><span class="tn">06</span>Январь почти без рекламы</a><a href="#s7"><span class="tn">07</span>Бренды и гости магазина</a><a href="#s8"><span class="tn">08</span>Instagram</a></div><div class="toc-g"><div class="toc-gt">Продажи</div><a href="#s9"><span class="tn">09</span>Выручка по месяцам</a><a href="#s10"><span class="tn">10</span>Прибыль по месяцам</a><a href="#s11"><span class="tn">11</span>Январь против осени</a><a href="#s12"><span class="tn">12</span>Продажи по дням</a></div><div class="toc-g"><div class="toc-gt">Аренда и деньги</div><a href="#s13"><span class="tn">13</span>Аренда оплачена на 73%</a><a href="#s14"><span class="tn">14</span>Сколько осталось внести за аренду</a><a href="#s15"><span class="tn">15</span>Куда пойдут $103 000</a><a href="#s16"><span class="tn">16</span>Ближайший платёж</a></div><div class="toc-g"><div class="toc-gt">Доходность</div><a href="#s17"><span class="tn">17</span>Три сценария</a><a href="#s18"><span class="tn">18</span>Сколько сверху к вложенному</a><a href="#s19"><span class="tn">19</span>Почему доходность высокая</a><a href="#s20"><span class="tn">20</span>Войти можно от $10 000</a><a href="#s21"><span class="tn">21</span>Условия в доле от суммы</a><a href="#s22"><span class="tn">22</span>Расчёт по каждому сценарию</a><a href="#s23"><span class="tn">23</span>Насколько это реально</a></div><div class="toc-g"><div class="toc-gt">Сделка и защита</div><a href="#s24"><span class="tn">24</span>Как инвестор получает деньги</a><a href="#s25"><span class="tn">25</span>Как оформляем сделку</a><a href="#s26"><span class="tn">26</span>Если магазин закроется</a><a href="#s27"><span class="tn">27</span>Субаренда в пользу инвестора</a><a href="#s28"><span class="tn">28</span>Второй этаж интересен арендаторам</a><a href="#s29"><span class="tn">29</span>Хватит ли пересдачи</a></div><div class="toc-g"><div class="toc-gt">План и встреча</div><a href="#s30"><span class="tn">30</span>Выручка из трёх чисел</a><a href="#s31"><span class="tn">31</span>План: сначала тушим пожар</a><a href="#s32"><span class="tn">32</span>Риски и как мы их закрываем</a><a href="#s33"><span class="tn">33</span>Что покажем до сделки</a><a href="#s34"><span class="tn">34</span>Приезжайте в магазин</a></div></nav>
 
 <!-- 01 обложка -->
-<section class="page cover">
+<section class="page cover" id="s1" data-toc="Главное" data-group="Магазин">
   <div class="inner">
     <div class="cv">
       <div class="cv-l">
@@ -40,7 +43,7 @@
           <li>Вложение возвращается за <b>16 месяцев</b> в осторожном сценарии, за <b>11</b> с вывеской и рекламой.</li>
           <li>Вложение защищено арендой всего здания до 2030 года. Если за первый год инвестор получит меньше $80 000, у него появляется право сдать здание в субаренду, и арендная плата идёт ему до полного возврата. Письменное согласие арендодателя получаем до перевода денег.</li>
         </ul>
-        <a class="more" href="#start">Подробнее ниже ↓</a>
+        <span class="more">Подробнее ниже ↓</span>
       </div>
     </div>
     <div class="sub">
@@ -50,7 +53,7 @@
 </section>
 
 <!-- здание (Артур 21.10 ночь): план архитектора m510 и главные характеристики -->
-<section class="page">
+<section class="page" id="s2" data-toc="Здание: два этажа, 300 м²">
   <div class="inner">
     <h2>Два этажа, около 300&nbsp;м²</h2>
     <p class="lede">Здание на Jl. Raya Bumbak 169 в Умаласе. Раньше здесь был ресторан, его коммуникации сохранены. План магазина от архитектора.</p>
@@ -78,7 +81,7 @@
 </section>
 
 <!-- зал внутри (Артур 21.10 ночь: фото 1 и 2 этажа) -->
-<section class="page night">
+<section class="page night" id="s3" data-toc="Так магазин выглядит внутри">
   <div class="inner">
     <h2>Так магазин выглядит внутри</h2>
     <p class="lede">Трековый свет и кондиционеры в обоих залах. Наверху деревянные пол и потолок.</p>
@@ -92,7 +95,7 @@
 </section>
 
 <!-- 03 история -->
-<section class="page panel" id="start">
+<section class="page panel" id="s4" data-toc="История магазина">
   <div class="inner">
     <h2>Изначально инвестиции были не нужны</h2>
     <p class="lede">Зимой дела шли хорошо. Потом ушёл партнёр, без него магазин задержал выплаты брендам, вещи перестали привозить, и продажи упали почти до нуля.</p>
@@ -112,7 +115,7 @@
 </section>
 
 <!-- почему копились долги (Артур 21.10: отдельным блоком, одна мысль на экран) -->
-<section class="page wine">
+<section class="page wine" id="s5" data-toc="Сейчас тяжело. Дальше легко">
   <div class="inner">
     <h2>Сейчас тяжело. Дальше легко</h2>
     <p class="lede">Почему копились долги. По договору аренду за 5 лет и депозит вносят вперёд, за первые два года.</p>
@@ -125,7 +128,7 @@
 </section>
 
 <!-- 04 январь -->
-<section class="page night">
+<section class="page night" id="s6" data-toc="Январь почти без рекламы">
   <div class="inner">
     <p class="shout">
       <span>Почти без рекламы.</span>
@@ -158,7 +161,7 @@
 </section>
 
 <!-- бренды и гости, видео из чата m193 -->
-<section class="page">
+<section class="page" id="s7" data-toc="Бренды и гости магазина">
   <div class="inner">
     <div class="grid">
       <div class="c5">
@@ -174,7 +177,7 @@
 </section>
 
 <!-- Instagram (Артур 21.10: отдельным блоком, привлечь внимание) -->
-<section class="page wine">
+<section class="page wine" id="s8" data-toc="Instagram">
   <div class="inner">
     <h2>Instagram уже работает</h2>
     <p class="lede">Живые подписчики и много своего контента. Можете посмотреть сами.</p>
@@ -192,7 +195,7 @@
 </section>
 
 <!-- 05 выручка по месяцам -->
-<section class="page panel">
+<section class="page panel" id="s9" data-toc="Выручка по месяцам" data-group="Продажи">
   <div class="inner">
     <h2>Пик $27 800 в декабре. Потом полки опустели</h2>
     <p class="lede">Выручка по месяцам в долларах. С ноября по январь почти без рекламы, потом партнёр отработал январь и ушёл. Появились долги перед брендами, и бренды перестали привозить товар. Выручка стала падать.</p>
@@ -205,7 +208,7 @@
 </section>
 
 <!-- чистая прибыль по месяцам (Артур 21.10 ночь): аренда оплачена вперёд, разложена на 5 лет -->
-<section class="page night">
+<section class="page night" id="s10" data-toc="Прибыль по месяцам">
   <div class="inner">
     <h2>Пока на полках был товар, магазин был в плюсе</h2>
     <p class="lede">Чистая прибыль магазина по месяцам. С ноября по апрель 6 месяцев подряд в плюсе, в декабре $6 900. В минус магазин ушёл, когда опустели полки.</p>
@@ -218,7 +221,7 @@
 </section>
 
 <!-- 06 январь и сейчас -->
-<section class="page">
+<section class="page" id="s11" data-toc="Январь против осени">
   <div class="inner">
     <h2>Январь (31 день) против 5 сентября - 19 октября (40 дней отчётов)</h2>
     <p class="lede">Людей заходит вдвое меньше, и из них вдвое реже покупают. В итоге покупок в день вчетверо меньше. «Нет размера» продавцы записали в 24 отчётах из 40: товара на полках просто нет.</p>
@@ -235,7 +238,7 @@
 </section>
 
 <!-- то же по дням -->
-<section class="page panel">
+<section class="page panel" id="s12" data-toc="Продажи по дням">
   <div class="inner">
     <h2>То же самое по дням</h2>
     <p class="lede">Выручка, посетители и покупки за каждый день. Январь 2026 и 5 сентября - 19 октября.</p>
@@ -270,7 +273,7 @@
 </section>
 
 <!-- 07 аренда -->
-<section class="page">
+<section class="page" id="s13" data-toc="Аренда оплачена на 73%" data-group="Аренда и деньги">
   <div class="inner">
     <h2>Аренда на 5 лет оплачена на 73%</h2>
     <p class="lede">По договору вся аренда за 5 лет и депозит за год вносятся вперёд. По новому графику, подписанному арендодателем, последний платёж 1 апреля 2027 года. После него до июля 2030 года за аренду платить не нужно.</p>
@@ -299,7 +302,7 @@
 </section>
 
 <!-- что осталось внести -->
-<section class="page panel">
+<section class="page panel" id="s14" data-toc="Сколько осталось внести за аренду">
   <div class="inner">
     <h2>Осталось внести $79 800</h2>
     <p class="lede">Новый график подписан арендодателем. Последний платёж 1 апреля 2027 года. В график входит доплата 10% за реструктуризацию, $7 900. Арендодатель готов её снять, если внести весь остаток сразу.</p>
@@ -332,7 +335,7 @@
 </section>
 
 <!-- 08 на что деньги -->
-<section class="page">
+<section class="page" id="s15" data-toc="Куда пойдут $103 000">
   <div class="inner">
     <h2>Куда пойдут $103 000</h2>
     <p class="lede">Три статьи. Первая сохраняет здание до 2030 года, вторая возвращает товар на полки, третья закрывает заём, которым платили аренду.</p>
@@ -365,7 +368,7 @@
 </section>
 
 <!-- ближайший платёж (Артур 21.10), отдельным экраном -->
-<section class="page panel">
+<section class="page panel" id="s16" data-toc="Ближайший платёж">
   <div class="inner">
     <div class="nextpay">
       <div class="nh">Ближайший платёж, до 30 октября 2026 года</div>
@@ -380,7 +383,7 @@
 </section>
 
 <!-- 09 сценарии -->
-<section class="page">
+<section class="page" id="s17" data-toc="Три сценария" data-group="Доходность">
   <div class="inner">
     <h2>Три сценария и срок возврата денег</h2>
     <p class="lede">Магазину 45% с каждой продажи. Из этого вычитаем расходы и получаем чистую прибыль. Инвестор получает 80% чистой прибыли, пока не вернёт $103 000. Остальные 20% остаются магазину.</p>
@@ -403,7 +406,7 @@
 </section>
 
 <!-- доходность, % годовых (Артур 21.10), отдельным экраном -->
-<section class="page night">
+<section class="page night" id="s18" data-toc="Сколько сверху к вложенному">
   <div class="inner">
     <h2>Сверху к вложенному от +33% до 2030 года</h2>
     <div class="yield bare">
@@ -415,7 +418,7 @@
 </section>
 
 <!-- почему доходность такая высокая (Артур 21.10: обосновать) -->
-<section class="page">
+<section class="page" id="s19" data-toc="Почему доходность высокая">
   <div class="inner">
     <h2>Почему доходность такая высокая</h2>
     <p class="lede">На чём держится расчёт.</p>
@@ -432,7 +435,7 @@
 </section>
 
 <!-- войти частью суммы (Артур 21.10 ночь) -->
-<section class="page panel">
+<section class="page panel" id="s20" data-toc="Войти можно от $10 000">
   <div class="inner">
     <h2>Войти можно от $10 000</h2>
     <p class="lede">Не обязательно вкладывать всю сумму сразу. Можно зайти на $10 000, $20 000 или $50 000 и вносить частями, например по $10 000 в месяц.</p>
@@ -460,7 +463,7 @@
 </section>
 
 <!-- условия те же, в доле -->
-<section class="page wine">
+<section class="page wine" id="s21" data-toc="Условия в доле от суммы">
   <div class="inner">
     <h2>Условия те же, в доле от суммы</h2>
     <p class="lede">Вложили 10 000 из 103 000, получаете примерно десятую часть выплат инвестору. Срок возврата и доходность такие же, как у всей суммы.</p>
@@ -474,7 +477,7 @@
 </section>
 
 <!-- расчёт по сценариям -->
-<section class="page panel">
+<section class="page panel" id="s22" data-toc="Расчёт по каждому сценарию">
   <div class="inner">
     <h2>Расчёт по каждому сценарию</h2>
     <div class="scen">
@@ -526,7 +529,7 @@
 </section>
 
 <!-- насколько это реально -->
-<section class="page">
+<section class="page" id="s23" data-toc="Насколько это реально">
   <div class="inner">
     <h2>Насколько это реально</h2>
     <div class="grid">
@@ -544,7 +547,7 @@
 </section>
 
 <!-- 10 возврат денег -->
-<section class="page panel">
+<section class="page panel" id="s24" data-toc="Как инвестор получает деньги" data-group="Сделка и защита">
   <div class="inner">
     <h2>Как инвестор получает деньги</h2>
     <p class="lede">Сколько инвестор получил нарастающим итогом, с декабря 2026 по июнь 2030. Где линия пересекает пунктир, вложение вернулось.</p>
@@ -568,7 +571,7 @@
 </section>
 
 <!-- сделка -->
-<section class="page">
+<section class="page" id="s25" data-toc="Как оформляем сделку">
   <div class="inner">
     <h2>Как оформляем сделку</h2>
     <p class="lede">Договор с компанией, которой принадлежат магазин и право аренды здания. Деньги инвестора идут сразу туда, где они нужны, а не в кассу.</p>
@@ -585,7 +588,7 @@
 </section>
 
 <!-- если магазин закроется -->
-<section class="page panel">
+<section class="page panel" id="s26" data-toc="Если магазин закроется">
   <div class="inner">
     <h2>Если магазин закроется</h2>
     <p class="lede">78% вложения уходит на аренду. После этого здание оплачено до июля 2030 года. У такой аренды есть цена, по договору это $3 935 за каждый оставшийся месяц. И в любой момент она больше, чем инвестору ещё осталось получить назад. Даже если магазин продаёт всего на $13 300 в месяц.</p>
@@ -612,7 +615,7 @@
 </section>
 
 <!-- субаренда в пользу инвестора -->
-<section class="page">
+<section class="page" id="s27" data-toc="Субаренда в пользу инвестора">
   <div class="inner">
     <h2>Субаренда в пользу инвестора</h2>
     <p class="lede">Если продажи не вернутся даже к январским, инвестор получает право сдать здание другому арендатору и вернуть вложение из арендной платы.</p>
@@ -629,7 +632,7 @@
 </section>
 
 <!-- спрос на площадь (Аня 21.10: бренд хотел часть 2 этажа под офис, пропал, денег нет; суммы не даём) -->
-<section class="page night">
+<section class="page night" id="s28" data-toc="Второй этаж интересен арендаторам">
   <div class="inner">
     <h2>Второй этаж интересен арендаторам</h2>
     <p class="lede">Второй этаж около 140&nbsp;м². В сентябре 2026 года один из брендов хотел снять его часть под свой офис. Если включится право субаренды, здание можно сдавать не только целиком, но и по этажам.</p>
@@ -638,7 +641,7 @@
 </section>
 
 <!-- хватит ли пересдачи -->
-<section class="page">
+<section class="page" id="s29" data-toc="Хватит ли пересдачи">
   <div class="inner">
     <h2>Хватит ли пересдачи, чтобы вернуть вложение</h2>
     <div class="scroll">
@@ -653,7 +656,7 @@
 </section>
 
 <!-- дорожная карта -->
-<section class="page panel">
+<section class="page panel" id="s30" data-toc="Выручка из трёх чисел" data-group="План и встреча">
   <div class="inner">
     <h2>Выручка складывается из трёх чисел</h2>
     <p class="lede">Сколько людей зашло, какая доля из них купила и какой средний чек. Мы двигаем все три.</p>
@@ -676,7 +679,7 @@
 </section>
 
 <!-- дорожная карта: шаги -->
-<section class="page">
+<section class="page" id="s31" data-toc="План: сначала тушим пожар">
   <div class="inner">
     <h2>Сначала тушим пожар, потом растём</h2>
     <div class="steps four">
@@ -735,7 +738,7 @@
 </section>
 
 <!-- 13 риски -->
-<section class="page panel">
+<section class="page panel" id="s32" data-toc="Риски и как мы их закрываем">
   <div class="inner">
     <h2>Риски и как мы их закрываем</h2>
     <div class="risks">
@@ -751,7 +754,7 @@
 </section>
 
 <!-- прозрачность -->
-<section class="page">
+<section class="page" id="s33" data-toc="Что покажем до сделки">
   <div class="inner">
     <h2>Что покажем до сделки</h2>
     <p class="lede">Нам важно, чтобы бизнес жил дальше. Поэтому до сделки открываем инвестору документы и цифры.</p>
@@ -781,7 +784,7 @@
 </section>
 
 <!-- 14 следующий шаг -->
-<section class="page night">
+<section class="page night" id="s34" data-toc="Приезжайте в магазин">
   <div class="inner">
     <h2>Приезжайте в магазин</h2>
     <p class="lede">Покажем оба этажа, договор аренды, кассу и отчёты продавцов. Расскажем план на первые 90 дней.</p>
@@ -803,5 +806,34 @@
   <div class="pno">34 / 34</div>
 </section>
 
+<script>
+(function () {
+  var btn = document.getElementById('toc-btn'), nav = document.getElementById('toc'), veil = document.getElementById('toc-veil');
+  function set(open) {
+    nav.classList.toggle('open', open); veil.classList.toggle('open', open);
+    document.documentElement.classList.toggle('toc-lock', open);
+    btn.setAttribute('aria-expanded', String(open));
+    if (open) { var on = nav.querySelector('a.on'); if (on) on.scrollIntoView({ block: 'center' }); }
+  }
+  btn.addEventListener('click', function () { set(!nav.classList.contains('open')); });
+  document.getElementById('toc-x').addEventListener('click', function () { set(false); });
+  veil.addEventListener('click', function () { set(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
+  nav.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+  if ('IntersectionObserver' in window) {
+    var links = {};
+    nav.querySelectorAll('a').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting && links[e.target.id]) {
+          nav.querySelectorAll('a.on').forEach(function (a) { a.classList.remove('on'); });
+          links[e.target.id].classList.add('on');
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('section[id^="s"]').forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
 </body>
 </html>
