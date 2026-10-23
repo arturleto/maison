@@ -12,8 +12,13 @@
   --rouge: #a3141e;
   --amber: #d8a45a;
   --line: rgba(38, 34, 31, .14);
+  /* дизайнер 23.10: у каждого сценария один цвет на всём сайте */
+  --sc-pes: #857d74;
+  --sc-std: var(--rouge);
+  --sc-opt: var(--ink);
   color-scheme: light;
 }
+.night, .wine { --sc-pes: #a89f95; --sc-std: #e2626a; --sc-opt: #f4ece6; }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 46px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
@@ -23,7 +28,7 @@ html.toc-lock, html.toc-lock body { overflow: hidden; }
 .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; gap: 14px;
   height: calc(46px + env(safe-area-inset-top, 0px)); padding: env(safe-area-inset-top, 0px) max(14px, env(safe-area-inset-right, 0px)) 0 max(10px, env(safe-area-inset-left, 0px));
   background: rgba(24, 21, 19, .8); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); color: #ede8e1; border-bottom: 1px solid rgba(237, 232, 225, .1); }
-.burger { width: 40px; height: 40px; display: grid; place-content: center; gap: 5px; background: none; border: 0; padding: 0; cursor: pointer; }
+.burger { width: 40px; height: 40px; display: grid; place-content: center; gap: 5px; background: none; border: 0; padding: 0; cursor: pointer; color: inherit; }   /* дизайнер 23.10: у кнопки по умолчанию чёрный цвет */
 .burger span { display: block; width: 20px; height: 1.6px; background: currentColor; border-radius: 1px; transition: transform .2s, opacity .2s; }
 .burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.6px) rotate(45deg); }
 .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
@@ -132,11 +137,13 @@ ul.plain li { padding: 10px 0; border-bottom: 1px solid var(--line); }
 .chart .gap { fill: var(--line); }
 .chart .avg { stroke: var(--rouge); stroke-width: 1; stroke-dasharray: 3 3; }
 .chart .ln { fill: none; stroke-width: 2.4; stroke-linejoin: round; stroke-linecap: round; }
-.chart .l-pes { stroke: var(--stone); } .chart .l-std { stroke: var(--ink); } .chart .l-opt { stroke: var(--rouge); } .chart .l-lease { stroke: var(--amber); stroke-width: 3; }
+.chart .l-pes { stroke: var(--sc-pes); } .chart .l-std { stroke: var(--sc-std); } .chart .l-opt { stroke: var(--sc-opt); } .chart .l-lease { stroke: var(--amber); stroke-width: 3; }
+.chart .avg.inv-l { stroke: var(--ink); stroke-width: 1.2; stroke-dasharray: 2 4; }
 .chart-h { font-weight: 700; font-size: 15px; margin: 34px 0 10px; }
 .key { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--text2); margin-top: 8px; }
 .key i { display: inline-block; width: 12px; height: 10px; margin-right: 6px; vertical-align: -1px; }
 .key i.l { height: 3px; vertical-align: 3px; }
+.key i.dash { width: 16px; height: 0; border-top: 1.5px dashed var(--ink); }
 
 /* пары «было и сейчас» */
 .pairs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: clamp(32px, 5vw, 52px); border-top: 1px solid var(--line); }
@@ -426,3 +433,40 @@ footer.end { padding: 28px clamp(20px, 6vw, 96px); font-size: 12px; color: var(-
 .chart.cmpc .inv { stroke: var(--rouge); stroke-width: 1.4; stroke-dasharray: 4 3; }
 .chart.cmpc .inv-t { fill: #e2626a; font-size: 11px; font-weight: 700; }
 @media (max-width: 900px) { .cmp-grid.three { grid-template-columns: 1fr; } }
+
+/* сценарии одним цветом везде (дизайнер 23.10): верхняя полоса и название */
+.sc.pes { border-color: var(--sc-pes); } .sc.std { border-color: var(--sc-std); } .sc.opt { border-color: var(--sc-opt); }
+.sc.pes .row.key-row span:last-child { color: var(--sc-pes); } .sc.opt .row.key-row span:last-child { color: var(--sc-opt); }
+.yield .y.pes, .yield .y.std, .yield .y.opt { border-top-width: 3px; padding-top: 14px; }
+.yield .y.pes { border-top-color: var(--sc-pes); } .yield .y.std { border-top-color: var(--sc-std); } .yield .y.opt { border-top-color: var(--sc-opt); }
+.ex { border-radius: 2px; }
+.ex.pes { border-top-color: var(--sc-pes); } .ex.std { border-top-color: var(--sc-std); } .ex.opt { border-top-color: var(--sc-opt); }
+.dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 8px; vertical-align: 0; }
+.dot.pes { background: var(--sc-pes); } .dot.std { background: var(--sc-std); } .dot.opt { background: var(--sc-opt); }
+
+/* таблицы на телефоне карточками (дизайнер 23.10): строка таблицы = карточка, у каждой цифры подпись колонки */
+.tbl .m-pre { display: none; }
+@media (max-width: 640px) {
+  .tbl.cards { min-width: 0; }
+  .tbl.cards tr.th { display: none; }
+  .tbl.cards, .tbl.cards tbody, .tbl.cards tr { display: block; width: 100%; }
+  .tbl.cards tr { padding: 14px 0 6px; border-top: 1px solid var(--ink); }
+  .tbl.cards td { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; padding: 7px 0; white-space: normal; text-align: right; }
+  .tbl.cards td::before { content: attr(data-l); text-align: left; font-size: 14px; font-weight: 400; color: var(--text2); }
+  .tbl.cards td:first-child { display: block; padding: 0 0 6px; border: 0; font-size: 16px; font-weight: 700; color: var(--ink); text-align: left; }
+  .tbl.cards td:first-child::before { content: none; }
+  .tbl.cards .m-pre { display: inline; font-weight: 400; color: var(--text2); }
+  .tbl.cards tr.due td, .tbl.cards tr.due td:first-child { color: var(--rouge); }
+}
+
+/* пары «было и сейчас» на телефоне в одну колонку: «4 из 31 → 16 из 40» не влезала (дизайнер 23.10) */
+@media (max-width: 600px) { .pairs { grid-template-columns: 1fr; } }
+
+/* графики на телефоне: подписи от 11 px, без «k $», вместо него подпись «тысяч $» (дизайнер 23.10) */
+.chart .m-only { display: none; }
+@media (max-width: 600px) {
+  .chart text { font-size: 12px; }
+  .chart.pay text, .chart.profit text { font-size: 15px; }
+  .chart .u { display: none; }
+  .chart .m-only { display: inline; }
+}
