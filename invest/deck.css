@@ -185,6 +185,7 @@ ul.plain li { padding: 10px 0; border-bottom: 1px solid var(--line); }
 .split .a { background: var(--ink); color: var(--paper); }
 .split .b { background: var(--rouge); color: #fff; min-width: 104px; }
 .split .c { background: var(--stone); color: #fff; min-width: 128px; }
+.split .r { background: var(--stone); padding: 0; }   /* запас на непредвиденное, без подписи */
 .vid { display: block; width: 100%; max-width: 420px; max-height: 82vh; aspect-ratio: 464 / 848; object-fit: cover; background: var(--night); }
 .nextpay { margin-top: clamp(24px, 3vw, 36px); padding: clamp(20px, 3vw, 32px); background: var(--panel); border-left: 4px solid var(--rouge); }
 .nextpay .nh { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--rouge); }
