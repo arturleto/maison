@@ -471,3 +471,26 @@ footer.end { padding: 28px clamp(20px, 6vw, 96px); font-size: 12px; color: var(-
   .chart .u { display: none; }
   .chart .m-only { display: inline; }
 }
+
+/* выбор языка (Артур 23.10): RU EN ID в шапке и окно «Choose your language» через 2 секунды */
+.tb-lang { display: flex; gap: 2px; margin-left: auto; }
+.tb-lang a { font-size: 12px; font-weight: 700; letter-spacing: .06em; padding: 6px 7px; color: rgba(237, 232, 225, .62); text-decoration: none; border-radius: 4px; }
+.tb-lang a:hover, .tb-lang a:focus-visible { color: #fff; outline: none; }
+.tb-lang a.on { color: #fff; background: rgba(237, 232, 225, .14); }
+.tb-lang ~ .tb-tg { margin-left: 6px; }
+@media (max-width: 380px) { .tb-name { font-size: 15px; } .tb-lang a { padding: 6px 5px; } }
+.lang-pop { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; padding: 20px; background: rgba(15, 13, 12, .64); opacity: 0; transition: opacity .25s; }
+.lang-pop.open { opacity: 1; }
+.lang-pop[hidden] { display: none; }
+.lp-card { position: relative; width: min(420px, 100%); background: var(--night); color: var(--night-text); padding: 40px 24px 26px; border-top: 3px solid var(--rouge); box-shadow: 0 24px 64px rgba(0, 0, 0, .45); text-align: center; }
+.lp-t { font-family: "Prata", Georgia, serif; font-size: 28px; line-height: 1.15; margin: 0 0 24px; }
+.lp-btns { display: grid; gap: 10px; }
+.lp-b { display: flex; align-items: center; gap: 14px; padding: 15px 18px; background: rgba(237, 232, 225, .08); border: 1px solid rgba(237, 232, 225, .2); color: var(--night-text); text-decoration: none; font-size: 17px; font-weight: 600; border-radius: 2px; text-align: left; }
+.lp-b:hover, .lp-b:focus-visible { background: rgba(237, 232, 225, .16); border-color: var(--amber); outline: none; }
+.lp-b svg { width: 30px; height: 20px; flex: none; box-shadow: 0 0 0 1px rgba(255, 255, 255, .3); }
+.lp-x { position: absolute; top: 10px; right: 10px; width: 44px; height: 44px; display: grid; place-items: center; border: 0; border-radius: 50%; background: rgba(237, 232, 225, .16); cursor: pointer; }
+.lp-x svg { width: 22px; height: 22px; stroke: #fff; stroke-width: 2.6; stroke-linecap: round; fill: none; }
+.lp-x:hover, .lp-x:focus-visible { background: var(--rouge); outline: none; }
+@media (prefers-reduced-motion: reduce) { .lang-pop { transition: none; } }
+/* индонезийский: «US$21.800» длиннее, на узком телефоне крупные цифры в две колонки не влезали */
+@media (max-width: 400px) { :lang(id) .figs:not(.two) .fig .n { font-size: 27px; } }
