@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Зеркальный лабиринт у магазина</title>
+<meta name="description" content="Зеркальный лабиринт 3 × 4 м на парковке Maison Sauvage: как устроен, схема, смета в двух вариантах, экономика в трёх сценариях, риски и источники.">
+<meta property="og:title" content="Зеркальный лабиринт у магазина: как устроен, сколько стоит, как окупается">
+<meta property="og:description" content="Сделать самим 108 295 500-246 847 500 IDR, готовый кит 249 920 000-418 990 000 IDR. Окупаемость от 1,7 мес. до 44,7 мес. в зависимости от потока.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Страница журнала: одна колонка, бетон, графит, красный, бордо. Стиль как у плана на 90 дней. */
+:root {
+  --bg: #f7f6f3;
+  --panel: #ebe8e3;
+  --card: #ffffff;
+  --ink: #26221f;
+  --muted: #746e67;
+  --line: rgba(38, 34, 31, .13);
+  --rouge: #a3141e;
+  --wine: #6f1118;
+  --wine-ink: #f4ece6;
+  --amber: #a4701f;
+  --ok: #3d6b48;
+  --sc-pes: #8a837b;
+  --sc-std: #a3141e;
+  --sc-opt: #26221f;
+  --display: "Prata", "Didot", "Bodoni 72", Georgia, serif;
+  --body: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1c1917; --panel: #26221f; --card: #2b2724; --ink: #ede8e1; --muted: #a59d93;
+    --line: rgba(237, 232, 225, .14); --rouge: #e2626a; --wine: #5a1016; --wine-ink: #f4ece6;
+    --amber: #e0b26c; --ok: #8cc59a; --sc-pes: #a59d93; --sc-std: #e2626a; --sc-opt: #ede8e1; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1c1917; --panel: #26221f; --card: #2b2724; --ink: #ede8e1; --muted: #a59d93;
+  --line: rgba(237, 232, 225, .14); --rouge: #e2626a; --wine: #5a1016; --wine-ink: #f4ece6;
+  --amber: #e0b26c; --ok: #8cc59a; --sc-pes: #a59d93; --sc-std: #e2626a; --sc-opt: #ede8e1; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.6 var(--body); overflow-wrap: break-word; }
+a { color: inherit; text-decoration-color: var(--rouge); text-underline-offset: 2px; }
+a:focus-visible { outline: 2px solid var(--rouge); outline-offset: 2px; border-radius: 4px; }
+.wrap { max-width: 780px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; text-wrap: balance; }
+h2 { font-size: clamp(28px, 6vw, 40px); line-height: 1.1; margin-top: 6px; }
+h3 { font-size: clamp(21px, 4.4vw, 25px); line-height: 1.2; margin-top: 30px; }
+p { margin: 12px 0 0; max-width: 64ch; }
+.eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.muted { color: var(--muted); }
+.sub { margin: 14px 0 0; color: var(--muted); max-width: 60ch; }
+.band { padding-block: 40px; }
+.band.panel { background: var(--panel); }
+.band.wine { background: var(--wine); color: var(--wine-ink); }
+.band.wine .eyebrow, .band.wine .muted { color: rgba(244, 236, 230, .78); }
+section.sec { padding-block: 40px; border-top: 1px solid var(--line); }
+.band + section.sec, section.sec:first-of-type { border-top: 0; }
+
+header.top { padding-block: 44px 34px; }
+header.top h1 { font-size: clamp(36px, 8vw, 58px); line-height: 1.04; margin-top: 10px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.chip { font-size: 13px; font-weight: 600; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+
+/* коротко */
+.short { display: grid; gap: 22px; margin-top: 22px; }
+.short .big { font-family: var(--display); font-size: clamp(26px, 6.4vw, 40px); line-height: 1.1; }
+.short .usd { font-size: 15px; color: rgba(244, 236, 230, .8); margin-top: 4px; }
+.pb { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 6px; }
+.pb li { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid rgba(244, 236, 230, .2); padding-bottom: 6px; font-variant-numeric: tabular-nums; }
+.pb li b { font-weight: 700; white-space: nowrap; }
+.fact { margin-top: 24px; padding-top: 16px; border-top: 1px solid rgba(244, 236, 230, .25); max-width: 62ch; }
+
+/* списки */
+ul.dots { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 12px; }
+ul.dots li { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 8px; max-width: 66ch; }
+ul.dots li::before { content: ""; width: 7px; height: 7px; margin-top: .65em; background: var(--rouge); border-radius: 50%; }
+ul.dots b { font-weight: 700; }
+ol.steps { list-style: none; margin: 18px 0 0; padding: 0; counter-reset: s; display: grid; gap: 14px; }
+ol.steps li { counter-increment: s; display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 8px; max-width: 66ch; }
+ol.steps li::before { content: counter(s); font-family: var(--display); font-size: 26px; line-height: 1; color: var(--rouge); }
+
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; margin-top: 20px; }
+.card h3 { margin-top: 0; }
+
+/* схема */
+figure.plan { margin: 22px 0 0; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 10px 8px; }
+figure.plan svg { display: block; width: 100%; max-width: 560px; height: auto; margin: 0 auto; }
+figure.plan figcaption { font-size: 13px; color: var(--muted); padding: 8px 6px 4px; }
+.g-room { fill: var(--panel); stroke: var(--muted); stroke-width: 1.5; }
+.g-grid { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 4; opacity: .55; }
+.g-mirror { stroke: var(--ink); stroke-width: 5.5; stroke-linecap: round; }
+.g-pillar { fill: var(--ink); }
+.g-path { fill: none; stroke: var(--rouge); stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
+.g-arrow { fill: var(--rouge); }
+.g-txt { fill: var(--ink); font: 700 21px var(--body); }
+.g-txt-m { fill: var(--muted); font: 600 18px var(--body); }
+.g-dim { stroke: var(--muted); stroke-width: 1; }
+.g-desk { fill: var(--card); stroke: var(--ink); stroke-width: 1.5; }
+.legend { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14px; }
+.legend li { display: flex; align-items: center; gap: 8px; }
+.legend i { display: inline-block; width: 26px; height: 0; border-top: 5px solid var(--ink); border-radius: 3px; }
+.legend i.op { border-top: 2px dashed var(--muted); }
+.legend i.pt { width: 10px; height: 10px; border: 0; background: var(--ink); border-radius: 50%; }
+.legend i.pa { border-top: 3px solid var(--rouge); }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 20px; }
+.stat { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.stat b { display: block; font-family: var(--display); font-weight: 400; font-size: 28px; line-height: 1.1; color: var(--rouge); }
+.stat span { font-size: 14px; color: var(--muted); }
+
+/* смета */
+.tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 22px; }
+.tier { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+.tier .price { font-family: var(--display); font-size: clamp(22px, 5vw, 27px); line-height: 1.2; margin-top: 8px; }
+.tier .usd { color: var(--muted); font-size: 15px; margin-top: 2px; }
+.tier p { font-size: 14px; color: var(--muted); margin-top: 10px; }
+.tablebox { margin-top: 18px; overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--line); border-radius: 10px; background: var(--card); max-width: 100%; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; font-variant-numeric: tabular-nums; }
+.tablebox table { min-width: 640px; }
+.tablebox.narrow table { min-width: 520px; }
+th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+th { font-weight: 700; font-size: 13px; color: var(--muted); background: var(--panel); }
+td.num, th.num { text-align: right; white-space: nowrap; }
+td.calc, td.basis { color: var(--muted); font-size: 13px; }
+td.basis { min-width: 130px; }
+tr.grp td { font-weight: 700; background: var(--panel); }
+tr.tot td { font-weight: 700; }
+tr.usdrow td { color: var(--rouge); }
+tr:last-child td { border-bottom: 0; }
+th.pes, td.pes { color: var(--sc-pes); }
+th.std, td.std { color: var(--sc-std); }
+th.opt, td.opt { color: var(--sc-opt); }
+td .muted { font-weight: 400; font-size: 13px; }
+.tablebox td:first-child, .tablebox th:first-child { position: sticky; left: 0; z-index: 1; background: var(--card); box-shadow: 1px 0 0 var(--line); min-width: 150px; }
+.tablebox th:first-child, .tablebox tr.grp td:first-child { background: var(--panel); }
+.scroll-hint { font-size: 13px; color: var(--muted); margin-top: 8px; }
+@media (min-width: 700px) { .scroll-hint { display: none; } }
+
+/* источники */
+ol.src { margin: 16px 0 0; padding-left: 22px; font-size: 14px; display: grid; gap: 6px; }
+ol.src li { max-width: 70ch; }
+.src-h { font-weight: 700; font-size: 14px; margin-top: 22px; }
+
+footer { padding-block: 30px 56px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); }
+footer p { margin: 0 0 6px; }
+@media (max-width: 520px) {
+  .pb li { flex-direction: column; gap: 0; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+</style>
+</head>
+<body>
+
+<header class="top wrap">
+  <div class="eyebrow">Maison Sauvage · Умалас, Jl. Raya Bumbak 169</div>
+  <h1>Зеркальный лабиринт у магазина</h1>
+  <p class="sub">Как устроен, сколько стоит и как окупается аттракцион 3 × 4 м на парковке рядом с магазином.</p>
+  <div class="chips">
+    <span class="chip">25.10.2026</span>
+    <span class="chip">курс 18 000 IDR за 1 $</span>
+    <span class="chip">«оценка» значит, что точной цены в открытых источниках нет</span>
+  </div>
+</header>
+
+<div class="band wine">
+  <section class="wrap">
+    <div class="eyebrow">Коротко</div>
+    <div class="short">
+      <div>
+        <div class="muted">Сделать самим на Бали</div>
+        <div class="big">108 295 500-246 847 500 IDR</div>
+        <div class="usd">6 016-13 714 $</div>
+      </div>
+      <div>
+        <div class="muted">Готовый кит из Китая</div>
+        <div class="big">249 920 000-418 990 000 IDR</div>
+        <div class="usd">13 884-23 277 $</div>
+      </div>
+      <div>
+        <div class="muted">Окупаемость, если делать самим, при билете 75 000 IDR</div>
+        <ul class="pb">
+          <li><span>5 гостей в день</span><b>44,7 мес.</b></li>
+          <li><span>20 гостей в день</span><b>5,6 мес.</b></li>
+          <li><span>60 гостей в день</span><b>1,7 мес.</b></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fact">Сам лабиринт построить несложно. Всё решает поток людей. ВДНХ за 2025 год посетили больше 28 млн человек. Магазин сейчас видит около 4 посетителей в день.</p>
+  </section>
+</div>
+
+<main>
+
+<section class="sec wrap">
+  <div class="eyebrow">Идея</div>
+  <h2>Что это и почему людям нравится</h2>
+  <p>Небольшое помещение, где зеркала стоят под углом 60° друг к другу. Человек идёт по коридорам, видит сотни своих отражений и ряды колонн до горизонта. Где проход, а где зеркало, понять трудно.</p>
+  <ul class="dots">
+    <li><span><b>Короткое яркое впечатление.</b> Маленький лабиринт проходят за 3-6 минут. Решение купить билет принимают за секунду, по пути.</span></li>
+    <li><span><b>Готовый кадр для Instagram.</b> Бесконечные отражения снимают на телефон почти все.</span></li>
+    <li><span><b>Для любого возраста.</b> Детям интересно, взрослым смешно. Семья заходит вся.</span></li>
+    <li><span><b>Не зависит от погоды.</b> Крытые развлечения на Бали хвалят как вариант на дождливый день.</span></li>
+  </ul>
+
+  <div class="card">
+    <div class="eyebrow">Кейс</div>
+    <h3>Зеркальный лабиринт на ВДНХ</h3>
+    <ul class="dots">
+      <li><span>Работает в Smile Park, павильон 55. Рядом ещё около 10 аттракционов. Музей иллюзий, перевёрнутый город, лабиринт страха.</span></li>
+      <li><span>Билет 450 ₽ по каталогу, около 5,5 $ по курсу 81,3 ₽ за 1 $. Комплексный билет на всё 1 500 ₽.</span></li>
+      <li><span>По наблюдению управляющего, там один баннер у входа, проход 3 минуты, билет 500 ₽ и очереди.</span></li>
+      <li><span>Отзыв за март 2026 года. Прошли за 6 минут, очередь около 5 минут, выдают перчатки, внутри немного душно.</span></li>
+      <li><span>Отзывы об этом лабиринте есть с 2015 года. Аттракцион держит спрос больше 10 лет.</span></li>
+      <li><span>Старый лабиринт в павильоне 2 ВДНХ закрылся в 2014 году. Билет там стоил 200 ₽. Не каждое место живёт долго.</span></li>
+    </ul>
+    <p><b>Главное отличие от нас.</b> ВДНХ за 2025 год посетили больше 28 млн человек, в среднем около 77 000 в день. Там лабиринт стоит в потоке гуляющих людей. У нас мимо едут на байках.</p>
+  </div>
+</section>
+
+<div class="band panel">
+  <section class="wrap">
+    <div class="eyebrow">Устройство</div>
+    <h2>Как устроен лабиринт</h2>
+    <ul class="dots">
+      <li><span><b>Сетка из равносторонних треугольников.</b> В каждой вершине колонна. Между колоннами стоит зеркало, прозрачное стекло или открытый проход. Иногда сетку делают из шестиугольников.</span></li>
+      <li><span><b>Откуда бесконечность.</b> От каждой колонны отходят 6 линий, настоящих или отражённых. Глаз видит ровные ряды колонн до горизонта. К зеркалу человек подходит под углом и не сразу видит себя в лоб.</span></li>
+      <li><span><b>Внутренние зеркала двусторонние.</b> Иначе с обратной стороны иллюзия ломается.</span></li>
+      <li><span><b>Стекло.</b> Для коммерческих лабиринтов советуют закалённое зеркало 6-10 мм без искажений и плёнку от осколков. Закалённое стекло бьётся на мелкие тупые кусочки.</span></li>
+      <li><span><b>Акриловое зеркало.</b> Легче и не бьётся. Но лист 3 мм на большой площади даёт кривое отражение. Для стен берут 5 мм на жёсткой основе или стекло. Для потолка акрил подходит.</span></li>
+      <li><span><b>Свет.</b> Часто это LED-ленты в полу по линиям между колоннами. Где проход, лент две. Где зеркало, лента одна, а отражение делает из неё вторую. Остальное в полутьме. Ещё бывает свет в потолке и ультрафиолет.</span></li>
+      <li><span><b>Потолок.</b> Зеркальный или тёмный. Сверху между колоннами часто ставят арки.</span></li>
+      <li><span><b>Перчатки.</b> Гостям выдают одноразовые перчатки, чтобы на зеркалах не оставалось следов. Так делают в Москве, Стокгольме и США.</span></li>
+      <li><span><b>Сколько людей внутри.</b> В лабиринте американского ТЦ American Dream одна группа до 4 человек. Дети идут со взрослым.</span></li>
+      <li><span><b>Уход.</b> Средство не брызгают прямо на зеркало. Жидкость стекает к краю и портит серебро. Нашатырь и уксус нельзя. Протирать каждый день мягкой тканью (наша рекомендация).</span></li>
+    </ul>
+    <h3>Готовые и мобильные лабиринты</h3>
+    <ul class="dots">
+      <li><span>Китайские фабрики продают лабиринты по цене за м² площади, обычно от 340 до 750 $. Многие берут заказ от 30-50 м², есть поставщик с заказом от 1 м².</span></li>
+      <li><span>Готовые комплекты из Китая стоят от 8 500 до 10 500 $ за набор. Что входит в набор, на страницах не сказано.</span></li>
+      <li><span>В США продают двухэтажный лабиринт в прицепе с LED-шоу. Цену не публикуют.</span></li>
+      <li><span>В Англии мобильный лабиринт сдают в аренду на мероприятия от 2 000 £.</span></li>
+      <li><span>В России продают проект с чертежами за 49 000 ₽, около 600 $. Материалы для лабиринта на 25 м² там оценивают в 350 000 ₽, около 4 300 $.</span></li>
+      <li><span>Б/у лабиринт на 46 м² в США выставляли за 35 000 $.</span></li>
+    </ul>
+  </section>
+</div>
+
+<section class="sec wrap">
+  <div class="eyebrow">Схема</div>
+  <h2>Лабиринт 3 × 4 м на парковке</h2>
+  <p class="sub">Наш вариант. Ячейка 0,8 м. Вход и выход со стороны улицы, касса между ними, так один человек видит обе двери.</p>
+  <figure class="plan">
+    <svg viewBox="-50 -58 500 474" role="img" aria-labelledby="planT planD" xmlns="http://www.w3.org/2000/svg">
+      <title id="planT">План зеркального лабиринта 3 на 4 метра</title>
+      <desc id="planD">Треугольная сетка из 36 ячеек, 28 колонн, 26 зеркальных стен. Вход слева снизу, выход справа снизу, путь к выходу проходит через 21 ячейку.</desc>
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+          <path d="M0,0 L10,5 L0,10 z" class="g-arrow"/>
+        </marker>
+      </defs>
+      <line class="g-dim" x1="0" y1="-26" x2="400" y2="-26"/>
+      <line class="g-dim" x1="0" y1="-32" x2="0" y2="-20"/>
+      <line class="g-dim" x1="400" y1="-32" x2="400" y2="-20"/>
+      <text class="g-txt-m" x="200" y="-34" text-anchor="middle">4 м</text>
+      <line class="g-dim" x1="-26" y1="0" x2="-26" y2="300"/>
+      <line class="g-dim" x1="-32" y1="0" x2="-20" y2="0"/>
+      <line class="g-dim" x1="-32" y1="300" x2="-20" y2="300"/>
+      <text class="g-txt-m" x="-32" y="150" text-anchor="middle" transform="rotate(-90 -32 150)">3 м</text>
+<rect class="g-room" x="0" y="0" width="400" height="300" rx="4"/>
+<line class="g-grid" x1="0" y1="288.6" x2="80" y2="288.6"/>
+<line class="g-grid" x1="80" y1="288.6" x2="40" y2="219.3"/>
+<line class="g-grid" x1="0" y1="288.6" x2="40" y2="219.3"/>
+<line class="g-grid" x1="80" y1="288.6" x2="160" y2="288.6"/>
+<line class="g-grid" x1="160" y1="288.6" x2="120" y2="219.3"/>
+<line class="g-grid" x1="80" y1="288.6" x2="120" y2="219.3"/>
+<line class="g-grid" x1="160" y1="288.6" x2="240" y2="288.6"/>
+<line class="g-grid" x1="240" y1="288.6" x2="200" y2="219.3"/>
+<line class="g-grid" x1="160" y1="288.6" x2="200" y2="219.3"/>
+<line class="g-grid" x1="240" y1="288.6" x2="320" y2="288.6"/>
+<line class="g-grid" x1="320" y1="288.6" x2="280" y2="219.3"/>
+<line class="g-grid" x1="240" y1="288.6" x2="280" y2="219.3"/>
+<line class="g-grid" x1="320" y1="288.6" x2="400" y2="288.6"/>
+<line class="g-grid" x1="400" y1="288.6" x2="360" y2="219.3"/>
+<line class="g-grid" x1="320" y1="288.6" x2="360" y2="219.3"/>
+<line class="g-grid" x1="40" y1="219.3" x2="120" y2="219.3"/>
+<line class="g-grid" x1="120" y1="219.3" x2="200" y2="219.3"/>
+<line class="g-grid" x1="200" y1="219.3" x2="280" y2="219.3"/>
+<line class="g-grid" x1="280" y1="219.3" x2="360" y2="219.3"/>
+<line class="g-grid" x1="0" y1="150" x2="80" y2="150"/>
+<line class="g-grid" x1="40" y1="219.3" x2="80" y2="150"/>
+<line class="g-grid" x1="40" y1="219.3" x2="0" y2="150"/>
+<line class="g-grid" x1="80" y1="150" x2="160" y2="150"/>
+<line class="g-grid" x1="120" y1="219.3" x2="160" y2="150"/>
+<line class="g-grid" x1="120" y1="219.3" x2="80" y2="150"/>
+<line class="g-grid" x1="160" y1="150" x2="240" y2="150"/>
+<line class="g-grid" x1="200" y1="219.3" x2="240" y2="150"/>
+<line class="g-grid" x1="200" y1="219.3" x2="160" y2="150"/>
+<line class="g-grid" x1="240" y1="150" x2="320" y2="150"/>
+<line class="g-grid" x1="280" y1="219.3" x2="320" y2="150"/>
+<line class="g-grid" x1="280" y1="219.3" x2="240" y2="150"/>
+<line class="g-grid" x1="320" y1="150" x2="400" y2="150"/>
+<line class="g-grid" x1="360" y1="219.3" x2="400" y2="150"/>
+<line class="g-grid" x1="360" y1="219.3" x2="320" y2="150"/>
+<line class="g-grid" x1="80" y1="150" x2="40" y2="80.7"/>
+<line class="g-grid" x1="0" y1="150" x2="40" y2="80.7"/>
+<line class="g-grid" x1="160" y1="150" x2="120" y2="80.7"/>
+<line class="g-grid" x1="80" y1="150" x2="120" y2="80.7"/>
+<line class="g-grid" x1="240" y1="150" x2="200" y2="80.7"/>
+<line class="g-grid" x1="160" y1="150" x2="200" y2="80.7"/>
+<line class="g-grid" x1="320" y1="150" x2="280" y2="80.7"/>
+<line class="g-grid" x1="240" y1="150" x2="280" y2="80.7"/>
+<line class="g-grid" x1="400" y1="150" x2="360" y2="80.7"/>
+<line class="g-grid" x1="320" y1="150" x2="360" y2="80.7"/>
+<line class="g-grid" x1="40" y1="80.7" x2="120" y2="80.7"/>
+<line class="g-grid" x1="120" y1="80.7" x2="200" y2="80.7"/>
+<line class="g-grid" x1="200" y1="80.7" x2="280" y2="80.7"/>
+<line class="g-grid" x1="280" y1="80.7" x2="360" y2="80.7"/>
+<line class="g-grid" x1="0" y1="11.4" x2="80" y2="11.4"/>
+<line class="g-grid" x1="40" y1="80.7" x2="80" y2="11.4"/>
+<line class="g-grid" x1="40" y1="80.7" x2="0" y2="11.4"/>
+<line class="g-grid" x1="80" y1="11.4" x2="160" y2="11.4"/>
+<line class="g-grid" x1="120" y1="80.7" x2="160" y2="11.4"/>
+<line class="g-grid" x1="120" y1="80.7" x2="80" y2="11.4"/>
+<line class="g-grid" x1="160" y1="11.4" x2="240" y2="11.4"/>
+<line class="g-grid" x1="200" y1="80.7" x2="240" y2="11.4"/>
+<line class="g-grid" x1="200" y1="80.7" x2="160" y2="11.4"/>
+<line class="g-grid" x1="240" y1="11.4" x2="320" y2="11.4"/>
+<line class="g-grid" x1="280" y1="80.7" x2="320" y2="11.4"/>
+<line class="g-grid" x1="280" y1="80.7" x2="240" y2="11.4"/>
+<line class="g-grid" x1="320" y1="11.4" x2="400" y2="11.4"/>
+<line class="g-grid" x1="360" y1="80.7" x2="400" y2="11.4"/>
+<line class="g-grid" x1="360" y1="80.7" x2="320" y2="11.4"/>
+<polyline class="g-path" points="40,334 40,288.6 40,265.5 80,242.4 80,196.2 120,173.1 120,126.9 80,103.8 80,57.6 120,34.5 160,57.6 200,34.5 240,57.6 240,103.8 200,126.9 200,173.1 160,196.2 160,242.4 200,265.5 240,242.4 280,265.5 320,242.4 360,265.5 360,288.6 360,334" marker-start="url(#arr)" marker-end="url(#arr)"/>
+<line class="g-mirror" x1="80" y1="288.6" x2="120" y2="219.3"/>
+<line class="g-mirror" x1="200" y1="219.3" x2="280" y2="219.3"/>
+<line class="g-mirror" x1="40" y1="219.3" x2="80" y2="150"/>
+<line class="g-mirror" x1="120" y1="219.3" x2="160" y2="150"/>
+<line class="g-mirror" x1="200" y1="219.3" x2="240" y2="150"/>
+<line class="g-mirror" x1="360" y1="219.3" x2="320" y2="150"/>
+<line class="g-mirror" x1="160" y1="150" x2="120" y2="80.7"/>
+<line class="g-mirror" x1="240" y1="150" x2="280" y2="80.7"/>
+<line class="g-mirror" x1="120" y1="80.7" x2="200" y2="80.7"/>
+<line class="g-mirror" x1="280" y1="80.7" x2="240" y2="11.4"/>
+<line class="g-mirror" x1="0" y1="288.6" x2="40" y2="219.3"/>
+<line class="g-mirror" x1="80" y1="288.6" x2="160" y2="288.6"/>
+<line class="g-mirror" x1="160" y1="288.6" x2="240" y2="288.6"/>
+<line class="g-mirror" x1="240" y1="288.6" x2="320" y2="288.6"/>
+<line class="g-mirror" x1="400" y1="288.6" x2="360" y2="219.3"/>
+<line class="g-mirror" x1="40" y1="219.3" x2="0" y2="150"/>
+<line class="g-mirror" x1="360" y1="219.3" x2="400" y2="150"/>
+<line class="g-mirror" x1="0" y1="150" x2="40" y2="80.7"/>
+<line class="g-mirror" x1="400" y1="150" x2="360" y2="80.7"/>
+<line class="g-mirror" x1="0" y1="11.4" x2="80" y2="11.4"/>
+<line class="g-mirror" x1="40" y1="80.7" x2="0" y2="11.4"/>
+<line class="g-mirror" x1="80" y1="11.4" x2="160" y2="11.4"/>
+<line class="g-mirror" x1="160" y1="11.4" x2="240" y2="11.4"/>
+<line class="g-mirror" x1="240" y1="11.4" x2="320" y2="11.4"/>
+<line class="g-mirror" x1="320" y1="11.4" x2="400" y2="11.4"/>
+<line class="g-mirror" x1="360" y1="80.7" x2="400" y2="11.4"/>
+<circle class="g-pillar" cx="0" cy="288.6" r="4.5"/>
+<circle class="g-pillar" cx="80" cy="288.6" r="4.5"/>
+<circle class="g-pillar" cx="160" cy="288.6" r="4.5"/>
+<circle class="g-pillar" cx="240" cy="288.6" r="4.5"/>
+<circle class="g-pillar" cx="320" cy="288.6" r="4.5"/>
+<circle class="g-pillar" cx="400" cy="288.6" r="4.5"/>
+<circle class="g-pillar" cx="40" cy="219.3" r="4.5"/>
+<circle class="g-pillar" cx="120" cy="219.3" r="4.5"/>
+<circle class="g-pillar" cx="200" cy="219.3" r="4.5"/>
+<circle class="g-pillar" cx="280" cy="219.3" r="4.5"/>
+<circle class="g-pillar" cx="360" cy="219.3" r="4.5"/>
+<circle class="g-pillar" cx="0" cy="150" r="4.5"/>
+<circle class="g-pillar" cx="80" cy="150" r="4.5"/>
+<circle class="g-pillar" cx="160" cy="150" r="4.5"/>
+<circle class="g-pillar" cx="240" cy="150" r="4.5"/>
+<circle class="g-pillar" cx="320" cy="150" r="4.5"/>
+<circle class="g-pillar" cx="400" cy="150" r="4.5"/>
+<circle class="g-pillar" cx="40" cy="80.7" r="4.5"/>
+<circle class="g-pillar" cx="120" cy="80.7" r="4.5"/>
+<circle class="g-pillar" cx="200" cy="80.7" r="4.5"/>
+<circle class="g-pillar" cx="280" cy="80.7" r="4.5"/>
+<circle class="g-pillar" cx="360" cy="80.7" r="4.5"/>
+<circle class="g-pillar" cx="0" cy="11.4" r="4.5"/>
+<circle class="g-pillar" cx="80" cy="11.4" r="4.5"/>
+<circle class="g-pillar" cx="160" cy="11.4" r="4.5"/>
+<circle class="g-pillar" cx="240" cy="11.4" r="4.5"/>
+<circle class="g-pillar" cx="320" cy="11.4" r="4.5"/>
+<circle class="g-pillar" cx="400" cy="11.4" r="4.5"/>
+
+      <rect class="g-desk" x="160" y="314" width="80" height="32" rx="5"/>
+      <text class="g-txt-m" x="200" y="336" text-anchor="middle">касса</text>
+      <text class="g-txt" x="40" y="372" text-anchor="middle">Вход</text>
+      <text class="g-txt" x="360" y="372" text-anchor="middle">Выход</text>
+      <text class="g-txt-m" x="200" y="402" text-anchor="middle">улица и парковка</text>
+    </svg>
+    <figcaption>Вид сверху. Узкие ниши по бокам под кондиционер и щиток.</figcaption>
+  </figure>
+  <ul class="legend">
+    <li><i></i>зеркало</li>
+    <li><i class="op"></i>открытый проход</li>
+    <li><i class="pt"></i>колонна</li>
+    <li><i class="pa"></i>путь к выходу</li>
+  </ul>
+  <div class="stats">
+    <div class="stat"><b>36</b><span>треугольных ячеек, около 10 м² пути</span></div>
+    <div class="stat"><b>28</b><span>колонн в вершинах сетки</span></div>
+    <div class="stat"><b>26</b><span>зеркальных стен, 16 по краю и 10 внутри, внутренние двусторонние</span></div>
+    <div class="stat"><b>36</b><span>зеркал 0,8 × 2,4 м, около 69 м²</span></div>
+    <div class="stat"><b>21</b><span>ячейка до выхода, около 10 м пути и 8 тупиков</span></div>
+    <div class="stat"><b>80</b><span>человек в час максимум, группа до 4 человек каждые 3 минуты</span></div>
+  </div>
+  <p>Размер ячейки в патентах не указан. 0,8 м это наша оценка под маленькую площадку, проход между колоннами около 0,75 м. Если ячейку сделать 1 м, ячеек станет меньше и лабиринт будет проще.</p>
+
+  <div class="card">
+    <div class="eyebrow">Вариант</div>
+    <h3>Лабиринт в 20-футовом контейнере</h3>
+    <ul class="dots">
+      <li><span>Внутри около 5,9 × 2,35 м, это около 14 м². Влезает 3 ряда ячеек вместо 4. Лабиринт выходит длинным и узким.</span></li>
+      <li><span>Плюс. Контейнер увозят краном за день, если место понадобится.</span></li>
+      <li><span>Минус. Железо на солнце сильно греется. Нужны теплоизоляция и кондиционер мощнее.</span></li>
+      <li><span>Б/у контейнер 20 футов в Индонезии стоит от 20 000 000 до 40 000 000 IDR. С доставкой, краном, дверями и утеплением выходит на 6 000 000-13 000 000 IDR дороже павильона (оценка).</span></li>
+    </ul>
+  </div>
+</section>
+
+<div class="band panel">
+  <section class="wrap">
+    <div class="eyebrow">Оформление</div>
+    <h2>Как украшают</h2>
+    <ul class="dots">
+      <li><span><b>Тема и история.</b> Сильные лабиринты строят вокруг сюжета с тематическими комнатами.</span></li>
+      <li><span><b>Арки между колоннами.</b> В лабиринте Музея науки в Бостоне это кроны стилизованных деревьев. Узор повторяется в отражениях и путает ещё сильнее.</span></li>
+      <li><span><b>Световое шоу.</b> Ленты в полу меняют цвет и мигают под музыку.</span></li>
+      <li><span><b>Ультрафиолет.</b> В лабиринте в Сан-Франциско всё освещено ультрафиолетом.</span></li>
+      <li><span><b>Сюрприз в конце.</b> Вращающийся пол у выхода, секретная комната, кривые зеркала.</span></li>
+      <li><span><b>Идея под имя магазина.</b> Sauvage значит «дикий». Тема джунглей. Тропические листья на арках, тёплый свет, логотип в последнем зеркале.</span></li>
+    </ul>
+  </section>
+</div>
+
+<section class="sec wrap">
+  <div class="eyebrow">Смета</div>
+  <h2>Сколько стоит</h2>
+  <p class="sub">Два варианта. Павильон, кондиционер, оформление и касса в обоих одинаковые. Разница в самом лабиринте.</p>
+  
+<div class="tiers">
+  <div class="tier">
+    <div class="eyebrow">Сделать самим на Бали</div>
+    <div class="price">108 295 500-246 847 500 IDR</div>
+    <div class="usd">6 016-13 714 $</div>
+    <p>Зеркала и каркас у мастерских Бали, сборка своей бригадой. Запас 15%.</p>
+  </div>
+  <div class="tier">
+    <div class="eyebrow">Готовый кит из Китая</div>
+    <div class="price">249 920 000-418 990 000 IDR</div>
+    <div class="usd">13 884-23 277 $</div>
+    <p>Лабиринт по цене за м² с доставкой и растаможкой, сборка здесь. Запас 10%.</p>
+  </div>
+</div>
+
+  <h3>Вариант 1. Сделать самим на Бали</h3>
+  <p class="muted">Суммы в IDR. Цены стекла и труб взяты из индонезийских прайсов. На Бали с доставкой может выйти дороже, это закрывает запас.</p>
+  <div class="tablebox">
+    <table>
+      <thead><tr><th>Позиция</th><th>Расчёт</th><th>Откуда цифра</th><th class="num">От</th><th class="num">До</th></tr></thead>
+      <tbody>
+<tr class="grp"><td colspan="3">Зеркала</td><td class="num">24 120 000</td><td class="num">57 800 000</td></tr>
+<tr><td>Закалённое зеркало 5-6 мм, 36 листов 0,8 × 2,4 м</td><td class="calc">76 м² × 190 000-500 000</td><td class="basis">низ по листу 183 × 122 см за 420 000, верх оценка за резку в размер</td><td class="num">14 440 000</td><td class="num">38 000 000</td></tr>
+<tr><td>Плёнка от осколков на обратную сторону</td><td class="calc">76 м² × 80 000-150 000</td><td class="basis">оценка</td><td class="num">6 080 000</td><td class="num">11 400 000</td></tr>
+<tr><td>Зеркальный потолок, акрил 5 мм</td><td class="calc">12 м² × 300 000-700 000</td><td class="basis">оценка</td><td class="num">3 600 000</td><td class="num">8 400 000</td></tr>
+<tr class="grp"><td colspan="3">Каркас</td><td class="num">8 700 000</td><td class="num">16 050 000</td></tr>
+<tr><td>Оцинкованная труба 40 × 40, хлысты по 6 м</td><td class="calc">27 × 100 000-150 000</td><td class="basis">цены 2025 года</td><td class="num">2 700 000</td><td class="num">4 050 000</td></tr>
+<tr><td>Профили, уголки, резина для крепления зеркал</td><td class="calc"></td><td class="basis">оценка</td><td class="num">4 000 000</td><td class="num">8 000 000</td></tr>
+<tr><td>Декор 28 колонн</td><td class="calc"></td><td class="basis">оценка</td><td class="num">2 000 000</td><td class="num">4 000 000</td></tr>
+<tr class="grp"><td colspan="3">Свет и электрика</td><td class="num">10 450 000</td><td class="num">22 500 000</td></tr>
+<tr><td>LED-лента по линиям пола, около 77 м</td><td class="calc">16 катушек × 100 000-300 000</td><td class="basis">оценка</td><td class="num">1 600 000</td><td class="num">4 800 000</td></tr>
+<tr><td>Профиль с рассеивателем в пол</td><td class="calc">77 м × 50 000-100 000</td><td class="basis">оценка</td><td class="num">3 850 000</td><td class="num">7 700 000</td></tr>
+<tr><td>Контроллер света под музыку, блоки питания, провод</td><td class="calc"></td><td class="basis">оценка</td><td class="num">2 000 000</td><td class="num">4 000 000</td></tr>
+<tr><td>Потолочный и ультрафиолетовый свет</td><td class="calc"></td><td class="basis">оценка</td><td class="num">1 000 000</td><td class="num">2 000 000</td></tr>
+<tr><td>Электрик: автомат, УЗО, аварийный свет, табличка «выход»</td><td class="calc"></td><td class="basis">оценка</td><td class="num">2 000 000</td><td class="num">4 000 000</td></tr>
+<tr class="grp"><td colspan="3">Климат</td><td class="num">5 700 000</td><td class="num">12 300 000</td></tr>
+<tr><td>Кондиционер 1-1,5 PK, инвертор, с монтажом</td><td class="calc">3 200 000-5 800 000 + монтаж</td><td class="basis">цена найдена, монтаж оценка</td><td class="num">3 700 000</td><td class="num">7 300 000</td></tr>
+<tr><td>Осушитель воздуха</td><td class="calc"></td><td class="basis">оценка</td><td class="num">2 000 000</td><td class="num">5 000 000</td></tr>
+<tr class="grp"><td colspan="3">Павильон на парковке</td><td class="num">25 000 000</td><td class="num">50 000 000</td></tr>
+<tr><td>Подиум, каркас, стены и крыша из сэндвич-панелей, две двери, около 15 м²</td><td class="calc"></td><td class="basis">оценка</td><td class="num">25 000 000</td><td class="num">50 000 000</td></tr>
+<tr class="grp"><td colspan="3">Снаружи</td><td class="num">8 000 000</td><td class="num">20 000 000</td></tr>
+<tr><td>Вывеска со светом, зеркальная арка у входа, фотозона, навес для очереди</td><td class="calc"></td><td class="basis">оценка</td><td class="num">8 000 000</td><td class="num">20 000 000</td></tr>
+<tr class="grp"><td colspan="3">Касса и безопасность</td><td class="num">3 000 000</td><td class="num">7 000 000</td></tr>
+<tr><td>Стойка, QRIS, камера, огнетушитель, запас перчаток</td><td class="calc"></td><td class="basis">оценка</td><td class="num">3 000 000</td><td class="num">7 000 000</td></tr>
+<tr class="grp"><td colspan="3">Сборка</td><td class="num">4 200 000</td><td class="num">14 000 000</td></tr>
+<tr><td>Бригада 3-4 человека, 21-40 человеко-дней</td><td class="calc">× 200 000-350 000 в день</td><td class="basis">оценка, как в смете фасада</td><td class="num">4 200 000</td><td class="num">14 000 000</td></tr>
+<tr class="grp"><td colspan="3">Бумаги</td><td class="num">5 000 000</td><td class="num">15 000 000</td></tr>
+<tr><td>Разрешения, чертежи, консультант</td><td class="calc"></td><td class="basis">оценка</td><td class="num">5 000 000</td><td class="num">15 000 000</td></tr>
+<tr class="tot"><td colspan="3">Итого без запаса</td><td class="num">94 170 000</td><td class="num">214 650 000</td></tr>
+<tr><td colspan="3">Запас 15% на бой, доставку и мелочи</td><td class="num">14 125 500</td><td class="num">32 197 500</td></tr>
+<tr class="tot"><td colspan="3">Итого, IDR</td><td class="num">108 295 500</td><td class="num">246 847 500</td></tr>
+<tr class="tot usdrow"><td colspan="3">Итого, $</td><td class="num">6 016 $</td><td class="num">13 714 $</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="scroll-hint">Таблицу можно листать вбок.</p>
+
+  <h3>Вариант 2. Готовый кит из Китая</h3>
+  <p class="muted">Нижняя цена это поставщик с заказом от 1 м², 650 $ за м², за 12 м² выходит 7 800 $. Верхняя это готовый набор до 10 500 $. Остальные фабрики берут заказ от 30-50 м², для нас это дороже.</p>
+  <div class="tablebox">
+    <table>
+      <thead><tr><th>Позиция</th><th>Расчёт</th><th>Откуда цифра</th><th class="num">От</th><th class="num">До</th></tr></thead>
+      <tbody>
+<tr><td>Лабиринт из Китая на 12 м²</td><td class="calc">7 800-10 500 $</td><td class="basis">цены поставщиков</td><td class="num">140 400 000</td><td class="num">189 000 000</td></tr>
+<tr><td>Доставка до Бали, пошлины и налоги на ввоз</td><td class="calc">25-40% от цены кита</td><td class="basis">оценка</td><td class="num">35 100 000</td><td class="num">75 600 000</td></tr>
+<tr><td>Сборка здесь: бригада и электрик</td><td class="calc"></td><td class="basis">оценка</td><td class="num">5 000 000</td><td class="num">12 000 000</td></tr>
+<tr><td>Кондиционер и осушитель</td><td class="calc">как в первом варианте</td><td class="basis">цена найдена, остальное оценка</td><td class="num">5 700 000</td><td class="num">12 300 000</td></tr>
+<tr><td>Павильон на парковке, около 15 м²</td><td class="calc"></td><td class="basis">оценка</td><td class="num">25 000 000</td><td class="num">50 000 000</td></tr>
+<tr><td>Снаружи: вывеска, арка, фотозона, навес</td><td class="calc"></td><td class="basis">оценка</td><td class="num">8 000 000</td><td class="num">20 000 000</td></tr>
+<tr><td>Касса и безопасность</td><td class="calc"></td><td class="basis">оценка</td><td class="num">3 000 000</td><td class="num">7 000 000</td></tr>
+<tr><td>Разрешения, чертежи, консультант</td><td class="calc"></td><td class="basis">оценка</td><td class="num">5 000 000</td><td class="num">15 000 000</td></tr>
+<tr class="tot"><td colspan="3">Итого без запаса</td><td class="num">227 200 000</td><td class="num">380 900 000</td></tr>
+<tr><td colspan="3">Запас 10%</td><td class="num">22 720 000</td><td class="num">38 090 000</td></tr>
+<tr class="tot"><td colspan="3">Итого, IDR</td><td class="num">249 920 000</td><td class="num">418 990 000</td></tr>
+<tr class="tot usdrow"><td colspan="3">Итого, $</td><td class="num">13 884 $</td><td class="num">23 277 $</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="scroll-hint">Таблицу можно листать вбок.</p>
+  <ul class="dots">
+    <li><span>Кит дороже почти вдвое. Главная разница в доставке и налогах на ввоз.</span></li>
+    <li><span>Плюс кита в том, что его можно разобрать и перевезти.</span></li>
+    <li><span>Средний путь. Купить чертежи за 49 000 ₽ (около 600 $), а стекло и каркас заказать на Бали.</span></li>
+  </ul>
+</section>
+
+<div class="band panel">
+  <section class="wrap">
+    <div class="eyebrow">Экономика</div>
+    <h2>Билеты и поток</h2>
+    <h3>Сколько стоят похожие билеты</h3>
+    <div class="tablebox narrow">
+      <table>
+        <thead><tr><th>Где</th><th>Билет</th><th class="num">В долларах</th></tr></thead>
+        <tbody>
+          <tr><td>Upside Down World, Бали</td><td>100 000 IDR взрослый</td><td class="num">около 5,6 $</td></tr>
+          <tr><td>Dream Museum Zone, Бали, 3D-музей</td><td>около 110 000 IDR, по отзыву</td><td class="num">около 6,1 $</td></tr>
+          <tr><td>Зеркальный лабиринт, ВДНХ, Москва</td><td>450 ₽</td><td class="num">около 5,5 $</td></tr>
+          <tr><td>Magic World с зеркальным лабиринтом, Пенанг</td><td>18-28 RM</td><td class="num">4,4-6,9 $</td></tr>
+          <tr><td>Mirror Maze, аэропорт Jewel Changi, Сингапур</td><td>18,90 SGD вместе с парком на крыше</td><td class="num">около 14,8 $</td></tr>
+          <tr><td>Mirror Maze, ТЦ American Dream, США</td><td>10 $</td><td class="num">10 $</td></tr>
+          <tr><td>Лабиринт в Сан-Франциско</td><td>10 $</td><td class="num">10 $</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="dots">
+      <li><span><b>Берём 75 000 IDR, около 4,2 $.</b> Это дешевле музеев на Бали, потому что наш проход короче. Ниже для сравнения 50 000 и 100 000 IDR.</span></li>
+      <li><span><b>Пропускная способность не ограничивает.</b> Группа до 4 человек каждые 3 минуты даёт до 80 человек в час, 800 за 10 часов. Ограничивает спрос.</span></li>
+      <li><span><b>Кассир или самообслуживание.</b> Оплату можно принимать по QRIS. Но у входа всё равно стоит человек. Он выдаёт перчатки, считает людей и следит за детьми.</span></li>
+    </ul>
+  </section>
+</div>
+
+<section class="sec wrap">
+  <div class="eyebrow">Экономика</div>
+  <h2>Три сценария</h2>
+  <p class="sub">Билет 75 000 IDR, 30 дней в месяц. Суммы в IDR. Окупаемость считаем от середины сметы.</p>
+  <div class="tablebox">
+    <table>
+      <tbody>
+<tr class="th"><th>Строка</th><th class="num pes">Пессимистичный</th><th class="num std">Реалистичный</th><th class="num opt">Оптимистичный</th></tr>
+<tr class=""><td>Гостей в день</td><td class="num pes">5</td><td class="num std">20</td><td class="num opt">60</td></tr>
+<tr class=""><td>Гостей в месяц, 30 дней</td><td class="num pes">150</td><td class="num std">600</td><td class="num opt">1 800</td></tr>
+<tr class="tot"><td>Выручка при билете 75 000 IDR</td><td class="num pes">11 250 000</td><td class="num std">45 000 000</td><td class="num opt">135 000 000</td></tr>
+<tr class=""><td>Персонал</td><td class="num pes">1 500 000</td><td class="num std">3 800 000</td><td class="num opt">7 600 000</td></tr>
+<tr class=""><td>Электричество (оценка)</td><td class="num pes">900 000</td><td class="num std">900 000</td><td class="num opt">900 000</td></tr>
+<tr class=""><td>Перчатки, средства для стёкол (оценка)</td><td class="num pes">200 000</td><td class="num std">500 000</td><td class="num opt">1 200 000</td></tr>
+<tr class=""><td>Ремонт, замена зеркал (оценка)</td><td class="num pes">1 000 000</td><td class="num std">1 000 000</td><td class="num opt">1 500 000</td></tr>
+<tr class=""><td>Реклама в Instagram (оценка)</td><td class="num pes">2 000 000</td><td class="num std">2 000 000</td><td class="num opt">2 000 000</td></tr>
+<tr class=""><td>Страховка (оценка)</td><td class="num pes">500 000</td><td class="num std">500 000</td><td class="num opt">500 000</td></tr>
+<tr class=""><td>Налог на развлечения 10%</td><td class="num pes">1 125 000</td><td class="num std">4 500 000</td><td class="num opt">13 500 000</td></tr>
+<tr class=""><td>Налог с оборота 0,5%</td><td class="num pes">56 250</td><td class="num std">225 000</td><td class="num opt">675 000</td></tr>
+<tr class="tot"><td>Расходы в месяц</td><td class="num pes">7 281 250</td><td class="num std">13 425 000</td><td class="num opt">27 875 000</td></tr>
+<tr class="tot"><td>Прибыль в месяц, IDR</td><td class="num pes">3 968 750</td><td class="num std">31 575 000</td><td class="num opt">107 125 000</td></tr>
+<tr class=""><td>Прибыль в месяц, $</td><td class="num pes">220 $</td><td class="num std">1 754 $</td><td class="num opt">5 951 $</td></tr>
+<tr class="tot"><td>Окупаемость, сделать самим (177 571 500)</td><td class="num pes">44,7 мес.</td><td class="num std">5,6 мес.</td><td class="num opt">1,7 мес.</td></tr>
+<tr class="tot"><td>Окупаемость, готовый кит (334 455 000)</td><td class="num pes">84,3 мес., дольше 5 лет</td><td class="num std">10,6 мес.</td><td class="num opt">3,1 мес.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="scroll-hint">Таблицу можно листать вбок.</p>
+
+  <h3>Допущения</h3>
+  <ul class="dots">
+    <li><span><b>Число гостей это допущение, а не данные.</b> 5 в день это как сейчас заходят в магазин. 20 это вдвое больше январского потока магазина (9 в день) плюс те, кто приехал ради лабиринта. 60 это лабиринт стал точкой в Instagram и TikTok, к нему везут туристов.</span></li>
+    <li><span><b>Персонал.</b> При 5 гостях билеты продают продавцы магазина за доплату. При 20 один отдельный сотрудник по минимальной зарплате Бадунга 3 791 003 IDR, округлили до 3 800 000. При 60 двое.</span></li>
+    <li><span><b>Электричество.</b> Кондиционер работает круглые сутки против влажности. Около 620 кВт·ч в месяц по тарифу 1 444,70 IDR за кВт·ч.</span></li>
+    <li><span><b>Налог на развлечения.</b> Ставку Бадунга для такого аттракциона не нашли. По закону она не больше 10%, берём 10%.</span></li>
+    <li><span><b>Налог 0,5% с оборота</b> для малого бизнеса.</span></li>
+    <li><span><b>Аренду места не считаем.</b> Это парковка магазина.</span></li>
+    <li><span><b>Покупки в магазине не считаем.</b> Если гости лабиринта что-то купят, это сверху.</span></li>
+    <li><span><b>Безубыточность.</b> Текущие расходы покрывают от 3,0 до 6,8 гостей в день. Всё, что выше, идёт на возврат вложений.</span></li>
+  </ul>
+
+  <h3>Если менять цену билета</h3>
+  <p class="muted">Прибыль в месяц и окупаемость, если делать самим (177 571 500 IDR). Расходы как в таблице выше.</p>
+  <div class="tablebox">
+    <table>
+      <tbody>
+<tr class="th"><th>Билет</th><th class="num pes">Пессимистичный, 5 в день</th><th class="num std">Реалистичный, 20 в день</th><th class="num opt">Оптимистичный, 60 в день</th></tr>
+<tr><td>50 000 IDR, 2,8 $</td><td class="num pes">612 500 в месяц<br><span class="muted">289,9 мес., дольше 5 лет</span></td><td class="num std">18 150 000 в месяц<br><span class="muted">9,8 мес.</span></td><td class="num opt">66 850 000 в месяц<br><span class="muted">2,7 мес.</span></td></tr>
+<tr><td>75 000 IDR, 4,2 $</td><td class="num pes">3 968 750 в месяц<br><span class="muted">44,7 мес.</span></td><td class="num std">31 575 000 в месяц<br><span class="muted">5,6 мес.</span></td><td class="num opt">107 125 000 в месяц<br><span class="muted">1,7 мес.</span></td></tr>
+<tr><td>100 000 IDR, 5,6 $</td><td class="num pes">7 325 000 в месяц<br><span class="muted">24,2 мес.</span></td><td class="num std">45 000 000 в месяц<br><span class="muted">3,9 мес.</span></td><td class="num opt">147 400 000 в месяц<br><span class="muted">1,2 мес.</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="scroll-hint">Таблицу можно листать вбок.</p>
+</section>
+
+<div class="band panel">
+  <section class="wrap">
+    <div class="eyebrow">Что пишут</div>
+    <h2>Правда ли быстро окупается</h2>
+    <ul class="dots">
+      <li><span>Продавец лабиринтов в России обещает окупаемость от 3 месяцев до года.</span></li>
+      <li><span>Продавец бизнес-планов пишет так. Вложения 249 000 ₽, прибыль 49 800 ₽ в месяц, окупаемость 5 месяцев.</span></li>
+      <li><span>Блог бизнес-идей. Старт чуть больше 1 млн ₽, окупаемость около 3 месяцев, если тема детская или молодёжная.</span></li>
+      <li><span>Расчёт около 10 лет назад. Билет 150 ₽, около 3 000 гостей в месяц, окупаемость 12-20 месяцев. Страница сейчас не открывается, цифры из поисковой выдачи.</span></li>
+      <li><span>Отзывов владельцев с реальной выручкой мы не нашли. Ни на русском, ни на английском.</span></li>
+    </ul>
+    <p><b>Вывод.</b> «Окупается за 3 месяца» пишут в основном те, кто продаёт лабиринты и бизнес-планы. 3 000 гостей в месяц это около 100 в день, поток торгового центра или парка. Наш реалистичный сценарий в 5 раз меньше, и даже он окупается быстро. Главное доказать, что 20 человек в день придут.</p>
+  </section>
+</div>
+
+<section class="sec wrap">
+  <div class="eyebrow">Связка с магазином</div>
+  <h2>Как лабиринт работает на магазин</h2>
+  <ul class="dots">
+    <li><span><b>Билет становится скидкой.</b> 75 000 IDR возвращаются скидкой при покупке в магазине в тот же день. Порог покупки выбрать самим.</span></li>
+    <li><span><b>Выход ведёт к двери магазина.</b> Гость выходит из лабиринта и сразу видит витрину.</span></li>
+    <li><span><b>Фотозона.</b> Последнее зеркало с логотипом Maison Sauvage. Отметка магазина в Instagram даёт скидку.</span></li>
+    <li><span><b>Примерочная бесконечности.</b> Гость берёт вещь из магазина и снимается в лабиринте. Блогерам и брендам можно сдавать лабиринт под съёмку по часам.</span></li>
+    <li><span><b>Свет вечером.</b> Вывеска лабиринта видна с дороги и работает как вторая вывеска магазина.</span></li>
+    <li><span><b>Продавцы продают билеты.</b> Сейчас у них около 4 посетителей в день, время есть.</span></li>
+    <li><span><b>Маркет выходного дня на парковке.</b> Лабиринт становится его главной точкой.</span></li>
+  </ul>
+</section>
+
+<div class="band panel">
+  <section class="wrap">
+    <div class="eyebrow">Риски</div>
+    <h2>Что может пойти не так</h2>
+    <ul class="dots">
+      <li><span><b>Мало людей на улице.</b> По Jl. Raya Bumbak едут на байках и машинах, пешком почти не ходят. Человеку надо остановиться и припарковаться. Это главный риск.</span></li>
+      <li><span><b>Жара и влажность.</b> Зеркала потеют. Влага заходит с краёв и разъедает серебро, появляются чёрные края и пятна. Это не чинится, только замена. Брать зеркала без меди, торцы герметизировать. Кондиционер и осушитель обязательны. Даже в Москве гости жалуются на духоту.</span></li>
+      <li><span><b>Бой стекла и травмы.</b> Закалённое зеркало и плёнка, перчатки, до 4 человек в группе, дети со взрослым, камера внутри. Нужна страховка ответственности перед гостями, цену полиса не нашли.</span></li>
+      <li><span><b>Разрешения.</b> На постройку оформляют PBG через систему SIMBG. Без PBG здание могут опечатать или снести. Для аттракциона нужен свой вид деятельности (KBLI) в OSS. Ещё налог на развлечения и налог на вывеску. Как это работает в Бадунге для временного павильона, точных данных не нашли.</span></li>
+      <li><span><b>Место.</b> Парковка в аренде, а не в собственности. Без письменного согласия арендодателя строить нельзя. Если место придётся освободить, разборный кит или контейнер увезти проще.</span></li>
+      <li><span><b>Новизна проходит.</b> Маленький лабиринт гости называют «очень лёгким», второй раз приходят редко. Тему и свет придётся обновлять.</span></li>
+      <li><span><b>Деньги и внимание.</b> Лабиринт забирает деньги и время у основного магазина.</span></li>
+      <li><span><b>Блики.</b> Большие зеркала снаружи могут слепить водителей на дороге. Снаружи лучше свет и вывеска.</span></li>
+      <li><span><b>Дождь.</b> Павильон на подиуме, над входом навес.</span></li>
+    </ul>
+  </section>
+</div>
+
+<section class="sec wrap">
+  <div class="eyebrow">До покупки</div>
+  <h2>Что проверить</h2>
+  <ol class="steps">
+    <li><span><b>Посчитать поток.</b> Три дня по 2 часа стоять у магазина и считать, сколько людей идёт пешком и сколько байков и машин тормозит.</span></li>
+    <li><span><b>Дешёвый тест спроса.</b> Зеркальная фотобудка на парковке на 2-4 недели или предпродажа билетов в Instagram.</span></li>
+    <li><span><b>Сходить в Upside Down World и похожие места на Бали.</b> Посчитать гостей за час, спросить про сезон.</span></li>
+    <li><span><b>Письменное согласие арендодателя</b> на павильон на парковке. Замерить место.</span></li>
+    <li><span><b>Мощность электричества магазина.</b> Кондиционер, свет и осушитель добавят около 2 кВт (оценка).</span></li>
+    <li><span><b>Налоги и разрешения.</b> В Bapenda Badung спросить ставку налога на развлечения. В DPMPTSP Badung спросить про PBG для временного павильона. У нотариуса подобрать KBLI.</span></li>
+    <li><span><b>Три предложения на Бали.</b> Стекольщик (закалённое зеркало в размер с плёнкой), мастерская каркаса, подрядчик павильона.</span></li>
+    <li><span><b>Запрос в Китай.</b> Цена на 12 м² с доставкой до порта Benoa и полный список, что входит в кит.</span></li>
+    <li><span><b>Страховка.</b> Цена полиса ответственности перед гостями.</span></li>
+  </ol>
+</section>
+
+<section class="sec wrap">
+  <div class="eyebrow">Источники</div>
+  <h2>Откуда цифры</h2>
+  <p class="muted">Дата обращения ко всем ссылкам: 25.10.2026. Курс рубля, ринггита и сингапурского доллара: open.er-api.com на 24.10.2026.</p>
+
+  <div class="src-h">Устройство и уход</div>
+  <ol class="src">
+    <li><a href="https://patents.google.com/patent/US7749087B2/en">Патент US7749087B2, лабиринт со светом в полу</a>. Сетка 60°, 6 линий от колонны, двусторонние зеркала, ленты в полу.</li>
+    <li><a href="https://patents.google.com/patent/US9254447">Патент US9254447B2</a>. Треугольные ячейки, колонны в вершинах, арки.</li>
+    <li><a href="https://mirrormaze.se/blog/what-is-a-mirror-maze/">Mirror Maze Stockholm</a>. Треугольная или шестиугольная сетка, перчатки, LED.</li>
+    <li><a href="https://en.wikipedia.org/wiki/Mirror_maze">Wikipedia, Mirror maze</a>. Зеркала и стёкла как препятствия, история.</li>
+    <li><a href="https://en.wikipedia.org/wiki/Magowan%27s_Infinite_Mirror_Maze">Wikipedia, лабиринт в Сан-Франциско</a>. 190 м², 77 зеркал, ультрафиолет.</li>
+    <li><a href="https://gregcookland.com/wonderland/2018/02/14/mirror-maze/">Обзор лабиринта Музея науки в Бостоне</a>. Сетка треугольников под арками деревьев, секретная комната.</li>
+    <li><a href="https://blooloop.com/news/adrian-fisher-design-mirror-maze-opens-at-hollywood-wax-museum-pigeon-forge/">Blooloop</a>. Тематические комнаты, вращающийся пол у выхода.</li>
+    <li><a href="https://www.tripster.com/detail/mirror-maze-at-american-dream.md">Mirror Maze в American Dream</a>. До 4 человек в группе, перчатки, билет 10 $.</li>
+    <li><a href="https://plasticsheetsshop.co.uk/comparison/acrylic-mirror-vs-glass-mirror/">Акрил против стекла</a> и <a href="https://www.cutmy.co.uk/plastic/acrylic-perspex-sheets/mirrored/silver-mirror/5mm/">акриловое зеркало 5 мм</a>. Искажения тонкого акрила.</li>
+    <li><a href="https://www.edwardmartin.com/blogs/information/how-to-prevent-mirror-desilvering-in-bathrooms-with-humidity">Почему темнеют края зеркал во влажности</a> и <a href="https://mirrormate.com/blogs/news/mirror-deterioration-why-it-happens-and-how-to-fix-it">как это предотвратить</a>.</li>
+  </ol>
+
+  <div class="src-h">Готовые лабиринты</div>
+  <ol class="src">
+    <li><a href="https://www.accio.com/plp/outdoor-mirror-maze">Accio, поставщики из Китая</a>. 650 $ за м² от 1 м², 400-750 $ за м² от 50 м², 340-680 $ за м² от 30 м², набор 8 500-10 500 $. Стекло 6-10 мм, плёнка.</li>
+    <li><a href="https://attractionpark.ru/product/proekt-attraktsiona-zerkalyniy-labirint">Проект зеркального лабиринта, Россия</a>. Проект 49 000 ₽, материалы на 25 м² 350 000 ₽.</li>
+    <li><a href="https://skyproduction.ru/services/kupity-zerkalyny-labyrint/">Sky Production</a>. Модульные лабиринты, окупаемость «от 3 месяцев до года».</li>
+    <li><a href="https://www.hauntrepreneurs.com/about-haunts-for-sale/sold/mirror-maze/">Hauntrepreneurs</a>. Б/у лабиринт 500 кв. футов, 35 000 $.</li>
+    <li><a href="https://carnivalwarehouse.com/newsserver/rides-usa-showcases-new-mirror-maze-at-gibtown-show-and-expands-offerings-1770768000">Лабиринт в прицепе, Rides USA</a>.</li>
+    <li><a href="https://www.wearetricycle.co.uk/category/funhouses/65/mirror-maze">Аренда мобильного лабиринта, Англия</a>. От 2 000 £.</li>
+  </ol>
+
+  <div class="src-h">Цены в Индонезии</div>
+  <ol class="src">
+    <li><a href="https://harga.web.id/harga-kaca-cermin-per-meter.info">Зеркало 5 мм и закалённое зеркало</a>. Лист 183 × 122 см закалённый 420 000 IDR.</li>
+    <li><a href="https://mamikos.com/info/harga-kaca-per-meter-berbagai-ukuran-gnr/?halaman=3">Закалённое стекло 8 мм</a>. Около 385 000 IDR за м².</li>
+    <li><a href="https://www.99.co/id/panduan/harga-besi-hollow/">Оцинкованная труба 40 × 40</a>. 100 000-150 000 IDR за 6 м, цены 2025 года.</li>
+    <li><a href="https://www.ruparupa.com/ms/artikel-harga-ac-panasonic-1-pk">Кондиционер 1 PK, Ruparupa</a> и <a href="https://techno.viva.co.id/elektronik/23840-5-rekomendasi-ac-1-pk-terpopuler-dan-hemat-listrik-di-2026">Viva</a>. Инвертор 3 200 000-5 800 000 IDR.</li>
+    <li><a href="https://kontainerindonesia.co.id/blog/harga-container-20-feet-bekas-id">Б/у контейнер 20 футов</a>. От 20 000 000 IDR.</li>
+    <li><a href="https://www.kompas.tv/regional/639859/upah-minimum-bali-2026-naik-umk-badung-paling-tinggi">Минимальная зарплата Бадунга 2026</a>. 3 791 003 IDR в месяц.</li>
+    <li><a href="https://investortrust.id/business/108052/tarif-listrik-pln-juli-september-2026-tetap-pemerintah-tahan-kenaikan">Тариф PLN для бизнеса B-2</a>. 1 444,70 IDR за кВт·ч, июль-сентябрь 2026.</li>
+  </ol>
+
+  <div class="src-h">Разрешения и налоги</div>
+  <ol class="src">
+    <li><a href="https://www.pajak.com/pajak/apa-itu-pbjt-atas-jasa-kesenian-dan-hiburan-ini-penjelasannya/">Налог на развлечения PBJT</a>. Не больше 10%, кроме дискотек, баров и спа.</li>
+    <li><a href="https://dpb.unpad.ac.id/kbli2025/93293/">KBLI 93293, игровые арены</a> и <a href="https://kbli.co.id/93299">KBLI 93299, прочие развлечения</a>.</li>
+    <li><a href="https://prolegal.id/?p=35275">Зачем нужен PBG</a>. Без него опечатывают.</li>
+  </ol>
+
+  <div class="src-h">Билеты и поток</div>
+  <ol class="src">
+    <li><a href="https://en.hoteles.com/go/indonesia/upside-down-world-bali">Upside Down World Bali</a>. 100 000 IDR взрослый.</li>
+    <li><a href="https://wanderlog.com/place/details/106207/dream-museum-zone-bali-dmz">Dream Museum Zone Bali</a>. Около 110 000 IDR по отзыву, хорош в дождь.</li>
+    <li><a href="https://vdnh55.orgs.biz/">Smile Park на ВДНХ, цены</a>. Зеркальный лабиринт 450 ₽, всё включено 1 500 ₽.</li>
+    <li><a href="https://irecommend.ru/content/zerkalnyi-labirint-v-smail-parke-na-vdnkh-nasha-lyubimaya-lokatsiya-vsegda-veselo">Отзыв о лабиринте ВДНХ, март 2026</a>. 6 минут, перчатки, душно.</li>
+    <li><a href="https://ex-forum.ru/muzey-illyuziy-i-labirintyi/">Отзывы 2015-2018 годов</a>. Жарко, «очень легко».</li>
+    <li><a href="https://kudago.com/msk/place/zerkalnyj-labirint/">Старый лабиринт ВДНХ, павильон 2</a>. Закрыт 12.05.2014, билет 200 ₽.</li>
+    <li><a href="https://www.m24.ru/news/02012026/861279">ВДНХ в 2025 году</a>. Больше 28 млн посетителей.</li>
+    <li><a href="https://headout.com/magic-world-penang-tickets-c-3862">Magic World Penang</a>. От 18 RM.</li>
+    <li><a href="https://www.jewelchangiairport.com/en/attractions/mirror-maze.html">Mirror Maze, Jewel Changi</a>. 18,90 SGD.</li>
+    <li><a href="https://open.er-api.com/v6/latest/USD">Курсы валют</a>. 81,3 ₽, 4,08 RM, 1,28 SGD за 1 $ на 24.10.2026.</li>
+  </ol>
+
+  <div class="src-h">Окупаемость</div>
+  <ol class="src">
+    <li><a href="https://alterainvest.ru/rus/biznes-plany/detail-7075969/">Бизнес-план, Альтера Инвест</a>. 249 000 ₽, 49 800 ₽ в месяц, 5 месяцев. При проверке страница отвечала ошибкой, цифры из поисковой выдачи.</li>
+    <li><a href="https://realybiz.ru/idei/biznes-ideya-attrakcion-zerkalnyj-labirint">RealyBiz</a>. Чуть больше 1 млн ₽, около 3 месяцев.</li>
+    <li><a href="https://delo360.ru/otkryvaem-biznes-_-zerkalnyy-labirint/">Delo360</a>. 150 ₽, 3 000 гостей в месяц, 12-20 месяцев. Страница сейчас не открывается.</li>
+  </ol>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <p>Maison Sauvage · внутренний рабочий материал · 25.10.2026</p>
+  <p>Цифры с пометкой «оценка» проверяются предложениями мастерских и поставщиков.</p>
+</footer>
+
+</body>
+</html>
