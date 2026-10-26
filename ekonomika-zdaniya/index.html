@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Экономика здания · Maison Sauvage</title>
+<meta name="description" content="Что выгоднее делать в здании Maison Sauvage в Умаласе: магазин, кафе, студии, события или сдача частями. Расчёт по нашим цифрам и ценам рынка Бали.">
+<meta property="og:title" content="Maison Sauvage: экономика здания">
+<meta property="og:description" content="Что выгоднее делать в здании Maison Sauvage в Умаласе: магазин, кафе, студии, события или сдача частями. Расчёт по нашим цифрам и ценам рынка Бали.">
+<meta property="og:image" content="https://arturleto.github.io/maison/invest/img/fasad-glavnoe.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Лист управляющего: узкая колонка, одна мысль на экран, соседние экраны на разном фоне. Палитра и шрифты как у плана на 90 дней. */
+:root {
+  --bg: #f7f6f3;
+  --panel: #ebe8e3;
+  --card: #ffffff;
+  --ink: #26221f;
+  --muted: #746e67;
+  --line: rgba(38, 34, 31, .13);
+  --rouge: #a3141e;
+  --wine: #6f1118;
+  --wine-ink: #f4ece6;
+  --amber: #a4701f;
+  --ok: #3d6b48;
+  --dim: #c9c3bb;
+  --display: "Prata", "Didot", "Bodoni 72", Georgia, serif;
+  --body: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1c1917; --panel: #26221f; --card: #2b2724; --ink: #ede8e1; --muted: #a59d93;
+    --line: rgba(237, 232, 225, .14); --rouge: #e2626a; --wine: #5a1016; --wine-ink: #f4ece6;
+    --amber: #e0b26c; --ok: #8cc59a; --dim: #5a534d; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1c1917; --panel: #26221f; --card: #2b2724; --ink: #ede8e1; --muted: #a59d93;
+  --line: rgba(237, 232, 225, .14); --rouge: #e2626a; --wine: #5a1016; --wine-ink: #f4ece6;
+  --amber: #e0b26c; --ok: #8cc59a; --dim: #5a534d; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.6 var(--body); -webkit-text-size-adjust: 100%; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--rouge); outline-offset: 2px; border-radius: 4px; }
+.wrap { max-width: 760px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; text-wrap: balance; }
+h2 { font-size: clamp(26px, 5.4vw, 36px); line-height: 1.15; }
+h3 { font-size: 20px; line-height: 1.25; }
+p { margin: 0; }
+.eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.band { padding-block: 52px; }
+.band.panel { background: var(--panel); }
+.band.wine { background: var(--wine); color: var(--wine-ink); }
+.band.wine .eyebrow, .band.wine .muted { color: rgba(244, 236, 230, .72); }
+.band.wine .num { color: #fff; }
+.band.wine a { color: inherit; }
+.eyebrow a { text-decoration: none; }
+.eyebrow a:hover { text-decoration: underline; }
+.stack { display: grid; gap: 18px; }
+.muted { color: var(--muted); }
+.small { font-size: 14px; }
+ul.points { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+ul.points li { padding-left: 22px; position: relative; max-width: 62ch; }
+ul.points li::before { content: ""; position: absolute; left: 2px; top: .68em; width: 8px; height: 8px; border-radius: 50%; background: var(--rouge); }
+.band.wine ul.points li::before { background: var(--wine-ink); }
+.num { font-variant-numeric: tabular-nums; font-weight: 700; }
+
+header.top { padding-block: 48px 40px; }
+header.top h1 { font-size: clamp(38px, 8.5vw, 62px); line-height: 1.03; margin-top: 12px; }
+.lead { margin-top: 18px; color: var(--muted); max-width: 58ch; }
+.answer { margin-top: 30px; display: grid; gap: 14px; }
+.answer .row { display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; }
+.answer .k { font-family: var(--display); font-size: 26px; line-height: 1; color: var(--rouge); }
+
+.big { display: flex; flex-wrap: wrap; gap: 14px 34px; align-items: baseline; }
+.big .v { font-family: var(--display); font-size: clamp(44px, 11vw, 76px); line-height: 1; font-variant-numeric: tabular-nums; }
+.big .v small { font-family: var(--body); font-size: 15px; font-weight: 600; margin-left: 6px; }
+.big .vs { font-size: 15px; }
+.big .old { font-family: var(--display); font-size: clamp(26px, 6vw, 38px); text-decoration: line-through; text-decoration-thickness: 2px; opacity: .55; }
+
+.chart { width: 100%; height: auto; display: block; }
+.chart text { fill: var(--muted); font: 600 11px var(--body); }
+.chart .lbl { fill: var(--ink); }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 13px; color: var(--muted); }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+
+.zones { display: grid; gap: 14px; }
+.zone { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 18px; display: grid; gap: 10px; min-width: 0; }
+.zone .head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.zone .area { font-size: 13px; color: var(--muted); font-weight: 600; }
+.opt { display: grid; grid-template-columns: 1fr auto; gap: 4px 14px; padding-top: 10px; border-top: 1px solid var(--line); }
+.opt .name { font-weight: 600; }
+.opt .money { font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap; text-align: right; }
+.opt .note { grid-column: 1 / -1; font-size: 14px; color: var(--muted); }
+.opt.best .name::after { content: "лучший"; margin-left: 8px; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ok); border: 1px solid currentColor; border-radius: 99px; padding: 1px 7px; vertical-align: 2px; }
+.opt.no .name, .opt.no .money { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--rouge); }
+
+.tbl-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; min-width: 460px; }
+th, td { text-align: left; padding: 11px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+td.r, th.r { text-align: right; white-space: nowrap; }
+tr.win td.hy { color: var(--ok); font-weight: 700; }
+td.neg { color: var(--rouge); font-weight: 700; }
+td.top { font-weight: 700; }
+
+.cash { display: grid; gap: 10px; }
+.cash .line { display: grid; grid-template-columns: 1fr auto; gap: 14px; padding-bottom: 10px; border-bottom: 1px solid rgba(244, 236, 230, .18); }
+.cash .line span:last-child { font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap; }
+.cash .total { font-size: 18px; border-bottom: 0; }
+
+.donts { display: grid; gap: 14px; }
+.dont { display: grid; gap: 4px; padding-left: 16px; border-left: 2px solid var(--rouge); }
+.dont b { font-weight: 700; }
+
+.steps { display: grid; gap: 26px; }
+.when { display: grid; gap: 10px; }
+.when h3 { font-family: var(--body); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; color: var(--rouge); }
+ol.do { margin: 0; padding-left: 22px; display: grid; gap: 8px; max-width: 62ch; }
+
+.plan svg { width: 100%; height: auto; display: block; }
+.plan .wall { fill: none; stroke: var(--ink); stroke-width: 2; }
+.plan .thin { fill: none; stroke: var(--muted); stroke-width: 1.2; }
+.plan .dash { fill: none; stroke: var(--muted); stroke-width: 1.2; stroke-dasharray: 5 4; }
+.plan .z-shop { fill: var(--rouge); fill-opacity: .14; }
+.plan .z-cafe { fill: var(--amber); fill-opacity: .18; }
+.plan .z-up { fill: var(--ok); fill-opacity: .16; }
+.plan .z-park { fill: var(--muted); fill-opacity: .10; }
+.plan .stair { fill: none; stroke: var(--muted); stroke-width: 1; }
+.plan text { fill: var(--ink); font: 700 12px var(--body); }
+.plan text.sub { fill: var(--muted); font: 600 10.5px var(--body); }
+.plan text.cap { fill: var(--muted); font: 600 10px var(--body); letter-spacing: .1em; }
+
+footer { padding-block: 34px 48px; font-size: 13px; color: var(--muted); }
+@media (min-width: 720px) {
+  .zones { grid-template-columns: 1fr 1fr; }
+  .zones .zone.wide { grid-column: 1 / -1; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .chart rect.bar { transition: opacity .2s; }
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow"><a href="../">Maison Sauvage · Умалас, Бали</a> · расчёт на 26.10.2026</div>
+    <h1>Как выжать из здания максимум денег</h1>
+    <p class="lead">Сравнил всё, что можно делать в нашем здании: магазин, кафе, студии, события, сдачу частями. Наши цифры взяты из договора, графика аренды и отчётов продавцов. Цены рынка взяты из объявлений и прайсов Бали за 2025-2026 годы.</p>
+    <div class="answer">
+      <div class="row"><span class="k">1</span><p>Сейчас магазин даёт меньше всего денег из всех вариантов. Он уходит в минус на <span class="num">13 млн IDR</span> в месяц ещё до аренды.</p></div>
+      <div class="row"><span class="k">2</span><p>Выгоднее всего гибрид. Магазин переезжает в левый зал. Правый зал и 2 этаж сдаём, на парковке по выходным маркеты.</p></div>
+      <div class="row"><span class="k">3</span><p>Сдача частей даст <span class="num">24-45 млн IDR</span> в месяц, даже если одежда не продаётся. С мая 2027 аренды нет, и эти деньги почти целиком наши.</p></div>
+    </div>
+  </div>
+</header>
+
+<section class="band panel">
+  <div class="wrap stack">
+    <div class="eyebrow">Аренда</div>
+    <h2>Остаток аренды обходится в 109 тыс. за метр</h2>
+    <div class="big">
+      <span class="v">109 000<small>IDR за м² в месяц</small></span>
+      <span class="old">236 000</span>
+    </div>
+    <ul class="points">
+      <li>По договору метр стоит 236 тыс. IDR в месяц. Но 73% аренды уже внесено.</li>
+      <li>До 1 апреля 2027 осталось внести <span class="num">1 437 млн IDR</span>, вместе с доплатой 142 млн. За это мы получаем ещё 44 месяца в здании и депозит 850 млн в июле 2030.</li>
+      <li>Если разделить остаток на оставшиеся месяцы, метр стоит 109 тыс. IDR. Похожие здания рядом сдают по 100-200 тыс. Значит, оставшаяся аренда дешевле рынка.</li>
+      <li>Проблема не в цене здания. Платим за 5 месяцев, пользуемся 44.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band wine">
+  <div class="wrap stack">
+    <div class="eyebrow">Что стоит на кону</div>
+    <h2>Право на здание стоит около 77 000 $</h2>
+    <div class="big"><span class="v num">41 000-114 000 $</span></div>
+    <ul class="points">
+      <li>Это рыночная цена оставшихся 44 месяцев плюс депозит, минус то, что ещё платить.</li>
+      <li>Столько сгорит, если один платёж задержится больше чем на 15 дней. Плюс 203 000 $, которые уже внесены.</li>
+      <li>Поэтому любое решение по зданию сначала проверяем одним вопросом. Помогает ли оно внести платежи до апреля?</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap stack">
+    <div class="eyebrow">Порог для магазина</div>
+    <h2>Сколько должен продавать магазин, чтобы быть выгоднее сдачи</h2>
+    <svg class="chart" id="rev" viewBox="0 0 640 330" role="img" aria-label="Выручка магазина по месяцам и два порога"></svg>
+    <div class="legend">
+      <span><i style="background:var(--rouge)"></i>выше порога для всего здания</span>
+      <span><i style="background:var(--amber)"></i>выше порога для левого зала</span>
+      <span><i style="background:var(--dim)"></i>ниже обоих порогов</span>
+      <span><i style="background:var(--rouge);opacity:.25"></i>полоса 170-230, порог для всего здания</span>
+      <span><i style="background:var(--amber);opacity:.35"></i>полоса 75-90, порог для левого зала</span>
+    </div>
+    <ul class="points">
+      <li>Магазин на всех 300 м² выгоднее сдачи здания, только если продаёт от <span class="num">170-230 млн IDR</span> в месяц. Так было с ноября по апрель.</li>
+      <li>Магазину в одном левом зале хватает <span class="num">75-90 млн IDR</span>. Это около 1,5 покупки в день при нынешнем чеке 1,93 млн.</li>
+      <li>Сейчас около 1 покупки в день и около 43 млн IDR в месяц. С августа магазин ниже обоих порогов.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band panel">
+  <div class="wrap stack">
+    <div class="eyebrow">План здания</div>
+    <h2>Здание уже поделено на три части</h2>
+    <figure class="plan" style="margin:0">
+      <svg viewBox="0 0 360 330" role="img" aria-label="Схема здания: 2 этаж, левый и правый залы, парковка">
+        <text class="cap" x="20" y="16">2 ЭТАЖ</text>
+        <rect class="z-up" x="20" y="24" width="320" height="62"/>
+        <rect class="wall" x="20" y="24" width="320" height="62"/>
+        <g class="stair"><rect x="24" y="30" width="22" height="50"/><line x1="24" y1="40" x2="46" y2="40"/><line x1="24" y1="50" x2="46" y2="50"/><line x1="24" y1="60" x2="46" y2="60"/><line x1="24" y1="70" x2="46" y2="70"/></g>
+        <g class="stair"><rect x="314" y="30" width="22" height="50"/><line x1="314" y1="40" x2="336" y2="40"/><line x1="314" y1="50" x2="336" y2="50"/><line x1="314" y1="60" x2="336" y2="60"/><line x1="314" y1="70" x2="336" y2="70"/></g>
+        <text x="180" y="52" text-anchor="middle">Пилатес, йога, бьюти или события</text>
+        <text class="sub" x="180" y="70" text-anchor="middle">около 140 м², две лестницы</text>
+
+        <text class="cap" x="20" y="112">1 ЭТАЖ</text>
+        <rect class="z-shop" x="50" y="120" width="150" height="72"/>
+        <rect class="z-cafe" x="204" y="120" width="96" height="72"/>
+        <rect class="wall" x="20" y="120" width="320" height="72"/>
+        <line class="wall" x1="50" y1="120" x2="50" y2="192"/>
+        <line class="wall" x1="202" y1="120" x2="202" y2="146"/>
+        <line class="wall" x1="202" y1="168" x2="202" y2="192"/>
+        <line class="wall" x1="302" y1="120" x2="302" y2="192"/>
+        <g class="stair"><rect x="24" y="150" width="22" height="38"/><line x1="24" y1="160" x2="46" y2="160"/><line x1="24" y1="170" x2="46" y2="170"/><line x1="24" y1="180" x2="46" y2="180"/></g>
+        <g class="stair"><rect x="314" y="146" width="22" height="42"/><line x1="314" y1="156" x2="336" y2="156"/><line x1="314" y1="166" x2="336" y2="166"/><line x1="314" y1="176" x2="336" y2="176"/></g>
+        <rect class="thin" x="306" y="124" width="30" height="18"/>
+        <text class="sub" x="321" y="137" text-anchor="middle">WC</text>
+        <path class="thin" d="M100 192 a18 18 0 0 1 18 18 M136 192 a18 18 0 0 0 -18 18"/>
+        <path class="thin" d="M232 192 a18 18 0 0 1 18 18 M268 192 a18 18 0 0 0 -18 18"/>
+        <path class="thin" d="M318 192 a14 14 0 0 1 14 14"/>
+        <text x="125" y="152" text-anchor="middle">Магазин</text>
+        <text class="sub" x="125" y="169" text-anchor="middle">левый зал, около 76 м²</text>
+        <text x="252" y="152" text-anchor="middle">Кафе</text>
+        <text class="sub" x="252" y="169" text-anchor="middle">правый зал, 47 м²</text>
+
+        <rect class="z-park" x="20" y="232" width="320" height="64"/>
+        <rect class="dash" x="20" y="232" width="320" height="64"/>
+        <text x="180" y="260" text-anchor="middle">Парковка</text>
+        <text class="sub" x="180" y="278" text-anchor="middle">маркеты по выходным, кофе-киоск, события</text>
+        <line class="thin" x1="0" y1="316" x2="360" y2="316"/>
+        <text class="cap" x="180" y="328" text-anchor="middle">JL. RAYA BUMBAK</text>
+      </svg>
+      <figcaption class="small muted" style="margin-top:8px">Схема по плану архитектора HESTIA, без масштаба. Площади по плану, не замер.</figcaption>
+    </figure>
+    <ul class="points">
+      <li>У левого и правого зала свои входы с улицы. По плану между ними есть проход.</li>
+      <li>На 2 этаж ведут две лестницы. У правой своя дверь на улицу, поэтому этаж можно сдать отдельно.</li>
+      <li>Стройка не понадобится. Мелкие части со своим входом рынок сдаёт в 2-3 раза дороже за метр, чем целое здание.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap stack">
+    <div class="eyebrow">Каждая часть отдельно</div>
+    <h2>Что выгоднее в каждой части</h2>
+    <p class="muted small">Деньги в млн IDR в месяц, до налога.</p>
+    <div class="zones">
+      <div class="zone">
+        <div class="head"><h3>Правый зал</h3><span class="area">47 м², свой вход, WC</span></div>
+        <div class="opt best"><span class="name">Кафе оператора</span><span class="money">10-20</span><span class="note">Или 10% его выручки, что больше. Оборудование даёт хозяйка, кухню ставит оператор. Его гости заходят к нам каждый день.</span></div>
+        <div class="opt"><span class="name">Ногти или ресницы</span><span class="money">10-15</span><span class="note">Запасной вариант, если кафе не найдём. Та же аудитория, что у магазина.</span></div>
+        <div class="opt no"><span class="name">Своё кафе</span><span class="money">запуск 400-700</span><span class="note">Денег на запуск нет. Пусть вкладывается оператор.</span></div>
+      </div>
+      <div class="zone">
+        <div class="head"><h3>2 этаж</h3><span class="area">140 м², две лестницы</span></div>
+        <div class="opt best"><span class="name">Два арендатора с оплатой вперёд</span><span class="money">14-20</span><span class="note">Офис, бьюти, барре, шоурум. Две половины по 7-11 млн, расчёт ниже. Работы от нас нет, деньги за год сразу.</span></div>
+        <div class="opt"><span class="name">События, съёмки, классы</span><span class="money">24-89</span><span class="note">Чистыми, после уборки и банджара. Больше денег, но держится на нашем времени. Хорошо в сезон.</span></div>
+        <div class="opt"><span class="name">Рейлы новых брендов</span><span class="money">17-65</span><span class="note">1,25-2 млн за рейл плюс 20% с продаж. Только новые бренды.</span></div>
+      </div>
+      <div class="zone">
+        <div class="head"><h3>Левый зал</h3><span class="area">76 м², главный вход</span></div>
+        <div class="opt best"><span class="name">Магазин</span><span class="money">от −3 до 140</span><span class="note">Выгоднее сдачи при продажах от 75-90 млн в месяц.</span></div>
+        <div class="opt"><span class="name">Сдать</span><span class="money">11-19</span><span class="note">Если магазин долго ниже порога.</span></div>
+      </div>
+      <div class="zone">
+        <div class="head"><h3>Парковка</h3><span class="area">влезает автобус</span></div>
+        <div class="opt best"><span class="name">Маркеты и кофе-киоск</span><span class="money">3-10</span><span class="note">Стол на маркете LYD у La Brisa стоит 400 тыс. в день. Киоск сдаём кофейне.</span></div>
+        <div class="opt"><span class="name">Зеркальный лабиринт</span><span class="money">своя страница</span><span class="note">Посчитан на отдельной странице <a href="../zerkalnyi-labirint/">Зеркальный лабиринт</a>.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band panel">
+  <div class="wrap stack">
+    <div class="eyebrow">2 этаж на две части</div>
+    <h2>Сколько стоит половина 2 этажа</h2>
+    <p class="muted small">Половина около 70 м². Цена в млн IDR в год. Два независимых расчёта по объявлениям Бали сошлись в этих вилках.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Часть</th><th class="r">Быстрая цена</th><th class="r">Рынок</th><th class="r">Рынок в месяц</th></tr></thead>
+        <tbody>
+          <tr><td>Правая половина, своя дверь на улицу</td><td class="r">90-95</td><td class="r top">120-130</td><td class="r">10-11</td></tr>
+          <tr><td>Левая половина, вход через магазин</td><td class="r">80-85</td><td class="r top">100-115</td><td class="r">8-9,5</td></tr>
+          <tr><td>Обе половины</td><td class="r">170-180</td><td class="r top">220-245</td><td class="r">18-20</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="points">
+      <li>Быстрая цена около 90 млн за половину. Это столько же, сколько нам самим стоят эти 70 м² по остатку аренды, 91 млн в год.</li>
+      <li>Рыночная цена около 120 млн. Это на треть больше нашего остатка.</li>
+      <li>По договору половина стоит нам 198 млн в год. Столько рынок не даст, поэтому сравниваем с 91 млн.</li>
+      <li>Сроки. По быстрой цене арендатор находится примерно за 1-3 месяца, по рыночной за 3-6. За 2-4 недели не гарантирует никто.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap stack">
+    <div class="eyebrow">Кто снимет половину</div>
+    <h2>Четыре реальных арендатора</h2>
+    <div class="zones">
+      <div class="zone">
+        <div class="head"><h3>Офис команды</h3><span class="area">6-10 человек</span></div>
+        <div class="opt best"><span class="name">Быстро / рынок</span><span class="money">85-95 / 110-130</span><span class="note">Агентства вилл и недвижимости, визы, маркетинг, IT. В коворкинге такая команда платит 14-34 млн в месяц, у нас выйдет 9-11. Лучше в правую половину.</span></div>
+      </div>
+      <div class="zone">
+        <div class="head"><h3>Бьюти-студия</h3><span class="area">ресницы, брови, ногти</span></div>
+        <div class="opt best"><span class="name">Быстро / рынок</span><span class="money">80-90 / 100-110</span><span class="note">Наша аудитория. Её гости видят магазин. Подходит любая половина.</span></div>
+      </div>
+      <div class="zone">
+        <div class="head"><h3>Мини-студия барре или растяжки</h3><span class="area">5-7 тренажёров</span></div>
+        <div class="opt"><span class="name">Быстро / рынок</span><span class="money">80-90 / 100-120</span><span class="note">В Умаласе уже 4 студии пилатеса, одна в доме 164 на нашей улице. Лучше барре или растяжка, чем ещё один пилатес.</span></div>
+      </div>
+      <div class="zone">
+        <div class="head"><h3>Шоурум бренда</h3><span class="area">или контент-студия</span></div>
+        <div class="opt"><span class="name">Быстро / рынок</span><span class="money">70-85 / 90-100</span><span class="note">Для левой половины, вход через магазин им только в плюс.</span></div>
+      </div>
+    </div>
+    <p class="muted small">Слабые варианты: клиника, тату, йога и танцы. Им нужны вода, туалет и лицензии. Йогу и танцы лучше пускать по часам, за зал просят 0,5-1 млн в час.</p>
+  </div>
+</section>
+
+<section class="band wine">
+  <div class="wrap stack">
+    <div class="eyebrow">Как сдать быстрее</div>
+    <h2>Просим рынок, ниже быстрой цены не опускаемся</h2>
+    <ul class="points">
+      <li>Выставляем правую половину за 125 млн в год, левую за 110 млн. Ниже 90 и 80 не опускаемся.</li>
+      <li>За год вперёд даём скидку до 10%. При брони берём задаток 5 млн.</li>
+      <li>Вешаем FOR RENT в стеклянной витрине 2 этажа. Мастера и команды ищут помещения, проезжая по улице.</li>
+      <li>Выставляем на Bali Home Immo, Ray White и rumah123. Говорим в коворкингах, мастерам на Fresha и брендам магазина.</li>
+      <li>Ставим отдельный счётчик света на каждую половину.</li>
+      <li>Заранее решаем вопрос с туалетом. Он один, внизу справа, и при кафе в правом зале будет общим.</li>
+      <li>Перегородку ставим лёгкую и только с письменного согласия арендодателя, так требует договор.</li>
+    </ul>
+    <p class="muted small">Что может отпугнуть арендатора: нет туалета и, возможно, воды на этаже, вход в левую половину через магазин. Рядом новые помещения на 47-64 м² со своим санузлом сдают за 270 млн в год.</p>
+  </div>
+</section>
+
+<section class="band panel">
+  <div class="wrap stack">
+    <div class="eyebrow">Три способа</div>
+    <h2>Гибрид выигрывает почти при любых продажах</h2>
+    <p class="muted small">Сколько остаётся в месяц до платежей аренды, млн IDR. Налог 10% с дохода от сдачи вычтен.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Если магазин продаёт</th><th class="r">Магазин на всё здание</th><th class="r">Гибрид</th><th class="r">Сдать всё частями</th></tr></thead>
+        <tbody>
+          <tr><td>43 млн, как сейчас</td><td class="r neg">−13</td><td class="r">21-42</td><td class="r top">40-66</td></tr>
+          <tr class="win"><td>129 млн, как в июле</td><td class="r">23</td><td class="r hy">57-78</td><td class="r">40-66</td></tr>
+          <tr class="win"><td>303 млн, как в апреле</td><td class="r">95</td><td class="r hy">129-150</td><td class="r">40-66</td></tr>
+          <tr class="win"><td>392 млн, как в январе</td><td class="r">132</td><td class="r hy">166-187</td><td class="r">40-66</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="points">
+      <li>Магазин на всё здание проигрывает гибриду всегда. 2 этаж почти не продаёт одежду, а сданный приносит 14-20 млн.</li>
+      <li>Сдать всё выгоднее только при нынешних продажах. Как только магазин выходит на 75-90 млн, гибрид обгоняет.</li>
+      <li>Впереди сезон (<a href="../sezonnost-bali/">сезонность Бали</a>). В прошлом декабре было 500 млн. Даже половина этого выше порога, поэтому сейчас выбираем гибрид, а не полную сдачу.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band wine">
+  <div class="wrap stack">
+    <div class="eyebrow">Деньги вперёд</div>
+    <h2>До 1 февраля здание может дать 294-525 млн IDR</h2>
+    <div class="cash">
+      <div class="line"><span>2 этаж, две половины, год вперёд со скидкой 10%</span><span>153-220</span></div>
+      <div class="line"><span>Кафе в правом зале, 6 месяцев вперёд</span><span>60-120</span></div>
+      <div class="line"><span>Рейлы, 12-20 новых брендов на 3 месяца</span><span>45-105</span></div>
+      <div class="line"><span>Рождественская ярмарка в декабре</span><span>36-80</span></div>
+      <div class="line total"><span>Всего</span><span>294-525</span></div>
+    </div>
+    <ul class="points">
+      <li>На Бали арендаторы обычно платят за год или два вперёд. Знакомая студия пилатеса так и платит, за год сразу.</li>
+      <li>Платежи аренды с 1 ноября по 1 февраля составляют 850 млн IDR. Здание может закрыть 35-60% этой суммы. Инвестор понадобится на меньшую сумму.</li>
+      <li>К 1 ноября здание денег не даст. Успеть можно только с предоплатой арендатора, если договориться на этой неделе.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap stack">
+    <div class="eyebrow">Правило для предложений</div>
+    <h2>Сравниваем со 109 тыс., а не с 236 тыс.</h2>
+    <ul class="points">
+      <li>Предложение от <span class="num">110 тыс. IDR</span> за м² в месяц покрывает то, что нам ещё осталось платить за этот метр.</li>
+      <li>От <span class="num">150 тыс. IDR</span> за м² это уже рынок.</li>
+      <li>Пример. Бренд предлагал нам 100 млн в год за четверть здания под офис, это 111 тыс. за м². Рядом с 236 тыс. по договору это выглядело плохо. Рядом с остатком в 109 тыс. это было в ноль, плюс 50 млн сразу.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band panel">
+  <div class="wrap stack">
+    <div class="eyebrow">Отсеяно</div>
+    <h2>Чего не делать</h2>
+    <div class="donts">
+      <div class="dont"><b>Свой пилатес</b><span>Запуск 500-900 млн IDR. В доме 164 на нашей улице уже работает Revive + Pilates.</span></div>
+      <div class="dont"><b>Своё кафе с кухней</b><span>Запуск 400-700 млн. Вкладывается оператор, мы берём аренду и гостей.</span></div>
+      <div class="dont"><b>Виртуальные офисы</b><span>Место стоит 6 млн в год. Чтобы покрыть аренду, понадобится около 200 компаний.</span></div>
+      <div class="dont"><b>Спа</b><span>Налог на спа в Бадунге может быть 40%. Суд и налоговая пока спорят.</span></div>
+      <div class="dont"><b>Рейлы для старых брендов</b><span>Перевод с 45% на рейл и 20% забирает у магазина четверть их продаж. Рейлы только для новых.</span></div>
+      <div class="dont"><b>Студия для блогеров на туристической визе</b><span>В сентябре и октябре 2026 иммиграция проверяла креаторов в Умаласе и Чангу.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap stack">
+    <div class="eyebrow">До первого договора</div>
+    <h2>Пять проверок</h2>
+    <ul class="points">
+      <li><b>Согласие арендодателя письменно.</b> По договору сдавать часть здания можно только с её согласия, просить за 30 дней. За нарушение договор расторгают, и всё внесённое остаётся у арендодателя. Одним письмом просим согласие на всё сразу: кафе, 2 этаж, события, инвестор.</li>
+      <li><b>Налог.</b> С дохода от сдачи помещения в Индонезии обычно платят 10%. Бухгалтер подскажет, как оформить рейлы и события, арендой или услугой.</li>
+      <li><b>Компания арендатора.</b> Кафе работает по KBLI 56303 или 56101 с санитарным сертификатом, пилатес по 93116, салон по 96112. Лучше брать арендатора, у которого компания уже готова.</li>
+      <li><b>Банджар и иммиграция.</b> События от 25 гостей согласуем с банджаром, музыка до 23:00. За стендом и кассой на маркете стоят только люди с правом работать.</li>
+      <li><b>Реальные цены.</b> Рыночные цифры взяты из объявлений, а не из сделок. Перед переговорами звоним 2-3 агентам и спрашиваем, за сколько реально сдали.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band panel">
+  <div class="wrap stack">
+    <div class="eyebrow">Порядок</div>
+    <h2>Что делать и когда</h2>
+    <div class="steps">
+      <div class="when">
+        <h3>Эта неделя</h3>
+        <ol class="do">
+          <li>Отправить арендодателю одно письмо с просьбой о согласии. С этого дня идут 30 дней.</li>
+          <li>Позвонить тем, кто уже ищет помещение под кафе, знакомому ресторатору и повару. Предложить правый зал с террасой.</li>
+          <li>Выставить обе половины 2 этажа. Просим 125 млн в год за правую и 110 за левую, ниже 90 и 80 не опускаемся.</li>
+          <li>Запустить рейлы для новых брендов. 1,25-2 млн в месяц плюс 20%, оплата за 3 месяца, в каждом рейле размеры S, M, L.</li>
+        </ol>
+      </div>
+      <div class="when">
+        <h3>Декабрь</h3>
+        <ol class="do" start="5">
+          <li>Рождественская ярмарка на 2 этаже и парковке. Закрытый вечер 18 декабря (идеи в <a href="../plan/#idei">банке идей</a>).</li>
+          <li>Каждую неделю записывать, сколько принесла каждая часть здания.</li>
+        </ol>
+      </div>
+      <div class="when">
+        <h3>15 января</h3>
+        <ol class="do" start="7">
+          <li>Решение по 2 этажу. Если события в декабре дали больше 20 млн чистыми, оставляем события. Если меньше, сдаём арендатору.</li>
+        </ol>
+      </div>
+      <div class="when">
+        <h3>Весна 2027</h3>
+        <ol class="do" start="8">
+          <li>Решение по левому залу. Если магазин 3 месяца подряд продаёт меньше 75-90 млн, сдаём и его. Тогда здание целиком приносит 40-66 млн в месяц.</li>
+        </ol>
+      </div>
+      <div class="when">
+        <h3>С мая 2027</h3>
+        <ol class="do" start="9">
+          <li>Аренды нет. Сданные части дают 24-45 млн в месяц, за 38 месяцев 923-1 710 млн IDR (51 300-95 000 $). Это сверх магазина.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap stack">
+    <div class="eyebrow">Насколько верить</div>
+    <h2>Что проверено, а что оценка</h2>
+    <ul class="points">
+      <li>Аренда, выручка и расходы магазина взяты из договора, графика и отчётов продавцов. Октябрь посчитан по 25 дням, 35,5 млн. Модель магазина по месяцам до 2030 на странице <a href="../model/">Финансовая модель</a>.</li>
+      <li>Рынок собран по 70 объявлениям аренды, прайсам кафе, студий, салонов и маркетов. Это цены запроса.</li>
+      <li>Не доказано, что кафе приводит покупателей в магазин. Есть один пример ресторана, где одежда вокруг кафе дала 70% прибыли. И общие данные: события в магазине дают около +14% к обороту.</li>
+      <li>В расходы магазина не входят зарплаты управляющих. С ними порог для магазина выше.</li>
+      <li>Гибрид считает, что в левом зале магазин продаёт столько же, сколько на всей площади. Если товара станет больше, магазин забирает рейлы на колёсах на 2 этаж.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Курс 18 000 IDR за 1 $. Расчёт work/strategy/помещение/raschet_v2.py, данные агентов в work/strategy/помещение/сырьё/.</div>
+</footer>
+
+<script>
+(function () {
+  var data = [
+    ["окт", 162], ["ноя", 362], ["дек", 500], ["янв", 401], ["фев", 240], ["мар", 240],
+    ["апр", 303], ["май", 157], ["июн", 132], ["июл", 129], ["авг", 73], ["сен", 57], ["окт", 43]
+  ];
+  var svg = document.getElementById("rev");
+  var NS = "http://www.w3.org/2000/svg";
+  var W = 640, H = 330, L = 44, R = 12, T = 18, B = 46, max = 520;
+  var pw = W - L - R, ph = H - T - B;
+  function y(v) { return T + ph - v / max * ph; }
+  function el(n, a, txt) {
+    var e = document.createElementNS(NS, n);
+    for (var k in a) e.setAttribute(k, a[k]);
+    if (txt != null) e.textContent = txt;
+    svg.appendChild(e); return e;
+  }
+  var cs = getComputedStyle(document.documentElement);
+  function c(name) { return cs.getPropertyValue(name).trim(); }
+  [0, 100, 200, 300, 400, 500].forEach(function (v) {
+    el("line", { x1: L, x2: W - R, y1: y(v), y2: y(v), stroke: c("--line"), "stroke-width": 1 });
+    el("text", { x: L - 8, y: y(v) + 4, "text-anchor": "end" }, v);
+  });
+  el("rect", { x: L, y: y(233), width: pw, height: y(170) - y(233), fill: c("--rouge"), "fill-opacity": .10 });
+  el("rect", { x: L, y: y(92), width: pw, height: y(74) - y(92), fill: c("--amber"), "fill-opacity": .16 });
+  var step = pw / data.length, bw = step * 0.62;
+  data.forEach(function (d, i) {
+    var v = d[1], x = L + step * i + (step - bw) / 2;
+    var col = v >= 170 ? c("--rouge") : v >= 74 ? c("--amber") : c("--dim");
+    el("rect", { class: "bar", x: x, y: y(v), width: bw, height: y(0) - y(v), fill: col, rx: 2 });
+    el("text", { x: x + bw / 2, y: y(v) - 5, "text-anchor": "middle", class: "lbl" }, v);
+    el("text", { x: x + bw / 2, y: H - B + 18, "text-anchor": "middle" }, d[0]);
+  });
+  el("text", { x: L + 2, y: H - 8 }, "2025");
+  el("text", { x: L + step * 3 + 2, y: H - 8 }, "2026");
+  el("text", { x: L, y: 11 }, "млн IDR в месяц");
+})();
+</script>
+</body>
+</html>
