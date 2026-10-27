@@ -248,7 +248,7 @@
       "note": "только если розыгрыш iPhone сработал"
     }
   ],
-  "commission": 0.35,
+  "commission": 0.45,
   "investment": 2700000000,
   "brandDebt": 335000000,
   "rentExpense": 70833333.33333333,
@@ -311,8 +311,8 @@
       ]
     }
   ],
-  "commissionStatus": "owner_assumption_35_percent",
-  "commissionSource": "Решение управляющего 27.10.2026: средняя доля магазина 35%, допущение с запасом, не фактическая средневзвешенная.",
+  "commissionStatus": "owner_decision_45_percent",
+  "commissionSource": "Решение управляющего 27.10.2026: доля магазина 45% от продаж. Ниже 45% магазин с брендами не работает.",
   "vespaIncluded": true,
   "marketingFloor": 72000000,
   "marketingFloorMonths": 6,
