@@ -11,7 +11,7 @@ const makeItems=(names,bucket,prefix)=>names.map((k,i)=>leaf(prefix+i,k,item(buc
 const team=group('team','Команда и охрана',[...makeItems(G.team,'fixedItems','staff'),...makeItems(G.teamAnnual,'annualItems','thr')]);
 const space=group('space','Помещение и обслуживание',[...makeItems(G.space,'fixedItems','space'),...makeItems(G.spaceAnnual,'annualItems','maint')]);
 const admin=group('admin','Учёт и сервисы',[...makeItems(G.admin,'fixedItems','admin'),...makeItems(G.adminAnnual,'annualItems','report')]);
-const AD_LABEL={0:'Реклама · только таргет 1 000 $ в месяц',50:'Реклама · 8% продаж, не меньше 1 000 $ в месяц',100:'Реклама · 8% продаж, не меньше 1 000 $ в месяц'};
+const AD_LABEL={0:'Реклама · только таргет 1 000 $ в месяц',50:'Реклама · 1 000 $, после цели продаж 8% продаж',100:'Реклама · 1 000 $, после цели продаж 8% продаж'};
 const marketing=group('marketing',AD_LABEL[50],[leaf('target','Таргет в Instagram · 1 000 $ в месяц',r=>r.adTarget),leaf('adRest','Остальной маркетинг, каналы выбираем по ходу',r=>r.adRest)]);
 const sales=group('sales','Комиссии, налоги и расходники',makeItems(G.sales,'variableItems','variable'));
 const costs=group('costs','Расходы на работу',[team,space,admin,marketing,sales]);
@@ -55,7 +55,7 @@ function chart(){const rows=current.rows,n=rows.length,W=660,H=150,L=48,R=14,T=1
  $('chart').innerHTML='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Сколько инвестор получил с начала, по месяцам, относительно вложения '+money(d.investment)+'">'+g+'<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y(d.investment).toFixed(1)+'" y2="'+y(d.investment).toFixed(1)+'" stroke="#b38a4a" stroke-dasharray="5 4"/><text class="gold" x="'+(W-R)+'" y="'+(y(d.investment)+13).toFixed(1)+'" text-anchor="end">вложение '+money(d.investment)+'</text><path d="'+path+'" stroke="#365f49" stroke-width="2.5" fill="none"/>'+mark+'</svg>';}
 function status(){const b=current;let t;
  if(b.unreturned>.5*d.rate)t='Инвестор получает '+money(b.totalPaid)+' из '+money(d.investment)+', в том числе '+money(b.settlement)+' при окончательном расчёте в июле 2030. Не хватает '+money(b.unreturned)+'. Управленческий фонд в этом сценарии не платится.';
- else t='Вложение возвращается в '+monthIn(b.returned)+'. Всего инвестор получает '+money(b.totalPaid)+', из них '+money(b.profitPaid)+' сверх вложения.';
+ else t='Вложение возвращается в '+monthIn(b.returned)+'. Всего инвестор получает '+money(b.totalPaid)+', из них '+money(b.profitPaid)+' сверх вложения'+(b.settlement>.5*d.rate?', в том числе '+money(b.settlement)+' при окончательном расчёте в июле 2030':'')+'.';
  t+=' За 2027 год выплаты '+money(b.paid2027)+'. Самый низкий свободный остаток '+money(b.minimumFree)+', из него резерв '+money(d.minimumCash)+'.';
  if(b.extraFunding>0)t+=' Не хватает денег на работу: '+money(b.extraFunding)+'.';$('status').textContent=t;}
 function render(){current=S[pos];marketing.label=AD_LABEL[pos];funnel.children.find(x=>x.id==='vAds').label='От рекламы · каждая 1 000 $ даёт +'+d.visitorsPer1000[KEY[pos]]+' человека в день';$('cards').innerHTML=cardsHtml();document.querySelectorAll('.sc').forEach(b=>b.onclick=()=>{pos=+b.dataset.pos;render();});
