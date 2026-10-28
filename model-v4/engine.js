@@ -1,7 +1,7 @@
 (function(root){'use strict';
 // Финансовая модель Maison Sauvage, версия 4 (28.10.2026). Три сценария: 0 пессимистичный, 50 реалистичный, 100 оптимистичный.
 // Отличия от v3: доля рекламы и часть команды по сценарию, посетители в день с разбивкой (прошлая зима, реклама, другие действия),
-// комиссия магазина по датам, НДС с доли магазина с месяца после того, как оборот за год превысил порог.
+// комиссия магазина по датам.
 function simulate(d,position){
  const p=[0,50,100].includes(+position)?+position:50,k=p===0?'pes':p===50?'std':'opt',c=d.costs,check=d.checks[k],rpv=d.conversion*check;
  const sum=o=>Object.values(o).reduce((a,b)=>a+b,0);
@@ -9,19 +9,16 @@ function simulate(d,position){
  const yearRevenue={};d.months.forEach((m,i)=>{const y=m.slice(0,4);yearRevenue[y]=(yearRevenue[y]||0)+revenueOf(m,i);});
  const rentSchedule=c.rent.filter(x=>x[0].slice(0,7)>=d.months[0]);
  let rentRemaining=rentSchedule.reduce((s,x)=>s+x[1],0),cash=0,carry=0,capital=d.investment,entitled=0,owedCap=0,owedProfit=0;
- let cumPaid=0,returned=null,pendCap=0,pendProfit=0,minFree=Infinity,taxYear='',ytdBase=0,ytdTax=0,ytdRev=0,vatPayer=false,vatNext=false;
+ let cumPaid=0,returned=null,pendCap=0,pendProfit=0,minFree=Infinity,taxYear='',ytdBase=0,ytdTax=0;
  const rows=d.months.map((month,i)=>{
   const mo=+month.slice(5),year=month.slice(0,4),revenue=revenueOf(month,i),commission=d.commissionFrom.filter(x=>month>=x.from).at(-1).value,store=revenue*commission;
   const profitRegime=yearRevenue[year]>c.tax.threshold;
-  if(year!==taxYear){taxYear=year;ytdBase=0;ytdTax=0;ytdRev=0;}
-  // НДС: оборот за год превысил порог, со следующего месяца магазин плательщик НДС и остаётся им дальше
-  if(vatNext)vatPayer=true;ytdRev+=revenue;if(ytdRev>c.tax.threshold)vatNext=true;
+  if(year!==taxYear){taxYear=year;ytdBase=0;ytdTax=0;}
   const fixedItems={...c.monthly};
   for(const[name,v]of Object.entries(c.monthlyFrom)){if(v.only&&!v.only.includes(k))continue;if(v.from==='после_возврата'?returned!==null:month>=v.from)fixedItems[name]=v.idr;}
   const annualItems={};for(const x of c.annual)if(x.months.includes(mo)&&(!x.from||month>=x.from))annualItems[x.name]=x.idr/x.months.length;
   const variableItems={};for(const[name,v]of Object.entries(c.share))variableItems[name]=(name===c.adsName?d.adShare[k]:v)*revenue;
   if(profitRegime)variableItems[c.tax.turnoverName]=0;
-  variableItems[c.vat.name]=vatPayer?c.vat.inPrice*store:0; // НДС в цене, доли магазина и бренда считаются от цены без НДС
   variableItems[c.bagsName]=revenue/check*c.bagPerCheck;
   const adShare=variableItems[c.adsName],adTarget=d.targetMonthly,ads=Math.max(adShare,adTarget);variableItems[c.adsName]=ads; // доля продаж по сценарию, но не меньше таргета; таргет внутри
   const oneOffItems={};for(const x of d.oneOff)if(x.month===month&&p>=(x.minPosition||0))oneOffItems[x.what]=x.idr;
@@ -48,7 +45,7 @@ function simulate(d,position){
   const pend=Math.min(owedCap+owedProfit,Math.max(0,cash-rentRemaining-d.minimumCash));
   pendCap=Math.min(owedCap,pend);pendProfit=pend-pendCap;owedCap-=pendCap;owedProfit-=pendProfit;
   const freeCash=cash-rentRemaining-pend;minFree=Math.min(minFree,freeCash);
-  return {month,revenue,commission,vatPayer,store,brands:revenue-store,fixed,annual,variable,ads,adTarget,adRest:ads-adTarget,operating,purchases,flow,profitTax,profitRegime,rent,debt,investment,
+  return {month,revenue,commission,store,brands:revenue-store,fixed,annual,variable,ads,adTarget,adRest:ads-adTarget,operating,purchases,flow,profitTax,profitRegime,rent,debt,investment,
    paid,principalPaid,profitPaid:paid-principalPaid,cumPaid,capital,allocated:pend,owed:owedCap+owedProfit,cash,freeCash,rentRemaining,reserve:d.minimumCash,
    days,visitors,adVisitors,baseVisitors,otherVisitors,fixedItems,annualItems,variableItems,oneOffItems,check};
  });
