@@ -10,10 +10,10 @@ const makeItems=(names,bucket,prefix)=>names.map((k,i)=>leaf(prefix+i,k,item(buc
 const team=group('team','Команда и охрана',[...makeItems(fixedNames.filter(k=>people.includes(k)),'fixedItems','staff'),...makeItems(annualNames.filter(k=>k.includes('зарплата')),'annualItems','thr')]);
 const space=group('space','Помещение и обслуживание',[...makeItems(fixedNames.filter(k=>premises.includes(k)),'fixedItems','space'),...makeItems(annualNames.filter(k=>!k.includes('зарплата')&&!k.includes('отчётность')),'annualItems','maint')]);
 const admin=group('admin','Учёт и сервисы',[...makeItems(fixedNames.filter(k=>!people.includes(k)&&!premises.includes(k)),'fixedItems','admin'),...makeItems(annualNames.filter(k=>k.includes('отчётность')),'annualItems','report')]);
-const marketing=group('marketing','Маркетинг · общий бюджет',[leaf('outdoor','Наружная реклама · бюджет',r=>r.ads*20/72),leaf('digital','Цифровая реклама · бюджет',r=>r.ads*40/72),leaf('creative','Креативы и тесты · бюджет',r=>r.ads*12/72)]);
+const marketing=group('marketing','Маркетинг · общий бюджет',[leaf('digital','Цифровая реклама · бюджет',r=>r.ads*40/52),leaf('creative','Креативы и тесты · бюджет',r=>r.ads*12/52)]);
 const sales=group('sales','Комиссии, налоги и расходники',makeItems([...Object.keys(d.costs['от_выручки']).filter(k=>k!=='Реклама'),'Пакеты'],'variableItems','variable'));
 const costs=group('costs','Расходы на работу',[team,space,admin,marketing,sales]);
-const purchases=group('purchases','Покупки и запуск',[...d.oneOff.map((x,i)=>leaf('purchase'+i,x.what,item('oneOffItems',x.what))),leaf('setup','Наружка: подготовка · оценка',item('oneOffItems','Наружная реклама: подготовка, бюджетная оценка'))]);
+const purchases=group('purchases','Покупки и запуск',[...d.oneOff.map((x,i)=>leaf('purchase'+i,x.what,item('oneOffItems',x.what)))]);
 const investor=group('investor','Выплаты инвестору',[leaf('principalPaid','Из них возврат капитала',r=>r.principalPaid),leaf('profitPaid','Из них доход сверх капитала',r=>r.profitPaid)],'investor');
 const days=r=>new Date(+r.month.slice(0,4),+r.month.slice(5),0).getDate(),live=rs=>rs.filter(r=>r.revenue>0),buys=rs=>sum(live(rs),r=>r.revenue/r.check);
 const one=v=>v.toLocaleString('ru-RU',{minimumFractionDigits:1,maximumFractionDigits:1}),whole=v=>Math.round(v).toLocaleString('ru-RU'),pct=v=>Math.round(v*100)+'%';

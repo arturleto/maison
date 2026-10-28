@@ -314,8 +314,8 @@
   "commissionStatus": "owner_decision_45_percent",
   "commissionSource": "Решение управляющего 27.10.2026: доля магазина 45% от продаж. Ниже 45% магазин с брендами не работает.",
   "vespaIncluded": true,
-  "marketingFloor": 72000000,
+  "marketingFloor": 52000000,
   "marketingFloorMonths": 6,
-  "marketingSetup": 36000000,
+  "marketingSetup": 0,
   "minimumCash": 402088200.0
 }
