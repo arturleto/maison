@@ -22,7 +22,7 @@ const one=v=>v.toLocaleString('ru-RU',{minimumFractionDigits:1,maximumFractionDi
 const perDay=(rs,f)=>{const l=live(rs),n=sum(l,r=>r.days);return n?sum(l,r=>f(r)*r.days)/n:0;};
 const funnel={id:'funnel',label:'Посетителей в день · прошлой зимой 8,8, в октябре 2026 3,8',agg:rs=>perDay(rs,r=>r.visitors),show:one,cls:'funnel',children:[
  {id:'vBase',label:'Как прошлой зимой, с учётом сезона',agg:rs=>perDay(rs,r=>r.baseVisitors),show:one},
- {id:'vAds',label:'От рекламы · каждая 1 000 $ даёт +1 человека в день',agg:rs=>perDay(rs,r=>r.adVisitors),show:one},
+ {id:'vAds',label:'',agg:rs=>perDay(rs,r=>r.adVisitors),show:one},
  {id:'vOther',label:'От других действий · SMM, стилист, партнёры, розыгрыши, входная группа',agg:rs=>perDay(rs,r=>r.otherVisitors),show:one},
  {id:'conversion',label:'Из них покупают',agg:rs=>live(rs).length?d.conversion:0,show:v=>one(v*100)+'%'},
  {id:'purchases',label:'Покупок за период',agg:buys,show:whole},
@@ -58,7 +58,7 @@ function status(){const b=current;let t;
  else t='Вложение возвращается в '+monthIn(b.returned)+'. Всего инвестор получает '+money(b.totalPaid)+', из них '+money(b.profitPaid)+' сверх вложения.';
  t+=' За 2027 год выплаты '+money(b.paid2027)+'. Самый низкий свободный остаток '+money(b.minimumFree)+', из него резерв '+money(d.minimumCash)+'.';
  if(b.extraFunding>0)t+=' Не хватает денег на работу: '+money(b.extraFunding)+'.';$('status').textContent=t;}
-function render(){current=S[pos];marketing.label=AD_LABEL[pos];$('cards').innerHTML=cardsHtml();document.querySelectorAll('.sc').forEach(b=>b.onclick=()=>{pos=+b.dataset.pos;render();});
+function render(){current=S[pos];marketing.label=AD_LABEL[pos];funnel.children.find(x=>x.id==='vAds').label='От рекламы · каждая 1 000 $ даёт +'+d.visitorsPer1000[KEY[pos]]+' человека в день';$('cards').innerHTML=cardsHtml();document.querySelectorAll('.sc').forEach(b=>b.onclick=()=>{pos=+b.dataset.pos;render();});
  $('tableHelp').textContent='Таблица сценария «'+NAMES[pos]+'». Суммы в $, кроме строк о посетителях. Нажмите на год, чтобы увидеть месяцы, и на строку с «+», чтобы увидеть состав.';
  status();chart();renderTable();}
 $('years').onclick=()=>{openYears.clear();renderTable();};$('months').onclick=()=>{['2026','2027','2028','2029','2030'].forEach(y=>openYears.add(y));renderTable();};$('expand').onclick=()=>{allGroups().forEach(k=>opened.add(k));renderTable();};$('collapse').onclick=()=>{opened.clear();openYears.clear();renderTable();};

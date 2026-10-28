@@ -29,7 +29,7 @@ function simulate(d,position){
   const variable=sum(variableItems),operating=store-fixed-annual-variable,flow=operating-purchases;
   const rent=rentSchedule.filter(x=>x[0].slice(0,7)===month).reduce((s,x)=>s+x[1],0),debt=i===0?d.brandDebt:0,investment=i===0?d.investment:0;
   // посетители в день: из продаж через долю купивших и чек; реклама даёт visitorsPer1000 человек на каждую 1 000 $, остальное от прошлой зимы и других действий
-  const days=new Date(+year,mo,0).getDate(),visitors=revenue/(days*rpv),adVisitors=ads/d.rate/1000*d.visitorsPer1000;
+  const days=new Date(+year,mo,0).getDate(),visitors=revenue/(days*rpv),adVisitors=ads/d.rate/1000*d.visitorsPer1000[k];
   const baseVisitors=Math.min(Math.max(0,visitors-adVisitors),d.baseVisitors[i]),otherVisitors=Math.max(0,visitors-baseVisitors-adVisitors);
   // выплата, начисленная в прошлом месяце
   const principalPaid=pendCap,paid=pendCap+pendProfit;capital-=principalPaid;cumPaid+=paid;if(capital<.01&&returned===null)returned=month;
