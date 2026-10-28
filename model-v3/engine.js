@@ -18,7 +18,7 @@ function simulate(d,position){
   const variableItems={};for(const[name,v]of Object.entries(c.share))variableItems[name]=v*revenue;
   if(profitRegime)variableItems[c.tax.turnoverName]=0;
   variableItems[c.bagsName]=revenue/check*c.bagPerCheck;
-  const adBase=variableItems[c.adsName],ads=Math.max(adBase,i<d.marketingFloorMonths?d.marketingFloor:0);variableItems[c.adsName]=ads;
+  const adShare=variableItems[c.adsName],adTarget=d.targetMonthly,ads=adShare+adTarget;variableItems[c.adsName]=ads; // таргет в Instagram каждый месяц плюс 8% продаж
   const oneOffItems={};for(const x of d.oneOff)if(x.month===month&&p>=(x.minPosition||0))oneOffItems[x.what]=x.idr;
   const purchases=sum(oneOffItems),fixed=sum(fixedItems),annual=sum(annualItems);
   // налог на прибыль: 22% с результата с начала года (доход минус все расходы и покупки), только в годы с оборотом выше порога
@@ -40,7 +40,7 @@ function simulate(d,position){
   const pend=Math.min(owedCap+owedProfit,Math.max(0,cash-rentRemaining-d.minimumCash));
   pendCap=Math.min(owedCap,pend);pendProfit=pend-pendCap;owedCap-=pendCap;owedProfit-=pendProfit;
   const freeCash=cash-rentRemaining-pend;minFree=Math.min(minFree,freeCash);
-  return {month,revenue,store,brands:revenue-store,fixed,annual,variable,ads,adBase,operating,purchases,flow,profitTax,profitRegime,rent,debt,investment,
+  return {month,revenue,store,brands:revenue-store,fixed,annual,variable,ads,adShare,adTarget,operating,purchases,flow,profitTax,profitRegime,rent,debt,investment,
    paid,principalPaid,profitPaid:paid-principalPaid,cumPaid,capital,allocated:pend,owed:owedCap+owedProfit,cash,freeCash,rentRemaining,reserve:d.minimumCash,
    fixedItems,annualItems,variableItems,oneOffItems,check};
  });

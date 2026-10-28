@@ -126,8 +126,7 @@
  "investment": 2700000000,
  "brandDebt": 335000000,
  "minimumCash": 402088200.0,
- "marketingFloor": 52000000,
- "marketingFloorMonths": 6,
+ "targetMonthly": 18000000,
  "shareBefore": 0.8,
  "shareAfter": 0.15,
  "costs": {
