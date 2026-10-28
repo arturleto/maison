@@ -23,9 +23,10 @@ function simulate(d,position){
   const adShare=variableItems[c.adsName],adTarget=d.targetMonthly,ads=Math.max(adShare,adTarget);variableItems[c.adsName]=ads; // доля продаж по сценарию, но не меньше таргета; таргет внутри
   const oneOffItems={};for(const x of d.oneOff)if(x.month===month&&p>=(x.minPosition||0))oneOffItems[x.what]=x.idr;
   const purchases=sum(oneOffItems),fixed=sum(fixedItems),annual=sum(annualItems);
-  // налог на прибыль: 22% с результата с начала года (доход минус все расходы и покупки), только в годы с оборотом выше порога
+  // налог на прибыль: 22% минус льгота 31E с результата с начала года (доход минус все расходы и покупки), только в годы с оборотом выше порога
   const base=store-fixed-annual-sum(variableItems)-purchases;let profitTax=0;
-  if(profitRegime){ytdBase+=base;const due=c.tax.profitRate*Math.max(0,ytdBase);profitTax=due-ytdTax;ytdTax=due;}
+  if(profitRegime){ytdBase+=base;const rate=yearRevenue[year]<=c.tax.reliefUpTo?c.tax.profitRate-c.tax.relief*c.tax.threshold/yearRevenue[year]:c.tax.profitRate; // льгота 31E до 50 млрд оборота
+   const due=rate*Math.max(0,ytdBase);profitTax=due-ytdTax;ytdTax=due;}
   variableItems[c.tax.profitName]=profitTax;
   const variable=sum(variableItems),operating=store-fixed-annual-variable,flow=operating-purchases;
   const rent=rentSchedule.filter(x=>x[0].slice(0,7)===month).reduce((s,x)=>s+x[1],0),debt=i===0?d.brandDebt:0,investment=i===0?d.investment:0;
