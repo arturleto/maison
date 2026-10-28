@@ -23,11 +23,11 @@ const perDay=(rs,f)=>{const l=live(rs),n=sum(l,r=>r.days);return n?sum(l,r=>f(r)
 const funnel={id:'funnel',label:'Посетителей в день · прошлой зимой 8,8, в октябре 2026 3,8',agg:rs=>perDay(rs,r=>r.visitors),show:one,cls:'funnel',children:[
  {id:'vBase',label:'Как прошлой зимой, с учётом сезона',agg:rs=>perDay(rs,r=>r.baseVisitors),show:one},
  {id:'vAds',label:'',agg:rs=>perDay(rs,r=>r.adVisitors),show:one},
- {id:'vOther',label:'От других действий · SMM, стилист, партнёры, розыгрыши, входная группа',agg:rs=>perDay(rs,r=>r.otherVisitors),show:one},
+ {id:'vOther',label:'От других действий · улица, рассылка по базе, блогеры, конкурсы, заведения, мастер-классы',agg:rs=>perDay(rs,r=>r.otherVisitors),show:one},
  {id:'conversion',label:'Из них покупают',agg:rs=>live(rs).length?d.conversion:0,show:v=>one(v*100)+'%'},
  {id:'purchases',label:'Покупок за период',agg:buys,show:whole},
  {id:'avgCheck',label:'Средний чек, $',agg:rs=>{const b=buys(rs);return b?sum(live(rs),r=>r.revenue)/b:0;},show:fmt}]};
-const tree=[funnel,leaf('revenue','Продажи магазина',r=>r.revenue),leaf('brands','Брендам · '+pct(1-d.commission),r=>r.brands),{...leaf('store','Комиссия магазина · '+pct(d.commission),r=>r.store),cls:'key'},costs,purchases,
+const tree=[funnel,leaf('revenue','Продажи магазина',r=>r.revenue),leaf('brands','Брендам · 55%, с 2028 года 50%',r=>r.brands),{...leaf('store','Комиссия магазина · 45%, с 2028 года 50%',r=>r.store),cls:'key'},costs,purchases,
  {...leaf('flow','Результат до аренды · аренда оплачена вперёд',r=>r.flow),cls:'key'},leaf('investment','Вложение инвестора',r=>r.investment),
  group('old','Аренда по графику и старый долг брендам',[leaf('rent','Аренда, последний платёж 01.04.2027',r=>r.rent),leaf('debt','Долг брендам, гасим в первый месяц',r=>r.debt)]),
  investor,leaf('owed','Начислено инвестору, ждёт выплаты',r=>r.owed,'stock'),leaf('cumPaid','Инвестор получил с начала',r=>r.cumPaid,'stock'),leaf('capital','Осталось вернуть инвестору',r=>r.capital,'stock'),
