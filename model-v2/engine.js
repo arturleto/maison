@@ -7,7 +7,7 @@ function simulate(d,position){
  const rows=d.months.map((month,i)=>{
   const mo=+month.slice(5),year=+month.slice(0,4),ramp=k=>d.ramps[k][Math.min(i,d.ramps[k].length-1)];
   const revenue=mix(ramp(keys[a]),ramp(keys[b]))*d.seasonality[mo-1],store=revenue*d.commission;
-  const fixedItems={...c['в_месяц_IDR']};for(const[k,v]of Object.entries(c['в_месяц_IDR_с_даты']))if(month>=v['с'])fixedItems[k]=v.IDR;
+  const fixedItems={...c['в_месяц_IDR']};for(const[k,v]of Object.entries(c['в_месяц_IDR_с_даты']))if(v['с']==='после_возврата'?returned!==null:month>=v['с'])fixedItems[k]=v.IDR;
   const annualItems={};for(const x of d.annualSchedule)if(x.months.includes(mo))annualItems[x.name]=x.amount/x.months.length;
   const variableItems=Object.fromEntries(Object.entries(c['от_выручки']).map(([k,v])=>[k,v*revenue]));
   variableItems['Пакеты']=revenue/check*c['пакет_IDR_на_чек'];

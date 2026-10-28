@@ -4,7 +4,7 @@ const opened=new Set(['investor','funnel']),openYears=new Set();let current,colu
 const sum=(xs,f)=>xs.reduce((s,x)=>s+f(x),0),leaf=(id,label,fn,kind='flow')=>({id,label,fn,kind}),group=(id,label,children,cls='')=>({id,label,children,fn:r=>sum(children,x=>x.fn(r)),kind:'flow',cls});
 const item=(bucket,key)=>r=>(r[bucket]||{})[key]||0;
 const fixedNames=Object.keys({...d.costs['в_месяц_IDR'],...d.costs['в_месяц_IDR_с_даты']}),annualNames=Object.keys(d.costs['в_год_IDR']);
-const people=['Три продавца','Налог на сотрудника и страховка BPJS','Управленческий ФОТ','Охрана','SMM','Стилист','Менеджер по партнёрам'];
+const people=['Три продавца','Налог на сотрудника и страховка BPJS','Управленческий фонд, после возврата капитала','Охрана','SMM','Стилист','Менеджер по партнёрам'];
 const premises=['Свет по счётчику','Интернет','Разное'];
 const makeItems=(names,bucket,prefix)=>names.map((k,i)=>leaf(prefix+i,k,item(bucket,k)));
 const team=group('team','Команда и охрана',[...makeItems(fixedNames.filter(k=>people.includes(k)),'fixedItems','staff'),...makeItems(annualNames.filter(k=>k.includes('зарплата')),'annualItems','thr')]);
