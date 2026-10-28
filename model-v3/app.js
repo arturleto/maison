@@ -11,7 +11,7 @@ const makeItems=(names,bucket,prefix)=>names.map((k,i)=>leaf(prefix+i,k,item(buc
 const team=group('team','Команда и охрана',[...makeItems(G.team,'fixedItems','staff'),...makeItems(G.teamAnnual,'annualItems','thr')]);
 const space=group('space','Помещение и обслуживание',[...makeItems(G.space,'fixedItems','space'),...makeItems(G.spaceAnnual,'annualItems','maint')]);
 const admin=group('admin','Учёт и сервисы',[...makeItems(G.admin,'fixedItems','admin'),...makeItems(G.adminAnnual,'annualItems','report')]);
-const marketing=group('marketing','Реклама и маркетинг',[leaf('target','Таргет в Instagram · 1 000 $ в месяц',r=>r.adTarget),leaf('adShare','Маркетинг · 8% продаж, каналы выбираем по ходу',r=>r.adShare)]);
+const marketing=group('marketing','Реклама · 8% продаж, не меньше 1 000 $ в месяц',[leaf('target','Таргет в Instagram · 1 000 $ в месяц',r=>r.adTarget),leaf('adRest','Остальной маркетинг, каналы выбираем по ходу',r=>r.adRest)]);
 const sales=group('sales','Комиссии, налоги и расходники',makeItems(G.sales,'variableItems','variable'));
 const costs=group('costs','Расходы на работу',[team,space,admin,marketing,sales]);
 const purchases=group('purchases','Покупки и розыгрыши',d.oneOff.map((x,i)=>leaf('purchase'+i,x.what,item('oneOffItems',x.what))));
