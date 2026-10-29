@@ -28,3 +28,5 @@ button.ghost{width:100%;padding:10px 12px;font-size:12px;cursor:pointer;backgrou
 @media(max-width:1000px){.cards{grid-template-columns:1fr 1fr}}@media(max-width:760px){.hundred{grid-template-columns:1fr}}@media(max-width:520px){.cards{grid-template-columns:1fr}}
 
 .planb.channels{min-width:620px}.planb.stages{min-width:820px}.planb.levers{min-width:540px}.planb.compare{min-width:720px}.people .planb-wrap{margin:8px 0 6px}
+
+.notes-title{font:400 30px/1.2 Georgia,serif;margin:14px 0 4px}.notes{padding-top:18px}.method-link{display:inline-block;padding:9px 14px;border:1px solid var(--line);font-size:12px;text-decoration:none;color:var(--ink);background:#fff}
