@@ -28,6 +28,17 @@
 .night .go .go-s, .wine .go .go-s { color:#5a524a; }
 .split .c { background: var(--amber, #c8963e); }
 @media (max-width: 600px) { .go { grid-template-columns: 1fr; grid-template-areas: "t" "s"; } .go .go-a { display:none; } }
+/* кнопки: объём, косой блик раз в несколько секунд, стрелка слегка двигается, при наведении поднимается */
+.go, .btn { position: relative; overflow: hidden; box-shadow: 0 10px 26px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.08); transition: transform .22s ease, box-shadow .22s ease; }
+.go:hover, .btn:hover { transform: translateY(-3px); box-shadow: 0 18px 38px rgba(0,0,0,.26), inset 0 1px 0 rgba(255,255,255,.1); }
+.go::after, .btn::after { content: ""; position: absolute; top: -60%; left: -45%; width: 28%; height: 220%; transform: skewX(-22deg); pointer-events: none;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.28) 50%, rgba(255,255,255,0) 100%); animation: shine 5.5s ease-in-out infinite; }
+.go.light::after, .btn::after { background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.75) 50%, rgba(255,255,255,0) 100%); }
+.btn::after { animation-delay: 1.2s; }
+.go .go-a { animation: nudge 2.6s ease-in-out infinite; }
+@keyframes shine { 0% { left: -45%; } 22% { left: 125%; } 100% { left: 125%; } }
+@keyframes nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(9px); } }
+@media (prefers-reduced-motion: reduce) { .go::after, .btn::after, .go .go-a { animation: none; } }
 .ch-wrap { position: relative; }
 .ch-wrap svg { touch-action: pan-y; cursor: crosshair; }
 .chart .hv-l { stroke: #1f1a16; stroke-width: 1; stroke-dasharray: 3 3; }

@@ -30,3 +30,11 @@ button.ghost{width:100%;padding:10px 12px;font-size:12px;cursor:pointer;backgrou
 .planb.channels{min-width:620px}.planb.stages{min-width:820px}.planb.levers{min-width:540px}.planb.compare{min-width:720px}.people .planb-wrap{margin:8px 0 6px}
 
 .notes-title{font:400 30px/1.2 Georgia,serif;margin:14px 0 4px}.notes{padding-top:18px}.method-link{display:inline-block;padding:9px 14px;border:1px solid var(--line);font-size:12px;text-decoration:none;color:var(--ink);background:#fff}
+/* кнопки зовут нажать: объём, косой блик, подъём при наведении (29.10.2026) */
+.method-link,button.ghost,.sc{position:relative;overflow:hidden;transition:transform .22s ease,box-shadow .22s ease}
+.method-link,button.ghost{box-shadow:0 8px 20px rgba(0,0,0,.14)}.method-link:hover,button.ghost:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(0,0,0,.22)}
+.method-link::after,button.ghost::after{content:"";position:absolute;top:-60%;left:-45%;width:30%;height:220%;transform:skewX(-22deg);pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.5) 50%,rgba(255,255,255,0) 100%);animation:shine 5.5s ease-in-out infinite}
+button.ghost::after{animation-delay:1.5s}
+.sc:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.12)}
+@keyframes shine{0%{left:-45%}22%{left:125%}100%{left:125%}}
+@media (prefers-reduced-motion:reduce){.method-link::after,button.ghost::after{animation:none}}

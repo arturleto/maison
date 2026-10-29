@@ -168,3 +168,11 @@ table.kpi-table { min-width: 520px; }
   .kpis { grid-template-columns: 1fr 1fr; }
   .kpi .val { font-size: 17px; }
 }
+
+/* карточки работ: объём, подъём при наведении, косой блик по картинке (29.10.2026, просьба владельца: все кнопки сайта должны звать нажать) */
+.card { position: relative; transition: transform .22s ease, box-shadow .22s ease; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(0,0,0,.18); }
+.card::after { content: ""; position: absolute; top: -60%; left: -45%; width: 26%; height: 220%; transform: skewX(-22deg); pointer-events: none; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.45) 50%, rgba(255,255,255,0) 100%); animation: shine 7s ease-in-out infinite; }
+.card:nth-child(2n)::after { animation-delay: 2.3s; } .card:nth-child(3n)::after { animation-delay: 4.1s; }
+@keyframes shine { 0% { left: -45%; } 18% { left: 125%; } 100% { left: 125%; } }
+@media (prefers-reduced-motion: reduce) { .card::after { animation: none; } }
