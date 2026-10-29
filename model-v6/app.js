@@ -3,7 +3,7 @@ const d=window.MODEL_INPUTS,$=id=>document.getElementById(id),fmt=n=>Math.round(
 const MON=['январь','февраль','март','апрель','май','июнь','июль','август','сентябрь','октябрь','ноябрь','декабрь'],MON_IN=['январе','феврале','марте','апреле','мае','июне','июле','августе','сентябре','октябре','ноябре','декабре'];
 const MON_G=['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
 const monthIn=m=>MON_IN[+m.slice(5)-1]+' '+m.slice(0,4),monthG=m=>MON_G[+m.slice(5)-1]+' '+m.slice(0,4),short=m=>MON[+m.slice(5)-1].slice(0,3);
-const POS=[0,50,100,150],NAMES={0:'Пессимистичный',50:'Реалистичный',100:'Оптимистичный',150:'Сверх плана'},KEY={0:'pes',50:'std',100:'opt',150:'max'};
+const POS=[0,50,100,150],NAMES={0:'Пессимистичный',50:'Реалистичный',100:'Оптимистичный',150:'Сверхрезультат'},KEY={0:'pes',50:'std',100:'opt',150:'max'};
 const people=n=>{const r=Math.round(n),m=r%10,h=r%100;return r+' '+((h>=11&&h<=14)?'человек':m===1?'человек':(m>=2&&m<=4)?'человека':'человек')+' в день';};
 const S=Object.fromEntries(POS.map(p=>[p,simulateMaison(d,p)]));
 const opened=new Set(['investor','funnel']),openYears=new Set();let current,columns,pos=50;
