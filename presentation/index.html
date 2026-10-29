@@ -39,6 +39,18 @@
 @keyframes shine { 0% { left: -45%; } 22% { left: 125%; } 100% { left: 125%; } }
 @keyframes nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(9px); } }
 @media (prefers-reduced-motion: reduce) { .go::after, .btn::after, .go .go-a { animation: none; } }
+.eyebrow-s { margin: 0 0 10px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #8a2a32; font-weight: 700; }
+.pairs.three { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2.5vw, 32px); }
+.pairs.three .pair { padding: 18px 20px; background: #fff; border: 1px solid #e3ddd3; border-radius: 6px; }
+.pairs.three .pair .s { margin-top: 6px; font-size: 12px; color: #7a726a; }
+.goal { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 22px; align-items: center; margin-top: clamp(22px, 3vw, 32px); padding: 20px 24px; background: #1f1a16; color: #f6efe6; border-radius: 6px; }
+.goal-n { font-family: "Prata", Georgia, serif; font-size: clamp(40px, 5vw, 64px); line-height: 1; color: #d8a45a; white-space: nowrap; }
+.goal-t { font-size: 15px; line-height: 1.5; color: rgba(246,239,230,.82); max-width: 70ch; } .goal-t b { color: #fff; display: block; font-size: 17px; margin-bottom: 4px; }
+.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 14px; }
+.tiles div { padding: 16px 16px 14px; background: #fff; border: 1px solid #e3ddd3; border-radius: 6px; font-family: "Prata", Georgia, serif; font-size: 19px; line-height: 1.2; }
+.tiles small { display: block; margin-top: 6px; font-family: "Manrope", system-ui, sans-serif; font-size: 12.5px; line-height: 1.4; color: #7a726a; }
+@media (max-width: 820px) { .pairs.three, .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .tiles { grid-template-columns: 1fr; } .goal { grid-template-columns: 1fr; } }
 .ch-wrap { position: relative; }
 .ch-wrap svg { touch-action: pan-y; cursor: crosshair; }
 .chart .hv-l { stroke: #1f1a16; stroke-width: 1; stroke-dasharray: 3 3; }
@@ -553,33 +565,33 @@
   <div class="pno">27 / 32</div>
 </section>
 
-<section class="page wine" id="s28" data-toc="Первым делом: товар">
+<section class="page " id="s28" data-toc="Первым делом: товар">
   <div class="inner">
+    <p class="eyebrow-s">Шаг 1 после сделки</p>
     <h2>Первым делом наполняем магазин товаром</h2>
-    <p class="lede">Как только инвестор зашёл и аренда закрыта, первый месяц работаем на одно: полки. Товар это главный рычаг прибыли. Когда его много, чаще покупают, выше чек и больше людей заходит. Цель: в 2-3 раза больше вещей, чем было в декабре 2025 и январе 2026.</p>
-    <div class="figs">
-      <div class="fig"><div class="n amber">41 → 14</div><div class="t">брендов в продаже: декабрь 2025 против октября 2026</div></div>
-      <div class="fig"><div class="n amber">288 → 46</div><div class="t">вещей продано за месяц</div></div>
-      <div class="fig"><div class="n amber">24%</div><div class="t">покупают из зашедших, зимой было 48%. «Нет размера» в 19 отчётах октября</div></div>
-      <div class="fig"><div class="n amber">×2-3</div><div class="t">столько товара хотим на полках к старту сезона</div></div>
+    <p class="lede">Товар это главный рычаг прибыли. Когда его много, чаще покупают, выше чек и больше людей заходит. Первый месяц после сделки работаем только на полки.</p>
+    <div class="pairs three">
+      <div class="pair"><div class="t">Брендов в продаже</div><div class="v"><span class="was">41</span><span class="arr">→</span><span class="now">14</span></div><div class="s">декабрь 2025 → октябрь 2026</div></div>
+      <div class="pair"><div class="t">Вещей продано за месяц</div><div class="v"><span class="was">288</span><span class="arr">→</span><span class="now">46</span></div><div class="s">декабрь 2025 → октябрь 2026</div></div>
+      <div class="pair"><div class="t">Покупают из зашедших</div><div class="v"><span class="was">48%</span><span class="arr">→</span><span class="now">24%</span></div><div class="s">«нет размера» в 19 отчётах октября</div></div>
     </div>
-    <div class="grid">
-      <div class="c6">
-        <h3>Не только одежда</h3>
-        <ul class="plain">
-          <li>Одежда: возвращаем бренды, которые уже работали с магазином, и зовём новые. Полный размерный ряд, мужская линия.</li>
-          <li>Предметы интерьера и дизайнерский декор.</li>
-          <li>Парфюмерия и ароматы для дома: духи, свечи.</li>
-          <li>Косметика и уход.</li>
-          <li>Подарки и подарочные наборы.</li>
-          <li>Кожаные аксессуары, сумки, головные уборы, украшения.</li>
-        </ul>
-      </div>
-      <div class="c6">
-        <h3>Как набираем бренды</h3>
-        <p class="muted">Всё на реализации: магазин ничего не покупает, бренд привозит вещи и получает деньги после продажи. Для набора брендов у нас готовая стратегия с кодовым названием «Охота на бренды»: карта из 350 бутиков и 12 маршрутов по Бали, список брендов без своего магазина, визиты, фотосессии для брендов в магазине, вечер в честь каждого нового бренда. По той же схеме приглашаем производителей интерьера, ароматов, косметики и подарков.</p>
-        <p class="muted">Прошлой зимой при 41 бренде магазин продавал на 24 419 $ в месяц. С полками в два-три раза полнее выше и доля купивших, и чек, и число людей, которые заходят за новым.</p>
-      </div>
+    <div class="goal"><div class="goal-n">×2-3</div><div class="goal-t"><b>Столько товара хотим на полках к сезону</b> по сравнению с декабрём 2025 и январём 2026. Всё на реализации: магазин ничего не покупает, бренд привозит вещи и получает деньги после продажи.</div></div>
+    <div class="chart-h">Не только одежда</div>
+    <div class="tiles">
+      <div>Одежда<small>полный размерный ряд, мужская линия</small></div>
+      <div>Интерьер и декор<small>предметы интерьера, дизайнерский декор</small></div>
+      <div>Ароматы для дома<small>духи, свечи, парфюмерия</small></div>
+      <div>Косметика и уход</div>
+      <div>Подарки<small>подарочные наборы</small></div>
+      <div>Кожа и сумки<small>кожаные аксессуары</small></div>
+      <div>Головные уборы</div>
+      <div>Украшения</div>
+    </div>
+    <div class="chart-h">Как набираем бренды</div>
+    <div class="steps">
+      <div class="step"><h3>1. Возвращаем своих</h3><ul><li>Долг брендам закрыт в первый день.</li><li>Бренды прошлой зимы снова привозят коллекции.</li></ul></div>
+      <div class="step"><h3>2. Охота на бренды</h3><ul><li>Карта из 350 бутиков и 12 маршрутов по Бали.</li><li>Список брендов без своего магазина, визиты, фотосессии у нас, вечер в честь каждого нового бренда.</li></ul></div>
+      <div class="step"><h3>3. Новые категории</h3><ul><li>По той же схеме зовём производителей интерьера, ароматов, косметики и подарков.</li><li>Прошлой зимой при 41 бренде магазин продавал на 24 419 $ в месяц.</li></ul></div>
     </div>
     <a class="go " href="../brendy-bali/"><span class="go-t">Охота на бренды: бутики Бали</span><span class="go-s">Карта бутиков и брендов, маршруты, критерии отбора.</span><span class="go-a">→</span></a>
     <a class="go light" href="../brendy-java-lombok/"><span class="go-t">Охота на бренды: Ява и Ломбок</span><span class="go-s">Бренды за пределами Бали, которые можно привезти на реализацию.</span><span class="go-a">→</span></a>
