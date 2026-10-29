@@ -3,7 +3,8 @@ const d=window.MODEL_INPUTS,$=id=>document.getElementById(id),fmt=n=>Math.round(
 const MON=['январь','февраль','март','апрель','май','июнь','июль','август','сентябрь','октябрь','ноябрь','декабрь'],MON_IN=['январе','феврале','марте','апреле','мае','июне','июле','августе','сентябре','октябре','ноябре','декабре'];
 const MON_G=['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
 const monthIn=m=>MON_IN[+m.slice(5)-1]+' '+m.slice(0,4),monthG=m=>MON_G[+m.slice(5)-1]+' '+m.slice(0,4),short=m=>MON[+m.slice(5)-1].slice(0,3);
-const POS=[0,50,100,150],NAMES={0:'Пессимистичный',50:'Реалистичный',100:'Оптимистичный',150:'Если 100 человек в день'},KEY={0:'pes',50:'std',100:'opt',150:'max'};
+const POS=[0,50,100,150],NAMES={0:'Пессимистичный',50:'Реалистичный',100:'Оптимистичный',150:'Сверх плана'},KEY={0:'pes',50:'std',100:'opt',150:'max'};
+const people=n=>{const r=Math.round(n),m=r%10,h=r%100;return r+' '+((h>=11&&h<=14)?'человек':m===1?'человек':(m>=2&&m<=4)?'человека':'человек')+' в день';};
 const S=Object.fromEntries(POS.map(p=>[p,simulateMaison(d,p)]));
 const opened=new Set(['investor','funnel']),openYears=new Set();let current,columns,pos=50;
 const sum=(xs,f)=>xs.reduce((s,x)=>s+f(x),0),leaf=(id,label,fn,kind='flow')=>({id,label,fn,kind}),group=(id,label,children,cls='')=>({id,label,children,fn:r=>sum(children,x=>x.fn(r)),kind:'flow',cls});
@@ -48,7 +49,8 @@ function renderTable(){buildColumns();$('tableHead').innerHTML='<tr><th scope="c
 function cardsHtml(){return POS.map(p=>{const b=S[p],ok=b.unreturned<.5*d.rate;
  const line2=ok?'Вложение возвращается в '+monthIn(b.returned):'Вложение возвращается не полностью';
  const line3=ok?'Сверх вложения '+money(b.profitPaid):'Не хватает '+money(b.unreturned);
- return '<button class="sc'+(p===pos?' active':'')+(p===150?' max':'')+'" data-pos="'+p+'" aria-pressed="'+(p===pos)+'"><span class="sc-name">'+NAMES[p]+(p===150?' <em>гипотеза</em>':'')+'</span><small class="sc-level">'+d.levels[KEY[p]]+'</small><span class="sc-label">Вложил '+money(d.investment)+', получит всего</span><strong>'+money(b.totalPaid)+'</strong><span class="sc-line">'+line2+'</span><span class="sc-line">'+line3+'</span></button>';}).join('');}
+ const y28=b.rows.filter(r=>r.month.startsWith('2028')),v28=y28.reduce((s,r)=>s+r.visitors*r.days,0)/y28.reduce((s,r)=>s+r.days,0);
+ return '<button class="sc'+(p===pos?' active':'')+(p===150?' max':'')+'" data-pos="'+p+'" aria-pressed="'+(p===pos)+'"><span class="sc-name">'+NAMES[p]+' · '+people(v28)+(p===150?' <em>гипотеза</em>':'')+'</span><small class="sc-level">'+d.levels[KEY[p]]+'</small><span class="sc-label">Вложил '+money(d.investment)+', получит всего</span><strong>'+money(b.totalPaid)+'</strong><span class="sc-line">'+line2+'</span><span class="sc-line">'+line3+'</span></button>';}).join('');}
 function chart(){const rows=current.rows,n=rows.length,W=660,H=150,L=48,R=14,T=12,B=26,top=Math.ceil(Math.max(d.investment,current.totalPaid,S[100].totalPaid)/d.rate/50000)*50000*d.rate;
  const x=i=>L+i*(W-L-R)/(n-1),y=v=>T+(H-T-B)*(1-v/top);let g='';
  for(let v=0;v<=top+1;v+=50000*d.rate)g+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y(v).toFixed(1)+'" y2="'+y(v).toFixed(1)+'" stroke="#dce0d4"/><text x="'+(L-6)+'" y="'+(y(v)+3).toFixed(1)+'" text-anchor="end">'+(v/d.rate/1000)+'k $</text>';
