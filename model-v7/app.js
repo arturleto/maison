@@ -15,7 +15,7 @@ const space=group('space','Помещение, события и обслужи�
 const admin=group('admin','Учёт и сервисы',[...makeItems(G.admin,'fixedItems','admin'),...makeItems(G.adminAnnual,'annualItems','report')]);
 const marketing=group('marketing','Реклама · 1 000 $ таргет, со ступени B доля продаж',[leaf('target','Таргет в Instagram · 1 000 $ в месяц',r=>r.adTarget),leaf('adRest','Бюджет ступени: 3%, 5%, 6% продаж сверх таргета',r=>r.adRest)]);
 const sales=group('sales','Комиссии, партнёры, налоги и расходники',makeItems(G.sales,'variableItems','variable'));
-const mgmt=leaf('mgmt','Управленческий фонд · от продаж месяца: оклад 600-750 $ от 25 000 $, 10 000 $ при 100 000 $, выше 22% с каждого доллара сверх',item('variableItems',d.costs.mgmtName));
+const mgmt=leaf('mgmt','Управленческий фонд · от продаж месяца: оклад 600-750 $ от 25 000 $, 10 000 $ при 100 000 $, выше 22% с каждого доллара сверх, потолок 20 000 $',item('variableItems',d.costs.mgmtName));
 const costs=group('costs','Расходы на работу',[team,mgmt,space,admin,marketing,sales]);
 const purchases=group('purchases','Покупки, розыгрыши и запуск ступеней',[...d.oneOff.map((x,i)=>leaf('purchase'+i,x.what,item('oneOffItems',x.what))),...makeItems(G.stageOneOff,'oneOffItems','stageBuy')]);
 const investor=group('investor','Выплаты инвестору',[leaf('principalPaid','Возврат вложения',r=>r.principalPaid),leaf('profitPaid','Доход сверх вложения',r=>r.profitPaid)],'investor');
