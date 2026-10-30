@@ -11,7 +11,7 @@ tbody th{font-weight:400}.key th,.investor th{font-weight:700}.stock th{font-sty
 .sc{display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;white-space:normal;padding:14px 16px;border:1px solid var(--line);border-radius:8px;background:#faf9f4}
 .sc:hover{background:#eef2e8}.sc.active{border:2px solid var(--green);background:#e8eee1;color:var(--ink);padding:13px 15px}
 .sc-name{font-weight:750;font-size:14px}.sc-level{font-size:11px;color:var(--muted);margin-bottom:6px}.sc-label{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
-.sc strong{font:30px/1.2 Georgia,serif}.sc-line{font-size:12.5px}
+.sc strong{font:30px/1.2 Georgia,serif}.sc-line{font-size:12.5px}.sc-extra{font-size:14.5px;font-weight:750;color:var(--green)}
 svg{height:auto}svg .mk{font-weight:700;fill:var(--green)}svg .gold{fill:#8a6a35}
 @media(max-width:760px){.intro{grid-template-columns:1fr;gap:4px}.cards{grid-template-columns:1fr}.sc strong{font-size:26px}}
 

@@ -51,7 +51,7 @@ function renderTable(){buildColumns();$('tableHead').innerHTML='<tr><th scope="c
 }
 function cardsHtml(){return POS.map(p=>{const b=S[p],ok=b.unreturned<.5*d.rate;
  const line2=ok?'Вложение возвращается в '+monthIn(b.returned):'Вложение возвращается не полностью';
- const line3=ok?'Сверх вложения '+money(b.profitPaid*(1-TAX))+taxLabel():'Не хватает '+money(b.unreturned);
+ const line3=ok?'Сверх вложения <b class="sc-extra">'+money(b.profitPaid*(1-TAX))+'</b>'+taxLabel():'Не хватает '+money(b.unreturned);
  const y28=b.rows.filter(r=>r.month.startsWith('2028')),v28=y28.reduce((s,r)=>s+r.visitors*r.days,0)/y28.reduce((s,r)=>s+r.days,0);
  return '<button class="sc'+(p===pos?' active':'')+(p===150?' max':'')+'" data-pos="'+p+'" aria-pressed="'+(p===pos)+'"><span class="sc-name">'+NAMES[p]+' · '+people(v28)+(p===150?' <em>гипотеза</em>':'')+'</span><small class="sc-level">'+d.levels[KEY[p]]+'</small><span class="sc-label">Вложил '+money(d.investment)+', получит всего'+(TAX?' на руки':'')+'</span><strong>'+money(totalNet(b))+'</strong><span class="sc-line">'+line2+'</span><span class="sc-line">'+line3+'</span></button>';}).join('');}
 function chart(){const rows=current.rows,n=rows.length,W=660,H=150,L=48,R=14,T=12,B=26,top=Math.ceil(Math.max(d.investment,current.totalPaid,S[100].totalPaid)/d.rate/50000)*50000*d.rate;
