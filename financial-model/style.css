@@ -23,7 +23,7 @@ svg{height:auto}svg .mk{font-weight:700;fill:var(--green)}svg .gold{fill:#8a6a35
 .cards{grid-template-columns:repeat(4,1fr)}.sc.max{border-style:dashed;background:#f6f3ea}.sc.max.active{border-style:dashed}.sc-name em{font-style:normal;font-size:11px;color:var(--gold);letter-spacing:.06em;text-transform:uppercase;margin-left:6px}
 .people{border-top:1px solid var(--line);padding:4px 0 18px}.people h2{font:22px Georgia,serif;margin:18px 0 10px}.people p{font-size:13px;max-width:110ch;margin:8px 0}.people p.small{font-size:12px;color:var(--muted)}
 .channels td small,.stages td small{display:block;color:var(--muted);font-size:11px}.channels td:first-child{min-width:220px}.planb tr.sum td{font-weight:700;background:#eff1e8}
-.hundred{display:grid;grid-template-columns:1fr 260px;gap:24px;align-items:start}.hundred ul{font-size:13px;padding-left:20px;margin:6px 0}.hundred li{margin:4px 0}
+.hundred{display:grid;grid-template-columns:1fr;gap:24px;align-items:start}.hundred ul{font-size:13px;padding-left:20px;margin:6px 0}.hundred li{margin:4px 0}
 .hundred-side{background:#faf9f4;border:1px solid var(--line);padding:14px;font-size:12px}.hundred-side .small{color:var(--muted);margin:10px 0 0}
 button.ghost{width:100%;padding:10px 12px;font-size:12px;cursor:pointer;background:var(--ink);color:#fff;border:0;white-space:normal;line-height:1.3}
 @media(max-width:1000px){.cards{grid-template-columns:1fr 1fr}}@media(max-width:760px){.hundred{grid-template-columns:1fr}}@media(max-width:520px){.cards{grid-template-columns:1fr}}
