@@ -4,7 +4,7 @@ tbody th{font-weight:400}.key th,.investor th{font-weight:700}.stock th{font-sty
 
 /* версия 3: магазин и условия сверху, карточки сценариев, график со шкалой */
 .intro{display:grid;grid-template-columns:1fr;gap:22px;padding:6px 0 22px;border-top:1px solid var(--line)}
-@media(min-width:900px){.intro .box.terms ul{display:grid;grid-template-columns:1fr 1fr;grid-auto-flow:column;grid-template-rows:repeat(5,auto);gap:10px 40px;max-width:none;align-content:start}.intro .box.terms li{margin:0}}
+.terms-cols{display:grid;grid-template-columns:1fr;gap:7px 40px}.terms-cols ul{max-width:none;align-content:start}@media(min-width:900px){.terms-cols{grid-template-columns:1fr 1fr}}
 .box h2{font:22px Georgia,serif;margin:16px 0 8px}.box ul{margin:0;padding-left:18px;display:grid;gap:7px;font-size:13.5px;max-width:64ch}
 .terms{background:#ede8da;border-left:3px solid var(--gold);padding:2px 18px 16px}.terms a{color:var(--green);font-weight:650}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:16px 0;border-top:1px solid var(--line)}
