@@ -2,6 +2,7 @@
 // Финансовая модель Maison Sauvage, версия 7 (30.10.2026). Четыре расчёта: 0 пессимистичный, 50 реалистичный, 100 оптимистичный, 150 «если 100 человек в день».
 // Отличие от v6: управленческий фонд (управляющий и основатель) считается от продаж месяца во всех расчётах, с первого месяца, без привязки к возврату вложения.
 // Кривая d.mgmt.curve: ниже start (25 000 $) ноль; от start до flatTo (40 000 $) оклад растёт равномерно с startFund (600 $) до flatFund (750 $); дальше flatFund + k × (продажи − flatTo)^power до endFund при end (100 000 $); выше end прибавляется slope с каждого доллара продаж, не больше cap (20 000 $). Параметры подобраны под цели по инвестору: 160 000 / 200 000+ / 250 000 $. Продажи = вся выручка до расчёта с брендами.
+// 13-я зарплата (THR) по закону пропорционально стажу: статья с hired платится как месяцы работы / 12, с 12 месяцев целиком.
 // Остальное как в v6: люди в день по каналам × доля купивших × чек, плюс онлайн и второй этаж; расходы ступенями A→B→C→D; деньги, налоги и защита инвестора как в v5.
 const KEYS={0:'pes',50:'std',100:'opt',150:'max'};
 function mgmtFund(d,revenue){if(!d.mgmt)return 0;const su=revenue/d.rate,c=d.mgmt.curve;if(su<c.start)return 0;
@@ -45,7 +46,7 @@ function simulate(d,position){
   const fixedItems={...c.monthly};
   for(const[name,v]of Object.entries(c.monthlyFrom)){if(v.only&&!v.only.includes(k))continue;if(v.stage&&!stageOn(v.stage))continue;if(v.from==='после_возврата'?returned!==null:!v.from||month>=v.from)fixedItems[name]=v.idr;}
   for(const s of order)if(stageOn(s)&&c.stageCosts[s])for(const[name,v]of Object.entries(c.stageCosts[s].monthly||{}))fixedItems[name]=v;
-  const annualItems={};for(const x of c.annual)if(x.months.includes(mo)&&(!x.from||month>=x.from))annualItems[x.name]=x.idr/x.months.length;
+  const annualItems={};for(const x of c.annual)if(x.months.includes(mo)&&(!x.from||month>=x.from)){let share=1;if(x.hired){const n=(+year*12+mo)-(+x.hired.slice(0,4)*12+ +x.hired.slice(5));share=n<1?0:Math.min(12,n)/12;}if(share>0)annualItems[x.name]=x.idr*share/x.months.length;}
   const variableItems={};for(const[name,v]of Object.entries(c.share))if(name!==c.adsName)variableItems[name]=v*revenue;
   if(profitRegime)variableItems[c.tax.turnoverName]=0;else variableItems[c.tax.turnoverName]=c.share[c.tax.turnoverName]*(revenue+f.floor);
   variableItems[c.bagsName]=f.offline/check*c.bagPerCheck;
