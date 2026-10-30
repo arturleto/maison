@@ -17,7 +17,7 @@ const marketing=group('marketing','Реклама · 1 000 $ таргет, со 
 const sales=group('sales','Комиссии, партнёры, налоги и расходники',makeItems(G.sales,'variableItems','variable'));
 const mgmt=leaf('mgmt','Управленческий фонд · от продаж месяца: оклад 600-750 $ от 25 000 $, 10 000 $ при 100 000 $, выше 22% с каждого доллара сверх, потолок 20 000 $',item('variableItems',d.costs.mgmtName));
 const costs=group('costs','Расходы на работу',[team,mgmt,space,admin,marketing,sales]);
-const purchases=group('purchases','Покупки, розыгрыши и запуск ступеней',[...d.oneOff.map((x,i)=>leaf('purchase'+i,x.what,item('oneOffItems',x.what))),...makeItems(G.stageOneOff,'oneOffItems','stageBuy')]);
+const purchases=group('purchases','Покупки, розыгрыши и запуск ступеней',[...[...new Set(d.oneOff.map(x=>x.what))].map((w,i)=>leaf('purchase'+i,w,item('oneOffItems',w))),...makeItems(G.stageOneOff,'oneOffItems','stageBuy')]);
 const investor=group('investor','Выплаты инвестору',[leaf('principalPaid','Возврат вложения',r=>r.principalPaid),leaf('profitPaid','Доход сверх вложения',r=>r.profitPaid)],'investor');
 const live=rs=>rs.filter(r=>r.revenue>0),buys=rs=>sum(live(rs),r=>r.offline/r.check);
 const one=v=>v.toLocaleString('ru-RU',{minimumFractionDigits:1,maximumFractionDigits:1}),whole=v=>Math.round(v).toLocaleString('ru-RU');
