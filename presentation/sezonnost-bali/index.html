@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Сезонность Бали</title>
+<meta name="description" content="Кто, откуда и когда приезжает на Бали. Прилёты по месяцам и странам 2023-2026, календарь и коэффициенты сезонности для магазина в Умаласе.">
+<meta property="og:title" content="Maison Sauvage: сезонность Бали, кто, откуда и когда приезжает">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Сезонность Бали: страница журнала в стиле плана. Бетон, графит, красный, бордо. */
+:root {
+  --bg: #f7f6f3;
+  --panel: #ebe8e3;
+  --card: #ffffff;
+  --ink: #26221f;
+  --muted: #746e67;
+  --line: rgba(38, 34, 31, .13);
+  --rouge: #a3141e;
+  --wine: #6f1118;
+  --wine-ink: #f4ece6;
+  --amber: #a4701f;
+  --ok: #3d6b48;
+  --cool: #2a6db0;
+  --s23: #c9c2b9;
+  --s24: #948c83;
+  --display: "Prata", "Didot", "Bodoni 72", Georgia, serif;
+  --body: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1c1917; --panel: #26221f; --card: #2b2724; --ink: #ede8e1; --muted: #a59d93;
+    --line: rgba(237, 232, 225, .14); --rouge: #e2626a; --wine: #5a1016; --wine-ink: #f4ece6;
+    --amber: #e0b26c; --ok: #8cc59a; --cool: #4f8fd0; --s23: #57514b; --s24: #8a8279; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1c1917; --panel: #26221f; --card: #2b2724; --ink: #ede8e1; --muted: #a59d93;
+  --line: rgba(237, 232, 225, .14); --rouge: #e2626a; --wine: #5a1016; --wine-ink: #f4ece6;
+  --amber: #e0b26c; --ok: #8cc59a; --cool: #4f8fd0; --s23: #57514b; --s24: #8a8279; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { overflow-x: hidden; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.55 var(--body); -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+a { color: inherit; text-underline-offset: 2px; }
+a:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--rouge); outline-offset: 2px; border-radius: 4px; }
+.wrap { max-width: 780px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; text-wrap: balance; }
+.eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.band { padding-block: 40px; }
+.band.panel { background: var(--panel); }
+.band.wine { background: var(--wine); color: var(--wine-ink); }
+.band.wine .eyebrow, .band.wine .muted { color: rgba(244, 236, 230, .75); }
+.muted { color: var(--muted); }
+p { margin: 12px 0 0; max-width: 64ch; }
+small { font-size: 12px; color: var(--muted); font-weight: 500; }
+
+header.top { padding-block: 44px 34px; }
+header.top h1 { font-size: clamp(34px, 7.4vw, 54px); line-height: 1.06; margin-top: 10px; }
+.sub { margin: 16px 0 0; color: var(--muted); max-width: 60ch; }
+
+.verdict { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 14px; }
+.verdict li { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 8px; font-size: 17px; max-width: 62ch; }
+.verdict li::before { content: counter(v); counter-increment: v; font-family: var(--display); font-size: 22px; line-height: 1.1; color: rgba(244, 236, 230, .7); }
+.verdict { counter-reset: v; }
+.verdict b { font-weight: 700; }
+
+.tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 4px; }
+.tile { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+.tile .v { font-size: clamp(26px, 6vw, 34px); font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.tile .l { margin-top: 6px; font-size: 14px; color: var(--muted); }
+
+section.sec { padding-block: 40px; }
+section.sec > h2, .h2 { font-size: clamp(27px, 5.8vw, 38px); line-height: 1.12; margin-top: 6px; }
+.lead { color: var(--muted); }
+.bul { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 10px; }
+.bul li { position: relative; padding-left: 22px; max-width: 64ch; }
+.bul li::before { content: ""; position: absolute; left: 2px; top: .62em; width: 7px; height: 7px; background: var(--rouge); border-radius: 50%; }
+.band.wine .bul li::before { background: var(--wine-ink); }
+
+/* прокрутка вбок для широких блоков */
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 18px; border-radius: 10px; }
+.hint { display: none; font-size: 12.5px; color: var(--muted); margin-top: 8px; }
+@media (max-width: 700px) { .hint { display: block; } }
+
+/* графики */
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 18px; font-size: 13.5px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.legend i { display: inline-block; width: 18px; height: 3px; border-radius: 2px; }
+.legend i.box { width: 12px; height: 12px; border-radius: 3px; }
+.k23 { background: var(--s23); } .k24 { background: var(--s24); } .k25 { background: var(--cool); } .k26 { background: var(--rouge); }
+.kexp { background: var(--cool); }
+.cbox { position: relative; min-width: 640px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 8px 6px 2px; }
+svg.chart { display: block; width: 100%; height: auto; font-family: var(--body); }
+svg .grid { stroke: var(--line); stroke-width: 1; }
+svg .ax { fill: var(--muted); font-size: 12.5px; font-variant-numeric: tabular-nums; }
+svg .ax.sm { font-size: 11px; }
+svg .lbl { fill: var(--ink); font-size: 12.5px; font-weight: 700; font-variant-numeric: tabular-nums; }
+svg .ln { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+svg .ln.s23 { stroke: var(--s23); } svg .ln.s24 { stroke: var(--s24); } svg .ln.s25 { stroke: var(--cool); }
+svg .ln.s26 { stroke: var(--rouge); stroke-width: 3; }
+svg .ln.exp { stroke: var(--cool); }
+svg .dot { stroke: var(--card); stroke-width: 2; }
+svg .dot.s26 { fill: var(--rouge); } svg .dot.exp { fill: var(--cool); }
+svg .bar { fill: var(--rouge); opacity: .85; }
+svg .bar.part { opacity: .4; }
+svg .xh { stroke: var(--muted); stroke-width: 1; }
+svg .hit { fill: transparent; cursor: crosshair; }
+.tip { position: absolute; pointer-events: none; background: var(--card); color: var(--ink); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; font-size: 13px; box-shadow: 0 6px 20px rgba(0,0,0,.12); min-width: 150px; display: none; z-index: 2; }
+.tip .t { font-weight: 700; margin-bottom: 4px; }
+.tip .r { display: grid; grid-template-columns: 14px auto 1fr; gap: 6px; align-items: center; font-variant-numeric: tabular-nums; }
+.tip .r i { height: 3px; border-radius: 2px; }
+.tip .r b { font-weight: 700; }
+.tip .r span { color: var(--muted); }
+
+/* таблицы */
+table { border-collapse: collapse; width: 100%; font-size: 14px; font-variant-numeric: tabular-nums; }
+th, td { padding: 8px 10px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th:first-child { text-align: left; }
+thead th { font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+tbody th { font-weight: 600; }
+tr.tot th, tr.tot td { font-weight: 700; border-bottom: 0; }
+.tbl { min-width: 560px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.tbl table td.wrap-ok, .tbl table th.wrap-ok { white-space: normal; }
+tr.ours th { color: var(--rouge); }
+details.tv { margin-top: 14px; }
+details.tv summary { cursor: pointer; font-weight: 600; font-size: 14px; color: var(--muted); }
+
+/* тепловая карта */
+.heat { min-width: 700px; }
+.heat th, .heat td { padding: 7px 6px; font-size: 13px; }
+.heat thead th { text-align: center; }
+.heat td.hc { position: relative; text-align: center; }
+.heat td.hc::before { content: ""; position: absolute; inset: 2px; border-radius: 4px; opacity: var(--a); }
+.heat td.hot::before { background: var(--rouge); }
+.heat td.cold::before { background: var(--cool); }
+.heat td.hc span { position: relative; }
+.heat tr.all th, .heat tr.all td { font-weight: 700; }
+.heat tr.main th, .heat tr.main td { font-weight: 700; }
+.heat th small { font-weight: 500; }
+.hkey { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 10px; font-size: 13px; color: var(--muted); }
+.hkey span { display: inline-flex; align-items: center; gap: 6px; }
+.hkey i { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
+.hkey i.h { background: var(--rouge); opacity: .5; } .hkey i.c { background: var(--cool); opacity: .5; }
+
+/* районы */
+.areas { display: grid; gap: 12px; margin-top: 18px; }
+.area { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+.area h3 { font-size: 21px; line-height: 1.2; }
+.area p { margin-top: 6px; font-size: 15px; }
+.area.ours { border-color: var(--rouge); }
+.area .tag { display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--rouge); margin-bottom: 4px; }
+
+/* календарь */
+.cal { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+.mcard { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; border-top: 4px solid var(--line); }
+.mcard.up { border-top-color: var(--rouge); }
+.mcard.down { border-top-color: var(--cool); }
+.mh { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.mh h3 { font-size: 23px; }
+.mh .k { text-align: right; display: grid; font-variant-numeric: tabular-nums; }
+.mh .k b { font-size: 22px; font-weight: 700; line-height: 1.1; }
+.mh .k span { font-size: 12px; color: var(--muted); }
+.mcard .row { margin-top: 10px; }
+.mcard .rl { font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.mcard .row p { margin: 2px 0 0; font-size: 14.5px; }
+
+.steps { margin: 16px 0 0; padding-left: 22px; display: grid; gap: 8px; max-width: 64ch; }
+.note { margin-top: 18px; padding: 14px 16px; border-left: 3px solid var(--amber); background: var(--card); border-radius: 0 10px 10px 0; font-size: 15px; max-width: 66ch; }
+.formula { margin-top: 16px; font-weight: 700; font-size: 17px; }
+
+.src { margin: 14px 0 0; padding-left: 20px; display: grid; gap: 10px; font-size: 14px; max-width: 70ch; }
+.src li { overflow-wrap: anywhere; }
+footer { padding-block: 30px 60px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); }
+footer p { margin: 0 0 8px; }
+
+@media (max-width: 620px) {
+  .cal { grid-template-columns: 1fr; }
+  .tiles { grid-template-columns: 1fr; }
+  .verdict li { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+<style>.back-pres{display:inline-block;margin:0 0 10px;padding:6px 12px;border:1px solid currentColor;border-radius:999px;font-size:12px;font-weight:700;text-decoration:none;color:inherit;letter-spacing:0}.back-pres:hover{opacity:.75}</style>
+</head>
+<body>
+
+<header class="top wrap">
+  <div class="eyebrow"><a class="back-pres" href="../">← Вернуться к презентации</a> · Maison Sauvage · Умалас, Бали</div>
+  <h1>Сезонность Бали: кто, откуда и когда приезжает</h1>
+  <p class="sub">Прилёты иностранцев по месяцам и странам за 2023-2026 годы по данным статистики Бали. Рядом наши продажи и коэффициенты для модели выручки. Данные на 25.10.2026, последний опубликованный месяц август 2026.</p>
+</header>
+
+<div class="band wine">
+  <section class="wrap">
+    <div class="eyebrow">Главный вывод</div>
+    <ol class="verdict">
+      <li><span>На Бали нет месяца без туристов. Больше всего людей прилетает в июле и августе. Июль 2026 стал рекордом, 697 809 иностранцев. Это больше, чем в любой месяц с 2008 года.</span></li>
+      <li><span>Наша нынешняя аудитория зимняя. Русскоязычные едут с ноября по март, сингапурцы в декабре. Поэтому у магазина в июне-сентябре <b>спад на 5-10% ниже среднего месяца</b> и на 26-30% ниже декабря.</span></li>
+      <li><span>На лето 2027 закладываем умеренный спад, <b>коэффициент 0,90-0,95</b>. Это не провал. Если заговорим с австралийцами и европейцами на английском, лето станет сезоном.</span></li>
+      <li><span>Летом 2026 выручка упала в 4-9 раз от декабря. Один сезон дал бы минус 30%. Остальное падение это пустые полки и уход управляющего партнёра, а не рынок.</span></li>
+    </ol>
+  </section>
+</div>
+
+<section class="sec wrap">
+  <div class="eyebrow">Цифры коротко</div>
+  <div class="tiles" style="margin-top:14px">
+    <div class="tile"><div class="v">6,95 млн</div><div class="l">иностранцев прилетело на Бали в 2025 году, на 9,7% больше, чем в 2024</div></div>
+    <div class="tile"><div class="v">-1,6%</div><div class="l">январь-август 2026 к тому же периоду 2025. Рынок стоит на месте, а не падает</div></div>
+    <div class="tile"><div class="v">698 тыс.</div><div class="l">иностранцев в июле 2026, рекордный месяц. У магазина в этом месяце 129 млн IDR</div></div>
+    <div class="tile"><div class="v">40% и 2,7%</div><div class="l">доля русских среди наших покупателей и среди всех прилетевших на Бали в июле 2026</div></div>
+  </div>
+</section>
+
+<div class="band panel">
+  <section class="wrap">
+    <div class="eyebrow">Рынок по месяцам</div>
+    <h2 class="h2">Прилёты иностранцев на Бали</h2>
+    <p class="lead">Прямые прилёты иностранцев, человек в месяц. Красная линия 2026 год, данные до августа.</p>
+    <div class="legend" aria-hidden="true">
+      <span><i class="k26"></i>2026</span><span><i class="k25"></i>2025</span><span><i class="k24"></i>2024</span><span><i class="k23"></i>2023</span>
+    </div>
+    <div class="scroll">
+      <div class="cbox" id="cb1" tabindex="0" aria-label="График прилётов. Стрелки влево и вправо листают месяцы.">
+        <svg class="chart" id="ch1" viewBox="0 0 720 330" role="img" aria-labelledby="ch1-t">
+<title id="ch1-t">Прилёты иностранцев на Бали по месяцам, 2023-2026</title>
+<line class="grid" x1="58" x2="696" y1="294.0" y2="294.0"/>
+<text class="ax" x="50" y="298.0" text-anchor="end">300 тыс</text>
+<line class="grid" x1="58" x2="696" y1="232.7" y2="232.7"/>
+<text class="ax" x="50" y="236.7" text-anchor="end">400 тыс</text>
+<line class="grid" x1="58" x2="696" y1="171.3" y2="171.3"/>
+<text class="ax" x="50" y="175.3" text-anchor="end">500 тыс</text>
+<line class="grid" x1="58" x2="696" y1="110.0" y2="110.0"/>
+<text class="ax" x="50" y="114.0" text-anchor="end">600 тыс</text>
+<line class="grid" x1="58" x2="696" y1="48.7" y2="48.7"/>
+<text class="ax" x="50" y="52.7" text-anchor="end">700 тыс</text>
+<text class="ax" x="84.6" y="318" text-anchor="middle">Янв</text>
+<text class="ax" x="137.8" y="318" text-anchor="middle">Фев</text>
+<text class="ax" x="190.9" y="318" text-anchor="middle">Мар</text>
+<text class="ax" x="244.1" y="318" text-anchor="middle">Апр</text>
+<text class="ax" x="297.2" y="318" text-anchor="middle">Май</text>
+<text class="ax" x="350.4" y="318" text-anchor="middle">Июн</text>
+<text class="ax" x="403.6" y="318" text-anchor="middle">Июл</text>
+<text class="ax" x="456.8" y="318" text-anchor="middle">Авг</text>
+<text class="ax" x="509.9" y="318" text-anchor="middle">Сен</text>
+<text class="ax" x="563.1" y="318" text-anchor="middle">Окт</text>
+<text class="ax" x="616.2" y="318" text-anchor="middle">Ноя</text>
+<text class="ax" x="669.4" y="318" text-anchor="middle">Дек</text>
+<polyline class="ln s23" points="84.6,274.5 137.8,279.6 190.9,250.6 244.1,225.6 297.2,208.5 350.4,184.7 403.6,146.0 456.8,157.8 509.9,166.2 563.1,195.0 616.2,230.7 669.4,182.6"/>
+<polyline class="ln s24" points="84.6,220.4 137.8,198.8 190.9,190.2 244.1,169.4 297.2,144.0 350.4,158.5 403.6,94.3 456.8,99.8 509.9,113.7 563.1,134.6 616.2,188.0 669.4,140.0"/>
+<polyline class="ln s25" points="84.6,153.0 137.8,201.6 190.9,189.2 244.1,115.4 297.2,108.6 350.4,86.8 403.6,50.4 456.8,59.2 509.9,88.4 563.1,113.2 616.2,181.5 669.4,126.8"/>
+<polyline class="ln s26" points="84.6,170.0 137.8,176.1 190.9,188.5 244.1,138.6 297.2,123.3 350.4,106.9 403.6,50.0 456.8,57.3"/>
+<circle class="dot s26" cx="456.8" cy="57.3" r="4.5"/>
+<circle class="dot s26" cx="403.6" cy="50.0" r="4.5"/>
+<text class="lbl" x="403.6" y="38.0" text-anchor="middle">рекорд 697 809</text>
+<line class="xh" id="ch1-x" x1="0" x2="0" y1="18" y2="294" visibility="hidden"/>
+<rect class="hit" x="58" y="18" width="638" height="276"/>
+</svg>
+        <div class="tip" id="tip1" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+    <div class="hint">Листайте график вбок. Нажмите на месяц, чтобы увидеть цифры.</div>
+    <ul class="bul">
+      <li>Низ рынка в феврале, марте и ноябре. Это сезон дождей, у европейцев работа и зима.</li>
+      <li>Верх с июля по сентябрь. Каникулы в Австралии и отпуска в Европе совпадают с сухим сезоном.</li>
+      <li>Форма года повторяется три года подряд. В 2026 году рынок около уровня 2025, январь-август -1,6%.</li>
+      <li>В марте 2026 прилёты упали на 4% к февралю. Статистика Бали объясняет это праздниками и отменой рейсов из-за конфликта на Ближнем Востоке. Апрель-июнь 2026 на 4-6% ниже 2025 года, июль и август на уровне 2025.</li>
+      <li>Сентябрь 2026 ещё не опубликован. Статистика выходит примерно через 5 недель после конца месяца.</li>
+      <li>Загрузка звёздных отелей в 2025 году от 47% в марте до 70% в августе. Та же форма года.</li>
+    </ul>
+    <details class="tv">
+      <summary>Таблица прилётов по месяцам</summary>
+      <div class="scroll"><div class="tbl"><table>
+        <thead><tr><th scope="col">Месяц</th><th scope="col">2023</th><th scope="col">2024</th><th scope="col">2025</th><th scope="col">2026</th></tr></thead>
+        <tbody><tr><th scope="row">Январь</th><td>331 785</td><td>420 037</td><td>529 897</td><td>502 205</td></tr><tr><th scope="row">Февраль</th><td>323 510</td><td>455 277</td><td>450 697</td><td>492 289</td></tr><tr><th scope="row">Март</th><td>370 695</td><td>469 227</td><td>470 851</td><td>472 070</td></tr><tr><th scope="row">Апрель</th><td>411 510</td><td>503 194</td><td>591 221</td><td>553 328</td></tr><tr><th scope="row">Май</th><td>439 475</td><td>544 601</td><td>602 213</td><td>578 251</td></tr><tr><th scope="row">Июнь</th><td>478 198</td><td>520 898</td><td>637 868</td><td>605 013</td></tr><tr><th scope="row">Июль</th><td>541 353</td><td>625 665</td><td>697 107</td><td>697 809</td></tr><tr><th scope="row">Август</th><td>522 141</td><td>616 641</td><td>682 866</td><td>685 994</td></tr><tr><th scope="row">Сентябрь</th><td>508 350</td><td>593 909</td><td>635 149</td><td>выйдет позже</td></tr><tr><th scope="row">Октябрь</th><td>461 441</td><td>559 911</td><td>594 853</td><td>выйдет позже</td></tr><tr><th scope="row">Ноябрь</th><td>403 154</td><td>472 900</td><td>483 364</td><td>выйдет позже</td></tr><tr><th scope="row">Декабрь</th><td>481 646</td><td>551 100</td><td>572 668</td><td>выйдет позже</td></tr><tr class="tot"><th scope="row">Год</th><td>5 273 258</td><td>6 333 360</td><td>6 948 754</td><td>4 586 959 за 8 мес.</td></tr></tbody>
+      </table></div></div>
+    </details>
+    <details class="tv">
+      <summary>Внутренние туристы из других регионов Индонезии</summary>
+      <p class="muted" style="font-size:14px">Их больше, чем иностранцев, 9,6 млн в 2025 году. Пики на Лебаран (в 2024 и 2025 году апрель, в 2026 март), в июне-июле на школьных каникулах и в декабре. В 2027 году Лебаран 10-11 марта.</p>
+      <div class="scroll"><div class="tbl"><table>
+        <thead><tr><th scope="col">Месяц</th><th scope="col">2024</th><th scope="col">2025</th><th scope="col">2026</th></tr></thead>
+        <tbody><tr><th scope="row">Январь</th><td>774 529</td><td>902 688</td><td>798 977</td></tr><tr><th scope="row">Февраль</th><td>726 744</td><td>686 283</td><td>628 418</td></tr><tr><th scope="row">Март</th><td>612 742</td><td>633 380</td><td>1 060 798</td></tr><tr><th scope="row">Апрель</th><td>1 124 781</td><td>1 127 649</td><td>871 459</td></tr><tr><th scope="row">Май</th><td>852 253</td><td>774 930</td><td>790 152</td></tr><tr><th scope="row">Июнь</th><td>898 335</td><td>902 879</td><td>896 753</td></tr><tr><th scope="row">Июль</th><td>926 975</td><td>800 121</td><td>898 486</td></tr><tr><th scope="row">Август</th><td>853 713</td><td>770 278</td><td>1 026 694</td></tr><tr><th scope="row">Сентябрь</th><td>856 370</td><td>763 690</td><td>выйдет позже</td></tr><tr><th scope="row">Октябрь</th><td>828 647</td><td>652 753</td><td>выйдет позже</td></tr><tr><th scope="row">Ноябрь</th><td>724 560</td><td>718 679</td><td>выйдет позже</td></tr><tr><th scope="row">Декабрь</th><td>941 137</td><td>879 181</td><td>выйдет позже</td></tr>
+        <tr class="tot"><th scope="row">Год</th><td>10 120 786</td><td>9 612 511</td><td>6 971 737 за 8 мес.</td></tr></tbody>
+      </table></div></div>
+    </details>
+  </section>
+</div>
+
+<section class="sec wrap">
+  <div class="eyebrow">Кто откуда</div>
+  <h2>Страны: сколько и как меняются</h2>
+  <p class="lead">Прилёты за 2025 год, доля, рост к 2024 году и январь-август 2026 к январю-августу 2025. Пик и спад по среднему 2024 и 2025 годов. Красным страны, которые есть среди наших покупателей.</p>
+  <div class="scroll"><div class="tbl"><table>
+    <thead><tr><th scope="col">Страна</th><th scope="col">2025, тыс.</th><th scope="col">Доля</th><th scope="col">К 2024</th><th scope="col">2026 к 2025</th><th scope="col">Пик</th><th scope="col">Спад</th></tr></thead>
+    <tbody><tr class="ours"><th scope="row">Австралия</th><td>1 628</td><td>23,4%</td><td>+5,5%</td><td>+7,1%</td><td>июл, сен</td><td>фев, мар</td></tr><tr><th scope="row">Индия</th><td>569</td><td>8,2%</td><td>+3,4%</td><td>-8,6%</td><td>май, июн</td><td>янв, фев</td></tr><tr><th scope="row">Китай</th><td>537</td><td>7,7%</td><td>+19,8%</td><td>+5,9%</td><td>июл, авг</td><td>мар, ноя</td></tr><tr><th scope="row">Южная Корея</th><td>347</td><td>5,0%</td><td>+17,9%</td><td>-18,3%</td><td>июл, авг</td><td>мар, апр</td></tr><tr><th scope="row">Великобритания</th><td>318</td><td>4,6%</td><td>+7,5%</td><td>-9,3%</td><td>июл, авг</td><td>фев, ноя</td></tr><tr><th scope="row">Франция</th><td>279</td><td>4,0%</td><td>+8,4%</td><td>-7,5%</td><td>июл, авг</td><td>янв, дек</td></tr><tr><th scope="row">США</th><td>275</td><td>4,0%</td><td>+4,9%</td><td>-1,4%</td><td>июн, июл</td><td>янв, фев</td></tr><tr><th scope="row">Малайзия</th><td>251</td><td>3,6%</td><td>+2,0%</td><td>-16,1%</td><td>май, сен</td><td>янв, мар</td></tr><tr class="ours"><th scope="row">Сингапур</th><td>211</td><td>3,0%</td><td>-3,5%</td><td>-10,8%</td><td>июн, дек</td><td>янв, фев</td></tr><tr><th scope="row">Япония</th><td>209</td><td>3,0%</td><td>+18,0%</td><td>+3,6%</td><td>авг, сен</td><td>янв, апр</td></tr><tr><th scope="row">Германия</th><td>206</td><td>3,0%</td><td>+0,6%</td><td>-10,7%</td><td>авг, сен</td><td>янв, дек</td></tr><tr class="ours"><th scope="row">Россия</th><td>204</td><td>2,9%</td><td>+25,9%</td><td>+6,3%</td><td>янв, дек</td><td>июн, сен</td></tr><tr><th scope="row">Новая Зеландия</th><td>167</td><td>2,4%</td><td>+15,2%</td><td>-0,8%</td><td>июл, авг</td><td>янв, фев</td></tr><tr><th scope="row">Нидерланды</th><td>134</td><td>1,9%</td><td>-2,7%</td><td>-13,7%</td><td>июл, сен</td><td>ноя, дек</td></tr><tr><th scope="row">Тайвань</th><td>119</td><td>1,7%</td><td>+14,8%</td><td>+8,7%</td><td>июн, сен</td><td>ноя, дек</td></tr><tr><th scope="row">Филиппины</th><td>106</td><td>1,5%</td><td>+2,0%</td><td>+1,6%</td><td>июн, авг</td><td>янв, фев</td></tr><tr><th scope="row">Италия</th><td>98</td><td>1,4%</td><td>+11,1%</td><td>-11,2%</td><td>июл, авг</td><td>янв, фев</td></tr><tr><th scope="row">Испания</th><td>90</td><td>1,3%</td><td>+13,3%</td><td>-8,7%</td><td>июл, авг</td><td>янв, фев</td></tr><tr><th scope="row">Канада</th><td>70</td><td>1,0%</td><td>+12,0%</td><td>+2,3%</td><td>фев, мар</td><td>июн, авг</td></tr><tr><th scope="row">Турция</th><td>57</td><td>0,8%</td><td>+34,0%</td><td>+21,2%</td><td>июн, сен</td><td>фев, мар</td></tr><tr class="ours"><th scope="row">Украина</th><td>30</td><td>0,4%</td><td>+21,9%</td><td>нет в отчёте</td><td>янв, дек</td><td>авг, сен</td></tr></tbody>
+  </table></div></div>
+  <div class="hint">Таблицу можно листать вбок.</div>
+  <ul class="bul">
+    <li><b>Австралия</b> четверть всех прилётов, едет круглый год. Пики на школьных каникулах: январь, апрель, июль, конец сентября и октябрь, декабрь.</li>
+    <li><b>Индия</b> вторая. Пик в мае и июне на летних каникулах, второй в декабре.</li>
+    <li><b>Китай</b> едет на Новый год по лунному календарю и летом. В феврале 2026 года китайцев было вдвое больше, чем в феврале 2025.</li>
+    <li><b>Европа</b> едет в июле и августе. Италия в августе в 3,6 раза выше своего среднего месяца. Немцы ещё и в сентябре-октябре.</li>
+    <li><b>Россия и Украина</b> едут зимой, с ноября по март. Меньше всего в мае-сентябре. В 2025 году русских стало на 26% больше после запуска прямых рейсов Москва-Денпасар в сентябре 2024 года.</li>
+    <li><b>Сингапур</b> едет в июне и декабре, это школьные каникулы. <b>Малайзия</b> в мае, сентябре и декабре, в Рамадан меньше.</li>
+    <li><b>Япония</b> в августе и сентябре. <b>Корея</b> в июле-августе и январе, в 2026 году корейцев на 18% меньше.</li>
+  </ul>
+</section>
+
+<div class="band panel">
+  <section class="wrap">
+    <div class="eyebrow">Кто когда</div>
+    <h2 class="h2">Календарь каждой страны</h2>
+    <p class="lead">Индекс месяца. 1,00 это средний месяц страны. 1,50 значит в полтора раза больше обычного. Среднее 2024 и 2025 годов.</p>
+    <div class="hkey"><span><i class="h"></i>больше обычного</span><span><i class="c"></i>меньше обычного</span></div>
+    <div class="scroll"><div class="tbl heat"><table>
+      <thead><tr><th scope="col">Страна</th><th scope="col">Янв</th><th scope="col">Фев</th><th scope="col">Мар</th><th scope="col">Апр</th><th scope="col">Май</th><th scope="col">Июн</th><th scope="col">Июл</th><th scope="col">Авг</th><th scope="col">Сен</th><th scope="col">Окт</th><th scope="col">Ноя</th><th scope="col">Дек</th></tr></thead>
+      <tbody><tr class="all"><th scope="row">Весь рынок</th><td class="hc cold" style="--a:0.16"><span>0,86</span></td><td class="hc cold" style="--a:0.20"><span>0,82</span></td><td class="hc cold" style="--a:0.16"><span>0,85</span></td><td class="hc cold" style="--a:0.00"><span>0,99</span></td><td class="hc hot" style="--a:0.04"><span>1,04</span></td><td class="hc hot" style="--a:0.05"><span>1,04</span></td><td class="hc hot" style="--a:0.21"><span>1,19</span></td><td class="hc hot" style="--a:0.19"><span>1,17</span></td><td class="hc hot" style="--a:0.12"><span>1,11</span></td><td class="hc hot" style="--a:0.05"><span>1,04</span></td><td class="hc cold" style="--a:0.15"><span>0,87</span></td><td class="hc hot" style="--a:0.00"><span>1,02</span></td></tr><tr><th scope="row">Австралия</th><td class="hc cold" style="--a:0.06"><span>0,95</span></td><td class="hc cold" style="--a:0.31"><span>0,72</span></td><td class="hc cold" style="--a:0.19"><span>0,83</span></td><td class="hc cold" style="--a:0.00"><span>0,97</span></td><td class="hc hot" style="--a:0.00"><span>1,01</span></td><td class="hc hot" style="--a:0.04"><span>1,04</span></td><td class="hc hot" style="--a:0.22"><span>1,20</span></td><td class="hc hot" style="--a:0.10"><span>1,09</span></td><td class="hc hot" style="--a:0.15"><span>1,14</span></td><td class="hc hot" style="--a:0.10"><span>1,09</span></td><td class="hc cold" style="--a:0.09"><span>0,92</span></td><td class="hc hot" style="--a:0.06"><span>1,05</span></td></tr><tr><th scope="row">Индия</th><td class="hc cold" style="--a:0.32"><span>0,71</span></td><td class="hc cold" style="--a:0.23"><span>0,79</span></td><td class="hc cold" style="--a:0.09"><span>0,92</span></td><td class="hc hot" style="--a:0.00"><span>1,01</span></td><td class="hc hot" style="--a:0.48"><span>1,44</span></td><td class="hc hot" style="--a:0.38"><span>1,35</span></td><td class="hc cold" style="--a:0.04"><span>0,97</span></td><td class="hc cold" style="--a:0.13"><span>0,88</span></td><td class="hc cold" style="--a:0.12"><span>0,89</span></td><td class="hc cold" style="--a:0.10"><span>0,91</span></td><td class="hc cold" style="--a:0.05"><span>0,95</span></td><td class="hc hot" style="--a:0.21"><span>1,19</span></td></tr><tr><th scope="row">Китай</th><td class="hc hot" style="--a:0.18"><span>1,16</span></td><td class="hc hot" style="--a:0.20"><span>1,18</span></td><td class="hc cold" style="--a:0.28"><span>0,74</span></td><td class="hc cold" style="--a:0.00"><span>0,97</span></td><td class="hc cold" style="--a:0.10"><span>0,90</span></td><td class="hc cold" style="--a:0.03"><span>0,97</span></td><td class="hc hot" style="--a:0.34"><span>1,31</span></td><td class="hc hot" style="--a:0.22"><span>1,20</span></td><td class="hc hot" style="--a:0.05"><span>1,05</span></td><td class="hc cold" style="--a:0.08"><span>0,92</span></td><td class="hc cold" style="--a:0.29"><span>0,74</span></td><td class="hc cold" style="--a:0.17"><span>0,85</span></td></tr><tr><th scope="row">Южная Корея</th><td class="hc hot" style="--a:0.09"><span>1,08</span></td><td class="hc cold" style="--a:0.10"><span>0,91</span></td><td class="hc cold" style="--a:0.38"><span>0,66</span></td><td class="hc cold" style="--a:0.19"><span>0,83</span></td><td class="hc cold" style="--a:0.08"><span>0,93</span></td><td class="hc cold" style="--a:0.04"><span>0,96</span></td><td class="hc hot" style="--a:0.34"><span>1,31</span></td><td class="hc hot" style="--a:0.19"><span>1,17</span></td><td class="hc hot" style="--a:0.06"><span>1,05</span></td><td class="hc hot" style="--a:0.11"><span>1,10</span></td><td class="hc cold" style="--a:0.05"><span>0,96</span></td><td class="hc hot" style="--a:0.05"><span>1,05</span></td></tr><tr><th scope="row">Великобритания</th><td class="hc cold" style="--a:0.28"><span>0,74</span></td><td class="hc cold" style="--a:0.29"><span>0,73</span></td><td class="hc hot" style="--a:0.06"><span>1,06</span></td><td class="hc hot" style="--a:0.13"><span>1,11</span></td><td class="hc hot" style="--a:0.11"><span>1,10</span></td><td class="hc cold" style="--a:0.00"><span>1,00</span></td><td class="hc hot" style="--a:0.27"><span>1,25</span></td><td class="hc hot" style="--a:0.31"><span>1,28</span></td><td class="hc hot" style="--a:0.09"><span>1,08</span></td><td class="hc hot" style="--a:0.00"><span>1,02</span></td><td class="hc cold" style="--a:0.31"><span>0,72</span></td><td class="hc cold" style="--a:0.09"><span>0,92</span></td></tr><tr><th scope="row">Франция</th><td class="hc cold" style="--a:0.55"><span>0,45</span></td><td class="hc cold" style="--a:0.49"><span>0,55</span></td><td class="hc cold" style="--a:0.43"><span>0,61</span></td><td class="hc hot" style="--a:0.21"><span>1,19</span></td><td class="hc hot" style="--a:0.24"><span>1,22</span></td><td class="hc cold" style="--a:0.05"><span>0,96</span></td><td class="hc hot" style="--a:0.55"><span>1,58</span></td><td class="hc hot" style="--a:0.55"><span>1,78</span></td><td class="hc hot" style="--a:0.36"><span>1,33</span></td><td class="hc hot" style="--a:0.28"><span>1,25</span></td><td class="hc cold" style="--a:0.42"><span>0,62</span></td><td class="hc cold" style="--a:0.55"><span>0,47</span></td></tr><tr><th scope="row">США</th><td class="hc cold" style="--a:0.25"><span>0,77</span></td><td class="hc cold" style="--a:0.25"><span>0,77</span></td><td class="hc hot" style="--a:0.04"><span>1,04</span></td><td class="hc hot" style="--a:0.03"><span>1,03</span></td><td class="hc hot" style="--a:0.10"><span>1,09</span></td><td class="hc hot" style="--a:0.25"><span>1,23</span></td><td class="hc hot" style="--a:0.26"><span>1,24</span></td><td class="hc hot" style="--a:0.00"><span>1,02</span></td><td class="hc hot" style="--a:0.03"><span>1,03</span></td><td class="hc cold" style="--a:0.00"><span>0,99</span></td><td class="hc cold" style="--a:0.15"><span>0,86</span></td><td class="hc cold" style="--a:0.07"><span>0,93</span></td></tr><tr><th scope="row">Малайзия</th><td class="hc cold" style="--a:0.19"><span>0,82</span></td><td class="hc hot" style="--a:0.16"><span>1,14</span></td><td class="hc cold" style="--a:0.30"><span>0,73</span></td><td class="hc cold" style="--a:0.13"><span>0,88</span></td><td class="hc hot" style="--a:0.25"><span>1,23</span></td><td class="hc cold" style="--a:0.05"><span>0,96</span></td><td class="hc cold" style="--a:0.09"><span>0,92</span></td><td class="hc cold" style="--a:0.09"><span>0,92</span></td><td class="hc hot" style="--a:0.45"><span>1,41</span></td><td class="hc hot" style="--a:0.04"><span>1,04</span></td><td class="hc cold" style="--a:0.16"><span>0,86</span></td><td class="hc hot" style="--a:0.10"><span>1,09</span></td></tr><tr><th scope="row">Сингапур</th><td class="hc cold" style="--a:0.29"><span>0,73</span></td><td class="hc cold" style="--a:0.23"><span>0,79</span></td><td class="hc hot" style="--a:0.00"><span>1,02</span></td><td class="hc cold" style="--a:0.23"><span>0,79</span></td><td class="hc hot" style="--a:0.11"><span>1,10</span></td><td class="hc hot" style="--a:0.55"><span>1,51</span></td><td class="hc cold" style="--a:0.18"><span>0,83</span></td><td class="hc cold" style="--a:0.21"><span>0,81</span></td><td class="hc cold" style="--a:0.20"><span>0,82</span></td><td class="hc cold" style="--a:0.20"><span>0,82</span></td><td class="hc cold" style="--a:0.03"><span>0,97</span></td><td class="hc hot" style="--a:0.55"><span>1,81</span></td></tr><tr><th scope="row">Япония</th><td class="hc cold" style="--a:0.40"><span>0,64</span></td><td class="hc cold" style="--a:0.09"><span>0,92</span></td><td class="hc hot" style="--a:0.04"><span>1,04</span></td><td class="hc cold" style="--a:0.30"><span>0,73</span></td><td class="hc cold" style="--a:0.27"><span>0,75</span></td><td class="hc cold" style="--a:0.15"><span>0,86</span></td><td class="hc hot" style="--a:0.00"><span>1,03</span></td><td class="hc hot" style="--a:0.55"><span>1,72</span></td><td class="hc hot" style="--a:0.49"><span>1,44</span></td><td class="hc hot" style="--a:0.05"><span>1,05</span></td><td class="hc cold" style="--a:0.27"><span>0,75</span></td><td class="hc hot" style="--a:0.08"><span>1,07</span></td></tr><tr><th scope="row">Германия</th><td class="hc cold" style="--a:0.44"><span>0,60</span></td><td class="hc cold" style="--a:0.37"><span>0,66</span></td><td class="hc cold" style="--a:0.06"><span>0,95</span></td><td class="hc hot" style="--a:0.11"><span>1,10</span></td><td class="hc hot" style="--a:0.17"><span>1,15</span></td><td class="hc cold" style="--a:0.13"><span>0,89</span></td><td class="hc hot" style="--a:0.17"><span>1,16</span></td><td class="hc hot" style="--a:0.48"><span>1,44</span></td><td class="hc hot" style="--a:0.54"><span>1,49</span></td><td class="hc hot" style="--a:0.25"><span>1,23</span></td><td class="hc cold" style="--a:0.32"><span>0,71</span></td><td class="hc cold" style="--a:0.41"><span>0,63</span></td></tr><tr><th scope="row">Россия</th><td class="hc hot" style="--a:0.42"><span>1,38</span></td><td class="hc hot" style="--a:0.15"><span>1,14</span></td><td class="hc hot" style="--a:0.09"><span>1,08</span></td><td class="hc cold" style="--a:0.05"><span>0,95</span></td><td class="hc cold" style="--a:0.24"><span>0,78</span></td><td class="hc cold" style="--a:0.26"><span>0,76</span></td><td class="hc cold" style="--a:0.23"><span>0,79</span></td><td class="hc cold" style="--a:0.26"><span>0,77</span></td><td class="hc cold" style="--a:0.29"><span>0,74</span></td><td class="hc hot" style="--a:0.00"><span>1,02</span></td><td class="hc hot" style="--a:0.10"><span>1,09</span></td><td class="hc hot" style="--a:0.54"><span>1,49</span></td></tr><tr><th scope="row">Украина</th><td class="hc hot" style="--a:0.55"><span>1,50</span></td><td class="hc hot" style="--a:0.24"><span>1,22</span></td><td class="hc hot" style="--a:0.16"><span>1,15</span></td><td class="hc cold" style="--a:0.07"><span>0,93</span></td><td class="hc cold" style="--a:0.21"><span>0,81</span></td><td class="hc cold" style="--a:0.26"><span>0,76</span></td><td class="hc cold" style="--a:0.22"><span>0,80</span></td><td class="hc cold" style="--a:0.28"><span>0,74</span></td><td class="hc cold" style="--a:0.27"><span>0,76</span></td><td class="hc cold" style="--a:0.12"><span>0,89</span></td><td class="hc hot" style="--a:0.04"><span>1,03</span></td><td class="hc hot" style="--a:0.45"><span>1,41</span></td></tr><tr><th scope="row">Нидерланды</th><td class="hc cold" style="--a:0.20"><span>0,81</span></td><td class="hc cold" style="--a:0.25"><span>0,77</span></td><td class="hc cold" style="--a:0.25"><span>0,78</span></td><td class="hc hot" style="--a:0.19"><span>1,18</span></td><td class="hc hot" style="--a:0.05"><span>1,04</span></td><td class="hc cold" style="--a:0.22"><span>0,80</span></td><td class="hc hot" style="--a:0.55"><span>1,82</span></td><td class="hc hot" style="--a:0.15"><span>1,13</span></td><td class="hc hot" style="--a:0.26"><span>1,24</span></td><td class="hc cold" style="--a:0.00"><span>0,99</span></td><td class="hc cold" style="--a:0.33"><span>0,70</span></td><td class="hc cold" style="--a:0.29"><span>0,74</span></td></tr><tr><th scope="row">Италия</th><td class="hc cold" style="--a:0.55"><span>0,47</span></td><td class="hc cold" style="--a:0.55"><span>0,45</span></td><td class="hc cold" style="--a:0.51"><span>0,54</span></td><td class="hc cold" style="--a:0.15"><span>0,86</span></td><td class="hc cold" style="--a:0.31"><span>0,72</span></td><td class="hc cold" style="--a:0.09"><span>0,92</span></td><td class="hc hot" style="--a:0.35"><span>1,32</span></td><td class="hc hot" style="--a:0.55"><span>3,60</span></td><td class="hc hot" style="--a:0.20"><span>1,18</span></td><td class="hc cold" style="--a:0.21"><span>0,81</span></td><td class="hc cold" style="--a:0.49"><span>0,56</span></td><td class="hc cold" style="--a:0.46"><span>0,58</span></td></tr><tr><th scope="row">Новая Зеландия</th><td class="hc cold" style="--a:0.46"><span>0,58</span></td><td class="hc cold" style="--a:0.51"><span>0,53</span></td><td class="hc cold" style="--a:0.41"><span>0,63</span></td><td class="hc cold" style="--a:0.00"><span>0,98</span></td><td class="hc hot" style="--a:0.07"><span>1,06</span></td><td class="hc hot" style="--a:0.31"><span>1,28</span></td><td class="hc hot" style="--a:0.48"><span>1,44</span></td><td class="hc hot" style="--a:0.44"><span>1,40</span></td><td class="hc hot" style="--a:0.31"><span>1,28</span></td><td class="hc hot" style="--a:0.15"><span>1,14</span></td><td class="hc cold" style="--a:0.20"><span>0,82</span></td><td class="hc cold" style="--a:0.15"><span>0,87</span></td></tr><tr><th scope="row">Индонезийцы</th><td class="hc hot" style="--a:0.00"><span>1,02</span></td><td class="hc cold" style="--a:0.15"><span>0,86</span></td><td class="hc cold" style="--a:0.27"><span>0,76</span></td><td class="hc hot" style="--a:0.41"><span>1,37</span></td><td class="hc cold" style="--a:0.00"><span>0,99</span></td><td class="hc hot" style="--a:0.11"><span>1,10</span></td><td class="hc hot" style="--a:0.05"><span>1,05</span></td><td class="hc cold" style="--a:0.00"><span>0,99</span></td><td class="hc cold" style="--a:0.00"><span>0,98</span></td><td class="hc cold" style="--a:0.11"><span>0,90</span></td><td class="hc cold" style="--a:0.13"><span>0,88</span></td><td class="hc hot" style="--a:0.12"><span>1,11</span></td></tr></tbody>
+    </table></div></div>
+    <div class="hint">Листайте вбок, чтобы увидеть все месяцы.</div>
+  </section>
+</div>
+
+<section class="sec wrap">
+  <div class="eyebrow">Где живут</div>
+  <h2>Кто где останавливается на Бали</h2>
+  <p class="lead">Официальной разбивки «страна по району» нет ни у статистики Бали, ни в опросе туристов. Ниже описание районов по гидам и отраслевым статьям плюс наши данные.</p>
+  <div class="areas">
+    <div class="area ours"><div class="tag">Наш район</div><h3>Чангу, Переренан, Умалас</h3><p>Виллы, сёрфинг, кафе, коворкинги. Главный район молодых экспатов и цифровых кочевников. Здесь большая русскоязычная община. В 2024 году Чангу в шутку переименовали на картах в «Новую Москву». Умалас тихий жилой район между Семиньяком и Чангу, виллы для семей, рядом международные школы.</p></div>
+    <div class="area"><h3>Семиньяк</h3><p>Дорогие отели, рестораны, дизайнерские бутики. Ближайший к нам торговый район, 10 минут от Умаласа.</p></div>
+    <div class="area"><h3>Кута</h3><p>Шумный торговый район у аэропорта, много бюджетного жилья. С него многие начинают знакомство с Бали.</p></div>
+    <div class="area"><h3>Улувату и Букит</h3><p>Столица сёрфинга, скалы и пляжи, виллы. Жильё дешевле, чем в Чангу.</p></div>
+    <div class="area"><h3>Нуса-Дуа и Джимбаран</h3><p>Большие курортные отели, семьи. Курортная зона на юге, до Умаласа далеко.</p></div>
+    <div class="area"><h3>Убуд</h3><p>Природа, йога, ретриты. Много туристов, но тише, чем на юге.</p></div>
+    <div class="area"><h3>Санур</h3><p>Тихий район у Денпасара, пенсионеры и семьи, международные школы, паромы на острова.</p></div>
+  </div>
+  <ul class="bul">
+    <li>Опрос иностранцев 2025 года. В среднем на Бали 12,3 ночи, 42% живут больше 9 ночей. 47% в звёздных отелях, 27% на виллах.</li>
+    <li>66% туристов ходят по магазинам, чаще всего в торговые центры (33%) и на рынки. О Бали узнают в Instagram и TikTok.</li>
+    <li>Средние траты иностранца около 2,93 млн IDR в день, это около 163 $.</li>
+    <li>Виллы в Чангу на Airbnb больше всего зарабатывают в июле, меньше всего в феврале. Загрузка от 37% в январе до 48% в августе-сентябре. Даже в нашем районе краткосрочный турист летний.</li>
+  </ul>
+</section>
+
+<div class="band panel">
+  <section class="wrap">
+    <div class="eyebrow">Кто живёт постоянно</div>
+    <h2 class="h2">Экспаты и цифровые кочевники</h2>
+    <ul class="bul">
+      <li>Сколько цифровых кочевников на Бали, официально не публикуют. Оценки в статьях от 30 до 100 тысяч иностранцев без ссылки на первоисточник, на них не опираемся.</li>
+      <li>Последние найденные официальные цифры за 2022 год. Иммиграция аэропорта Нгурах-Рай выдала 71 001 разрешение на пребывание. Больше всего у России, 29 762. Дальше Австралия 8 219, Германия 7 434, Франция 6 547, Великобритания 6 516. Это разрешения, включая продления виз, а не число жителей.</li>
+      <li>По разрешениям 2022 года русские чаще других продлевают пребывание. Значит, зимой их на острове ещё больше, чем видно по прилётам.</li>
+      <li>По отчёту за июль 2026 года 20% наших покупателей живут на Бали. Их сезонность слабее. Сколько из них уезжает летом, данных нет.</li>
+      <li>Для модели считаем этих 20% ровными круглый год.</li>
+    </ul>
+  </section>
+</div>
+
+<section class="sec wrap">
+  <div class="eyebrow">Календарь 2027</div>
+  <h2>Месяц за месяцем: кто едет и что делать магазину</h2>
+  <p class="lead">Крупная цифра это коэффициент нашего магазина (среднее 1,00). Рядом коэффициент всего рынка Бали. Красная полоса сверху у сильных месяцев, синяя у слабых.</p>
+  <div class="cal">
+  <article class="mcard up">
+  <div class="mh"><h3>Январь</h3><div class="k"><b>1,13</b><span>рынок 0,86</span></div></div>
+  <div class="row"><div class="rl">Кто едет</div><p>Русские и украинцы на пике зимовки. Австралийцы на летних школьных каникулах до конца месяца. Корейцы.</p></div>
+  <div class="row"><div class="rl">Даты 2027</div><p>Новогодние каникулы в России с 31.12.2026 по 10.01.2027. Каникулы в школах Австралии до конца января.</p></div>
+  <div class="row"><div class="rl">Магазину</div><p>Второй месяц года после декабря. Реклама на русском. Вечернее и курортное, новые поступления сразу после праздников.</p></div>
+</article><article class="mcard ">
+  <div class="mh"><h3>Февраль</h3><div class="k"><b>1,00</b><span>рынок 0,82</span></div></div>
+  <div class="row"><div class="rl">Кто едет</div><p>Весь рынок на минимуме года, идут дожди. Зимовщики из России и Украины остаются. Китайский Новый год приводит китайцев.</p></div>
+  <div class="row"><div class="rl">Даты 2027</div><p>Китайский Новый год 6.02.2027 (выходные в Индонезии 5 и 6 февраля). Рамадан примерно с 9 февраля по 9 марта, точную дату объявит министерство религий.</p></div>
+  <div class="row"><div class="rl">Магазину</div><p>Держим русскоязычных. Предложения для тех, кто живёт на Бали. Китайцы пока не наша аудитория, бюджет на них не тратим.</p></div>
+</article><article class="mcard ">
+  <div class="mh"><h3>Март</h3><div class="k"><b>1,03</b><span>рынок 0,85</span></div></div>
+  <div class="row"><div class="rl">Кто едет</div><p>Русские ещё на зимовке. Индонезийцы едут на Лебаран. С конца месяца австралийцы на пасхальных каникулах, прибавляются британцы.</p></div>
+  <div class="row"><div class="rl">Даты 2027</div><p>Ньепи 8.03.2027, остров закрыт на сутки, аэропорт не работает. Идул Фитри 10-11.03, в Индонезии длинные выходные с 6 по 15 марта. Пасха 28.03.</p></div>
+  <div class="row"><div class="rl">Магазину</div><p>В день Ньепи магазин закрыт, закладываем в план. На Лебаран реклама на индонезийском для гостей с Явы.</p></div>
+</article><article class="mcard ">
+  <div class="mh"><h3>Апрель</h3><div class="k"><b>0,95</b><span>рынок 0,99</span></div></div>
+  <div class="row"><div class="rl">Кто едет</div><p>Австралийцы на пасхальных каникулах, французы и британцы на весенних. Русские начинают разъезжаться.</p></div>
+  <div class="row"><div class="rl">Даты 2027</div><p>Каникулы в школах Австралии в разные даты с 26.03 по 25.04. Золотая неделя Японии с 29.04.</p></div>
+  <div class="row"><div class="rl">Магазину</div><p>Включаем рекламу на английском. Купальники, лён, пляжное. В 2026 году апрель дал больше марта, 303 против 240 млн IDR.</p></div>
+</article><article class="mcard down">
+  <div class="mh"><h3>Май</h3><div class="k"><b>0,92</b><span>рынок 1,04</span></div></div>
+  <div class="row"><div class="rl">Кто едет</div><p>Индийцы на пике года, у них летние каникулы. Едут французы, немцы, британцы. Русских мало.</p></div>
+  <div class="row"><div class="rl">Даты 2027</div><p>Идул Адха 17.05, Весак 20.05, в Индонезии длинные выходные. Майские в России 1-3 и 8-10.05 на прилёты русских на Бали почти не влияют.</p></div>
+  <div class="row"><div class="rl">Магазину</div><p>Основная реклама на английском. Спрос индийцев на нашу одежду не проверен, начинать с малого бюджета.</p></div>
+</article><article class="mcard ">
+  <div class="mh"><h3>Июнь</h3><div class="k"><b>0,95</b><span>рынок 1,04</span></div></div>
+  <div class="row"><div class="rl">Кто едет</div><p>Сингапурцы на школьных каникулах, индийцы, американцы, новозеландцы. С 26.06 австралийцы из Виктории и Квинсленда.</p></div>
+  <div class="row"><div class="rl">Даты 2027</div><p>Каникулы в Сингапуре 29.05-27.06. Школьные каникулы в Индонезии обычно с конца июня.</p></div>
+  <div class="row"><div class="rl">Магазину</div><p>Сингапурцы уже 10% наших покупателей, зовём их отдельно. Реклама на английском.</p></div>
+</article><article class="mcard down">
+  <div class="mh"><h3>Июль</h3><div class="k"><b>0,93</b><span>рынок 1,19</span></div></div>
+  <div class="row"><div class="rl">Кто едет</div><p>Максимум года для всего Бали. Австралийцы на зимних каникулах. Европейцы в отпусках: Нидерланды, Швейцария, Франция, Британия. Корейцы и китайцы.</p></div>
+  <div class="row"><div class="rl">Даты 2027</div><p>Каникулы в школах Западной Австралии 3-18.07, Нового Южного Уэльса 5-16.07, Виктории и Квинсленда с 26.06 по 11.07.</p></div>
+  <div class="row"><div class="rl">Магазину</div><p>Людей больше всего за год, но в основном не наших. Нужны английский в рекламе и на витрине и ассортимент под австралиек и европеек.</p></div>
+</article><article class="mcard down">
+  <div class="mh"><h3>Август</h3><div class="k"><b>0,91</b><span>рынок 1,17</span></div></div>
+  <div class="row"><div class="rl">Кто едет</div><p>Пик Европы: Италия, Испания, Франция, Германия. Японцы в праздник Обон. Австралийцы остаются.</p></div>
+  <div class="row"><div class="rl">Даты 2027</div><p>День независимости Индонезии 17.08. Отпуска в Европе.</p></div>
+  <div class="row"><div class="rl">Магазину</div><p>Французы в августе 2025 года третьи по числу прилётов после австралийцев и китайцев. Реклама на английском, проверить французский.</p></div>
+</article><article class="mcard down">
+  <div class="mh"><h3>Сентябрь</h3><div class="k"><b>0,90</b><span>рынок 1,11</span></div></div>
+  <div class="row"><div class="rl">Кто едет</div><p>Немцы, французы, японцы, малайзийцы. С конца месяца австралийцы на весенних каникулах. Русских меньше всего за год.</p></div>
+  <div class="row"><div class="rl">Даты 2027</div><p>Каникулы в Австралии с 18.09 (Виктория, Квинсленд), с 25.09 (Западная Австралия), с 27.09 (Новый Южный Уэльс).</p></div>
+  <div class="row"><div class="rl">Магазину</div><p>Самый тихий месяц для русскоязычной аудитории. Распродажа летнего, закупка к зиме.</p></div>
+</article><article class="mcard ">
+  <div class="mh"><h3>Октябрь</h3><div class="k"><b>0,99</b><span>рынок 1,04</span></div></div>
+  <div class="row"><div class="rl">Кто едет</div><p>Австралийцы до 10 октября на каникулах. Немцы и французы. Русские начинают возвращаться.</p></div>
+  <div class="row"><div class="rl">Даты 2027</div><p>Конец каникул в Австралии 3-10.10. Золотая неделя Китая 1-7.10 на Бали почти не видна.</p></div>
+  <div class="row"><div class="rl">Магазину</div><p>Возвращаем рекламу на русском. Новая коллекция к зимнему сезону.</p></div>
+</article><article class="mcard ">
+  <div class="mh"><h3>Ноябрь</h3><div class="k"><b>1,00</b><span>рынок 0,87</span></div></div>
+  <div class="row"><div class="rl">Кто едет</div><p>Рынок проседает, начинаются дожди, европейцы уезжают. Русские приезжают на зимовку. С 20.11 сингапурцы на каникулах.</p></div>
+  <div class="row"><div class="rl">Даты 2027</div><p>Длинные выходные в России 4-7.11. Каникулы в Сингапуре с 20.11 до конца года.</p></div>
+  <div class="row"><div class="rl">Магазину</div><p>Готовимся к декабрю: склад, новогодние образы, предзаказы. В ноябре 2025 года было 362 млн IDR.</p></div>
+</article><article class="mcard up">
+  <div class="mh"><h3>Декабрь</h3><div class="k"><b>1,29</b><span>рынок 1,02</span></div></div>
+  <div class="row"><div class="rl">Кто едет</div><p>Сингапурцы на пике года, русские, индийцы. С середины месяца австралийцы на летних каникулах. Индонезийцы на Рождество и Новый год.</p></div>
+  <div class="row"><div class="rl">Даты 2027</div><p>Рождество 25.12, в Индонезии выходной и 24.12. Каникулы в Австралии с 11-21.12 в зависимости от штата. Новый год.</p></div>
+  <div class="row"><div class="rl">Магазину</div><p>Лучший месяц года. Подарки, вечерние наряды, полный склад. В декабре 2025 года было 500 млн IDR.</p></div>
+</article>
+  </div>
+</section>
+
+<div class="band panel">
+  <section class="wrap">
+    <div class="eyebrow">Наши продажи</div>
+    <h2 class="h2">Выручка против сезона</h2>
+    <p class="lead">Столбцы это выручка магазина, млн IDR. Синяя линия показывает, сколько дал бы один сезон, если бы магазин работал как в ноябре-январе.</p>
+    <div class="legend" aria-hidden="true">
+      <span><i class="box" style="background:var(--rouge);opacity:.85"></i>Выручка, млн IDR</span><span><i class="kexp"></i>Что дал бы сезон</span>
+    </div>
+    <div class="scroll">
+      <div class="cbox" id="cb2" tabindex="0" aria-label="График выручки. Стрелки влево и вправо листают месяцы.">
+        <svg class="chart" id="ch2" viewBox="0 0 720 320" role="img" aria-labelledby="ch2-t">
+<title id="ch2-t">Выручка магазина по месяцам против того, что дал бы один сезон</title>
+<line class="grid" x1="50" x2="702" y1="280.0" y2="280.0"/>
+<text class="ax" x="42" y="284.0" text-anchor="end">0</text>
+<line class="grid" x1="50" x2="702" y1="228.4" y2="228.4"/>
+<text class="ax" x="42" y="232.4" text-anchor="end">100</text>
+<line class="grid" x1="50" x2="702" y1="176.8" y2="176.8"/>
+<text class="ax" x="42" y="180.8" text-anchor="end">200</text>
+<line class="grid" x1="50" x2="702" y1="125.2" y2="125.2"/>
+<text class="ax" x="42" y="129.2" text-anchor="end">300</text>
+<line class="grid" x1="50" x2="702" y1="73.6" y2="73.6"/>
+<text class="ax" x="42" y="77.6" text-anchor="end">400</text>
+<line class="grid" x1="50" x2="702" y1="22.0" y2="22.0"/>
+<text class="ax" x="42" y="26.0" text-anchor="end">500</text>
+<path class="bar" d="M63.1,280.0 V200.2 Q63.1,196.2 67.1,196.2 H83.1 Q87.1,196.2 87.1,200.2 V280.0 Z"/>
+<text class="ax" x="75.1" y="296" text-anchor="middle">Окт</text>
+<text class="ax sm" x="75.1" y="311" text-anchor="middle">2025</text>
+<path class="bar" d="M113.2,280.0 V97.2 Q113.2,93.2 117.2,93.2 H133.2 Q137.2,93.2 137.2,97.2 V280.0 Z"/>
+<text class="ax" x="125.2" y="296" text-anchor="middle">Ноя</text>
+<path class="bar" d="M163.4,280.0 V26.0 Q163.4,22.0 167.4,22.0 H183.4 Q187.4,22.0 187.4,26.0 V280.0 Z"/>
+<text class="ax" x="175.4" y="296" text-anchor="middle">Дек</text>
+<path class="bar" d="M213.5,280.0 V81.9 Q213.5,77.9 217.5,77.9 H233.5 Q237.5,77.9 237.5,81.9 V280.0 Z"/>
+<text class="ax" x="225.5" y="296" text-anchor="middle">Янв</text>
+<text class="ax sm" x="225.5" y="311" text-anchor="middle">2026</text>
+<path class="bar" d="M263.7,280.0 V160.2 Q263.7,156.2 267.7,156.2 H283.7 Q287.7,156.2 287.7,160.2 V280.0 Z"/>
+<text class="ax" x="275.7" y="296" text-anchor="middle">Фев</text>
+<path class="bar" d="M313.8,280.0 V160.2 Q313.8,156.2 317.8,156.2 H333.8 Q337.8,156.2 337.8,160.2 V280.0 Z"/>
+<text class="ax" x="325.8" y="296" text-anchor="middle">Мар</text>
+<path class="bar" d="M364.0,280.0 V127.7 Q364.0,123.7 368.0,123.7 H384.0 Q388.0,123.7 388.0,127.7 V280.0 Z"/>
+<text class="ax" x="376.0" y="296" text-anchor="middle">Апр</text>
+<path class="bar" d="M414.2,280.0 V203.0 Q414.2,199.0 418.2,199.0 H434.2 Q438.2,199.0 438.2,203.0 V280.0 Z"/>
+<text class="ax" x="426.2" y="296" text-anchor="middle">Май</text>
+<path class="bar" d="M464.3,280.0 V215.9 Q464.3,211.9 468.3,211.9 H484.3 Q488.3,211.9 488.3,215.9 V280.0 Z"/>
+<text class="ax" x="476.3" y="296" text-anchor="middle">Июн</text>
+<path class="bar" d="M514.5,280.0 V217.4 Q514.5,213.4 518.5,213.4 H534.5 Q538.5,213.4 538.5,217.4 V280.0 Z"/>
+<text class="ax" x="526.5" y="296" text-anchor="middle">Июл</text>
+<path class="bar" d="M564.6,280.0 V246.3 Q564.6,242.3 568.6,242.3 H584.6 Q588.6,242.3 588.6,246.3 V280.0 Z"/>
+<text class="ax" x="576.6" y="296" text-anchor="middle">Авг</text>
+<path class="bar" d="M614.8,280.0 V254.6 Q614.8,250.6 618.8,250.6 H634.8 Q638.8,250.6 638.8,254.6 V280.0 Z"/>
+<text class="ax" x="626.8" y="296" text-anchor="middle">Сен</text>
+<path class="bar part" d="M664.9,280.0 V268.0 Q664.9,264.0 668.9,264.0 H684.9 Q688.9,264.0 688.9,268.0 V280.0 Z"/>
+<text class="ax" x="676.9" y="296" text-anchor="middle">Окт</text>
+<text class="ax sm" x="676.9" y="311" text-anchor="middle">2026</text>
+<polyline class="ln exp" points="75.1,92.8 125.2,90.9 175.4,36.0 225.5,66.3 275.7,90.9 325.8,85.2 376.0,100.3 426.2,106.0 476.3,100.3 526.5,104.1 576.6,107.9 626.8,109.8 676.9,92.8"/>
+<circle class="dot exp" cx="75.1" cy="92.8" r="4"/>
+<circle class="dot exp" cx="125.2" cy="90.9" r="4"/>
+<circle class="dot exp" cx="175.4" cy="36.0" r="4"/>
+<circle class="dot exp" cx="225.5" cy="66.3" r="4"/>
+<circle class="dot exp" cx="275.7" cy="90.9" r="4"/>
+<circle class="dot exp" cx="325.8" cy="85.2" r="4"/>
+<circle class="dot exp" cx="376.0" cy="100.3" r="4"/>
+<circle class="dot exp" cx="426.2" cy="106.0" r="4"/>
+<circle class="dot exp" cx="476.3" cy="100.3" r="4"/>
+<circle class="dot exp" cx="526.5" cy="104.1" r="4"/>
+<circle class="dot exp" cx="576.6" cy="107.9" r="4"/>
+<circle class="dot exp" cx="626.8" cy="109.8" r="4"/>
+<circle class="dot exp" cx="676.9" cy="92.8" r="4"/>
+<text class="lbl" x="175.4" y="16.0" text-anchor="middle">500</text>
+<text class="lbl" x="676.9" y="256.0" text-anchor="middle">31</text>
+<line class="xh" id="ch2-x" x1="0" x2="0" y1="22" y2="280" visibility="hidden"/>
+<rect class="hit" x="50" y="22" width="652" height="258"/>
+</svg>
+        <div class="tip" id="tip2" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+    <div class="hint">Листайте график вбок. Октябрь 2026 бледный, это только 1-19 число.</div>
+    <div class="note">Важно. С февраля 2026 года в магазине пустели полки и ушёл управляющий партнёр. Поэтому падение с весны в основном не сезон, а проблемы магазина. Октябрь 2025 первый месяц после открытия.</div>
+    <ul class="bul">
+      <li>Ноябрь, декабрь и январь легли на сезонную кривую почти точно, отклонение не больше 6%. Значит, зимний пик это сезон нашей аудитории.</li>
+      <li>В феврале и марте выручка ниже сезона на 35%. Это совпадает с началом проблем с товаром.</li>
+      <li>В мае-сентябре сезон дал бы около 330-348 млн IDR в месяц. По факту от 57 до 157.</li>
+      <li>От декабря к сентябрю сезон снижает выручку на 30%. Фактически она упала на 89%.</li>
+      <li>Основатель говорит, что сезон круглый год и меняются аудитории, зимой русские, летом австралийцы. Бренд-поставщик говорил, что в мае-августе у него почти нет продаж. Данные подтверждают обоих. Летом рынок полный, но русскоязычных меньше. Без английской рекламы лето проседает.</li>
+    </ul>
+    <details class="tv">
+      <summary>Таблица: выручка, сезон, отклонение</summary>
+      <div class="scroll"><div class="tbl"><table>
+        <thead><tr><th scope="col">Месяц</th><th scope="col">Выручка, млн IDR</th><th scope="col">В $</th><th scope="col">Коэф.</th><th scope="col">Сезон, млн IDR</th><th scope="col">Факт к сезону</th></tr></thead>
+        <tbody><tr><th scope="row">Окт 2025</th><td>162,4</td><td>9 022</td><td>0,99</td><td>363</td><td>месяц открытия</td></tr><tr><th scope="row">Ноя 2025</th><td>362</td><td>20 111</td><td>1,00</td><td>367</td><td>99% от сезона</td></tr><tr><th scope="row">Дек 2025</th><td>500</td><td>27 778</td><td>1,29</td><td>473</td><td>106% от сезона</td></tr><tr><th scope="row">Янв 2026</th><td>391,6</td><td>21 756</td><td>1,13</td><td>414</td><td>95% от сезона</td></tr><tr><th scope="row">Фев 2026</th><td>240</td><td>13 333</td><td>1,00</td><td>367</td><td>65% от сезона</td></tr><tr><th scope="row">Мар 2026</th><td>240</td><td>13 333</td><td>1,03</td><td>378</td><td>64% от сезона</td></tr><tr><th scope="row">Апр 2026</th><td>303</td><td>16 833</td><td>0,95</td><td>348</td><td>87% от сезона</td></tr><tr><th scope="row">Май 2026</th><td>157</td><td>8 722</td><td>0,92</td><td>337</td><td>47% от сезона</td></tr><tr><th scope="row">Июн 2026</th><td>132</td><td>7 333</td><td>0,95</td><td>348</td><td>38% от сезона</td></tr><tr><th scope="row">Июл 2026</th><td>129</td><td>7 167</td><td>0,93</td><td>341</td><td>38% от сезона</td></tr><tr><th scope="row">Авг 2026</th><td>73</td><td>4 056</td><td>0,91</td><td>334</td><td>22% от сезона</td></tr><tr><th scope="row">Сен 2026</th><td>56,9</td><td>3 161</td><td>0,90</td><td>330</td><td>17% от сезона</td></tr><tr><th scope="row">Окт 2026</th><td>31</td><td>1 722</td><td>0,99</td><td>363</td><td>только 1-19 число, темп около 51 за месяц</td></tr></tbody>
+      </table></div></div>
+      <p class="muted" style="font-size:13.5px">Курс 18 000 IDR за 1 $. «Сезон» это средний месяц уровня ноября-января (367 млн IDR), умноженный на коэффициент месяца.</p>
+    </details>
+  </section>
+</div>
+
+<section class="sec wrap">
+  <div class="eyebrow">Для инвестора</div>
+  <h2>Коэффициенты сезонности для модели</h2>
+  <p class="lead">Среднее по году ровно 1,00. Выручка месяца равна среднемесячной выручке, умноженной на коэффициент месяца.</p>
+  <div class="formula">Выручка месяца = средний месяц × коэффициент</div>
+  <div class="scroll"><div class="tbl heat"><table>
+    <thead><tr><th scope="col">Ряд</th><th scope="col">Янв</th><th scope="col">Фев</th><th scope="col">Мар</th><th scope="col">Апр</th><th scope="col">Май</th><th scope="col">Июн</th><th scope="col">Июл</th><th scope="col">Авг</th><th scope="col">Сен</th><th scope="col">Окт</th><th scope="col">Ноя</th><th scope="col">Дек</th></tr></thead>
+    <tbody><tr class="main"><th scope="row">Наша аудитория<br><small>основной, в модель</small></th><td class="hc hot" style="--a:0.14"><span>1,13</span></td><td class="hc cold" style="--a:0.00"><span>1,00</span></td><td class="hc hot" style="--a:0.03"><span>1,03</span></td><td class="hc cold" style="--a:0.06"><span>0,95</span></td><td class="hc cold" style="--a:0.09"><span>0,92</span></td><td class="hc cold" style="--a:0.06"><span>0,95</span></td><td class="hc cold" style="--a:0.08"><span>0,93</span></td><td class="hc cold" style="--a:0.10"><span>0,91</span></td><td class="hc cold" style="--a:0.11"><span>0,90</span></td><td class="hc cold" style="--a:0.00"><span>0,99</span></td><td class="hc cold" style="--a:0.00"><span>1,00</span></td><td class="hc hot" style="--a:0.32"><span>1,29</span></td></tr><tr><th scope="row">Только русскоязычные<br><small>пессимистичный</small></th><td class="hc hot" style="--a:0.45"><span>1,41</span></td><td class="hc hot" style="--a:0.16"><span>1,15</span></td><td class="hc hot" style="--a:0.11"><span>1,10</span></td><td class="hc cold" style="--a:0.06"><span>0,95</span></td><td class="hc cold" style="--a:0.23"><span>0,79</span></td><td class="hc cold" style="--a:0.26"><span>0,76</span></td><td class="hc cold" style="--a:0.23"><span>0,79</span></td><td class="hc cold" style="--a:0.26"><span>0,76</span></td><td class="hc cold" style="--a:0.29"><span>0,74</span></td><td class="hc cold" style="--a:0.00"><span>0,99</span></td><td class="hc hot" style="--a:0.09"><span>1,08</span></td><td class="hc hot" style="--a:0.53"><span>1,48</span></td></tr><tr><th scope="row">Весь рынок Бали<br><small>оптимистичный</small></th><td class="hc cold" style="--a:0.15"><span>0,86</span></td><td class="hc cold" style="--a:0.20"><span>0,82</span></td><td class="hc cold" style="--a:0.17"><span>0,85</span></td><td class="hc cold" style="--a:0.00"><span>0,99</span></td><td class="hc hot" style="--a:0.04"><span>1,04</span></td><td class="hc hot" style="--a:0.04"><span>1,04</span></td><td class="hc hot" style="--a:0.21"><span>1,19</span></td><td class="hc hot" style="--a:0.19"><span>1,17</span></td><td class="hc hot" style="--a:0.12"><span>1,11</span></td><td class="hc hot" style="--a:0.04"><span>1,04</span></td><td class="hc cold" style="--a:0.14"><span>0,87</span></td><td class="hc hot" style="--a:0.00"><span>1,02</span></td></tr><tr><th scope="row">Виллы в Чангу<br><small>для сверки</small></th><td class="hc cold" style="--a:0.05"><span>0,95</span></td><td class="hc cold" style="--a:0.23"><span>0,79</span></td><td class="hc cold" style="--a:0.17"><span>0,84</span></td><td class="hc cold" style="--a:0.05"><span>0,96</span></td><td class="hc cold" style="--a:0.04"><span>0,97</span></td><td class="hc hot" style="--a:0.10"><span>1,09</span></td><td class="hc hot" style="--a:0.35"><span>1,32</span></td><td class="hc hot" style="--a:0.21"><span>1,19</span></td><td class="hc hot" style="--a:0.00"><span>1,01</span></td><td class="hc cold" style="--a:0.00"><span>1,00</span></td><td class="hc cold" style="--a:0.14"><span>0,87</span></td><td class="hc hot" style="--a:0.00"><span>1,01</span></td></tr></tbody>
+  </table></div></div>
+  <div class="hint">Листайте вбок, чтобы увидеть все месяцы.</div>
+  <p>Пример. Средний месяц 1 млрд IDR. Тогда декабрь 1,29 млрд, сентябрь 0,90 млрд.</p>
+  <h3 style="font-size:22px;margin-top:26px">Откуда основной ряд</h3>
+  <ol class="steps">
+    <li>Взяли прилёты каждой страны по месяцам за 2024 и 2025 годы из статистики Бали. 2023 год не брали, рынок ещё восстанавливался после ковида и рос каждый месяц.</li>
+    <li>Для каждой страны посчитали индекс месяца. Это прилёты месяца, делённые на средний месяц года. Два года усреднили.</li>
+    <li>Смешали страны в пропорции наших покупателей из отчёта за июль 2026: Россия 40%, Украина 10%, Австралия 10%, Сингапур 10%, местные 6% (по календарю внутренних туристов), Германия 2%, Франция 2%, другие 20% (как весь рынок).</li>
+    <li>Поправили на июль. Июль у русских слабый месяц, значит за год их доля выше, около 46%, у украинцев около 12%, у австралийцев около 8%.</li>
+    <li>20% покупателей живут на Бали. Их считаем ровными круглый год.</li>
+    <li>Учли 2027 год. Лебаран будет в марте, а не в апреле. Индонезийские туристы сдвигаются на март.</li>
+    <li>Округлили до сотых, среднее ровно 1,00.</li>
+  </ol>
+  <ul class="bul">
+    <li><b>Основной ряд</b> для базового сценария. Аудитория как сейчас, летом спад 5-10%.</li>
+    <li><b>Только русскоязычные</b> для пессимистичного. Если английская аудитория так и не появится. Лето 0,74-0,79, декабрь 1,48.</li>
+    <li><b>Весь рынок Бали</b> для оптимистичного. Если покупатели станут похожи на весь остров. Июль 1,19, февраль 0,82.</li>
+    <li><b>Виллы в Чангу</b> только для сверки. Выручка вилл на Airbnb по месяцам за 2 года, форма почти как у рынка.</li>
+  </ul>
+  <div class="note">Чего модель не знает. Состав покупателей взят из одного месяца, июля 2026. Сколько резидентов уезжает летом, неизвестно. В день Ньепи (8.03.2027) магазин закрыт, это около 3% выручки марта, в коэффициенты не заложено. Ряд стоит пересчитать, когда появятся продажи по дням за год работы.</div>
+</section>
+
+<div class="band panel">
+  <section class="wrap">
+    <div class="eyebrow">Источники</div>
+    <h2 class="h2">Откуда цифры</h2>
+    <p class="muted" style="font-size:14px">Все ссылки открыты 25.10.2026. Цифры прилётов это данные статистического управления провинции Бали (BPS Provinsi Bali), которые публикует туристический департамент Бали. Сайт BPS закрыт для автоматического чтения, поэтому таблицы взяты у департамента, итоги сверены.</p>
+    <ol class="src">
+      <li>Dinas Pariwisata Provinsi Bali. Rilis Data Statistik Bulan Agustus 2026 (опубликовано 05.10.2026): прилёты по месяцам 2008-2026, страны за январь-август 2026, внутренние туристы 2019-2026, загрузка отелей. <a href="https://disparda.baliprov.go.id/rilis-data-statistik-bulan-agustus-2026">disparda.baliprov.go.id/rilis-data-statistik-bulan-agustus-2026</a></li>
+      <li>Dinas Pariwisata Provinsi Bali. Статистика туризма Бали 2025, таблицы 1-7 (страны по месяцам 2025). <a href="https://disparda.baliprov.go.id/buku-statistik-pariwisata-bali-tahun-2025">disparda.baliprov.go.id/buku-statistik-pariwisata-bali-tahun-2025</a></li>
+      <li>То же за 2024 год. <a href="https://disparda.baliprov.go.id/buku-statistik-pariwisata-bali-tahun-2024">disparda.baliprov.go.id/buku-statistik-pariwisata-bali-tahun-2024</a></li>
+      <li>То же за 2023 год. <a href="https://disparda.baliprov.go.id/buku-statistik-pariwisata-tahun-2023">disparda.baliprov.go.id/buku-statistik-pariwisata-tahun-2023</a></li>
+      <li>Dinas Pariwisata Provinsi Bali. Karakteristik dan Indeks Kepuasan Wisatawan Mancanegara 2025 (опрос иностранцев: ночи, жильё, покупки, траты). <a href="https://disparda.baliprov.go.id/buku-karakteristik-dan-indeks-kepuasan-wisatawan-mancanegara-tahun-2025">disparda.baliprov.go.id/buku-karakteristik-dan-indeks-kepuasan-wisatawan-mancanegara-tahun-2025</a></li>
+      <li>BPS Provinsi Bali. Итоги 2025 года, 6 948 754 прилёта (02.02.2026). <a href="https://bali.bps.go.id/en/news/2026/02/02/347/bali-s-foreign-arrivals-jan-dec-2025-rise--with-australia-remaining-the-largest-contributor-overall-.html">bali.bps.go.id</a></li>
+      <li>RRI, 05.05.2026. Первый квартал 2026 года и причины спада в марте. <a href="https://rri.co.id/en/tourism/2391142/bali-welcomes-14-million-foreign-tourists-in-first-quarter-of-2026">rri.co.id</a></li>
+      <li>AirROI. Airbnb в Чангу по месяцам, обновлено 01.10.2026. <a href="https://www.airroi.com/airbnb-data/indonesia/bali/canggu">airroi.com/airbnb-data/indonesia/bali/canggu</a></li>
+      <li>Antara, 03.01.2023. Иммиграция Нгурах-Рай: 71 001 разрешение на пребывание в 2022 году. <a href="https://bali.antaranews.com/berita/304389/imigrasi-ngurah-rai-terbitkan-71001-izin-tinggal-untuk-wna-sepanjang-2022">bali.antaranews.com</a></li>
+      <li>Interfax, 20.08.2024. Аэрофлот запускает прямые рейсы Москва-Денпасар с 17.09.2024. <a href="https://www.interfax.com/newsroom/top-stories/105242/">interfax.com</a></li>
+      <li>Setneg (секретариат правительства Индонезии), 15.09.2026. Праздники и общие выходные Индонезии на 2027 год. <a href="https://setneg.go.id/baca/index/inilah_skb_3_menteri_libur_nasional_dan_cuti_bersama_2027">setneg.go.id</a></li>
+      <li>Школьные каникулы Австралии 2027. Западная Австралия: <a href="https://www.education.wa.edu.au/future-term-dates">education.wa.edu.au</a>. Новый Южный Уэльс: <a href="https://education.nsw.gov.au/schooling/calendars/2027">education.nsw.gov.au</a>. Квинсленд: <a href="https://education.qld.gov.au/about-us/calendar/future-dates">education.qld.gov.au</a>. Виктория: <a href="https://www.vic.gov.au/school-term-dates-and-holidays-victoria">vic.gov.au</a></li>
+      <li>Министерство образования Сингапура, 14.07.2026. Школьные четверти и каникулы 2027. <a href="https://www.moe.gov.sg/news/press-releases/20260714-school-terms-and-holidays-for-2027">moe.gov.sg</a></li>
+      <li>360.ru, 19.09.2026. Производственный календарь России на 2027 год. <a href="https://360.ru/tekst/obschestvo/proizvodstvennyj-kalendar-2027/">360.ru</a></li>
+      <li>Expat.com, обновлено 11.05.2026. Районы Бали для жизни. <a href="https://www.expat.com/en/guide/asia/indonesia/21561-popular-neighbourhoods-in-bali.html">expat.com</a></li>
+      <li>Bali Home Immo, 22.09.2025. Умалас для семей и экспатов (сайт агентства недвижимости). <a href="https://bali-home-immo.com/blog/living-in-bali/why-families-and-expats-love-living-in-umalas">bali-home-immo.com</a></li>
+      <li>DMARGE, 20.05.2024. Чангу на картах переименовали в «Новую Москву». <a href="https://www.dmarge.com/bali-surf-hotspot-renamed-new-moscow">dmarge.com</a></li>
+      <li>Данные магазина: выручка по месяцам, отчёт о покупателях за июль 2026 года.</li>
+    </ol>
+  </section>
+</div>
+
+<footer class="wrap">
+  <p>Maison Sauvage, сезонность Бали, версия 1 от 25.10.2026. Курс 18 000 IDR за 1 $.</p>
+</footer>
+
+<script>
+(function () {
+  const D = {"months": ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"], "arr": {"2023": [331785, 323510, 370695, 411510, 439475, 478198, 541353, 522141, 508350, 461441, 403154, 481646], "2024": [420037, 455277, 469227, 503194, 544601, 520898, 625665, 616641, 593909, 559911, 472900, 551100], "2025": [529897, 450697, 470851, 591221, 602213, 637868, 697107, 682866, 635149, 594853, 483364, 572668], "2026": [502205, 492289, 472070, 553328, 578251, 605013, 697809, 685994]}, "shop": [["Окт 2025", 162.4, 363], ["Ноя 2025", 362, 367], ["Дек 2025", 500, 473], ["Янв 2026", 391.6, 414], ["Фев 2026", 240, 367], ["Мар 2026", 240, 378], ["Апр 2026", 303, 348], ["Май 2026", 157, 337], ["Июн 2026", 132, 348], ["Июл 2026", 129, 341], ["Авг 2026", 73, 334], ["Сен 2026", 56.9, 330], ["Окт 2026", 31, 363]], "g1": {"L": 58, "pw": 638, "W": 720}, "g2": {"L": 50, "pw": 652, "W": 720, "n": 13}};
+  function fmt(x) { return Math.round(x).toLocaleString('ru-RU').replace(/,/g, ' '); }
+  function rowEl(color, val, label) {
+    const r = document.createElement('div'); r.className = 'r';
+    const i = document.createElement('i'); i.style.background = color; r.appendChild(i);
+    const b = document.createElement('b'); b.textContent = val; r.appendChild(b);
+    const s = document.createElement('span'); s.textContent = label; r.appendChild(s);
+    return r;
+  }
+  function setup(boxId, svgId, tipId, xhId, n, geo, fill) {
+    const box = document.getElementById(boxId), svg = document.getElementById(svgId);
+    const tip = document.getElementById(tipId), xh = document.getElementById(xhId);
+    if (!box || !svg) return;
+    let cur = -1;
+    function show(i) {
+      cur = Math.max(0, Math.min(n - 1, i));
+      const x = geo.L + geo.pw * (cur + 0.5) / n;
+      xh.setAttribute('x1', x); xh.setAttribute('x2', x); xh.setAttribute('visibility', 'visible');
+      tip.replaceChildren(); fill(tip, cur);
+      tip.style.display = 'block';
+      const scale = svg.getBoundingClientRect().width / geo.W;
+      const bx = svg.getBoundingClientRect().left - box.getBoundingClientRect().left;
+      let px = bx + x * scale + 14;
+      if (px + tip.offsetWidth > box.clientWidth - 6) px = bx + x * scale - tip.offsetWidth - 14;
+      tip.style.left = Math.max(6, px) + 'px'; tip.style.top = '14px';
+    }
+    function hide() { tip.style.display = 'none'; xh.setAttribute('visibility', 'hidden'); }
+    function idxFromEvent(e) {
+      const r = svg.getBoundingClientRect();
+      const x = (e.clientX - r.left) * geo.W / r.width;
+      return Math.floor((x - geo.L) / geo.pw * n);
+    }
+    svg.addEventListener('pointermove', e => { const i = idxFromEvent(e); if (i >= 0 && i < n) show(i); else hide(); });
+    svg.addEventListener('pointerdown', e => { const i = idxFromEvent(e); if (i >= 0 && i < n) show(i); });
+    svg.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') hide(); });
+    box.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') { show(cur + 1); e.preventDefault(); }
+      if (e.key === 'ArrowLeft') { show(cur < 0 ? n - 1 : cur - 1); e.preventDefault(); }
+      if (e.key === 'Escape') hide();
+    });
+    box.addEventListener('focus', () => { if (cur < 0) show(0); else show(cur); });
+    box.addEventListener('blur', hide);
+  }
+  const cs = getComputedStyle(document.documentElement);
+  const col = v => cs.getPropertyValue(v).trim();
+  setup('cb1', 'ch1', 'tip1', 'ch1-x', 12, D.g1, (tip, i) => {
+    const t = document.createElement('div'); t.className = 't'; t.textContent = D.months[i]; tip.appendChild(t);
+    [['2026', '--rouge'], ['2025', '--cool'], ['2024', '--s24'], ['2023', '--s23']].forEach(([y, c]) => {
+      const v = D.arr[y][i];
+      tip.appendChild(rowEl(col(c), v === undefined ? 'нет данных' : fmt(v), y));
+    });
+  });
+  setup('cb2', 'ch2', 'tip2', 'ch2-x', D.shop.length, D.g2, (tip, i) => {
+    const [lab, v, e] = D.shop[i];
+    const t = document.createElement('div'); t.className = 't'; t.textContent = lab; tip.appendChild(t);
+    tip.appendChild(rowEl(col('--rouge'), String(v).replace('.', ',') + ' млн', i === D.shop.length - 1 ? 'выручка 1-19 числа' : 'выручка'));
+    tip.appendChild(rowEl(col('--cool'), e + ' млн', 'сезон'));
+  });
+})();
+</script>
+</body>
+</html>
