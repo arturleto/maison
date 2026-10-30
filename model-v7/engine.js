@@ -1,11 +1,11 @@
 (function(root){'use strict';
 // Финансовая модель Maison Sauvage, версия 7 (30.10.2026). Четыре расчёта: 0 пессимистичный, 50 реалистичный, 100 оптимистичный, 150 «если 100 человек в день».
 // Отличие от v6: управленческий фонд (управляющий и основатель) считается от продаж месяца во всех расчётах, с первого месяца, без привязки к возврату вложения.
-// Опорные точки d.mgmt.points = [[продажи $ в месяц, доля продаж]], ниже первой точки 0, между точками доля меняется равномерно, выше последней точки доля последней (20%). Продажи = вся выручка до расчёта с брендами.
+// Кривая d.mgmt.curve: ниже start (25 000 $) ноль, в start фонд startFund (600 $), дальше растёт как парабола: startFund + k × (продажи − start)^power, в end (100 000 $) фонд endFund (20 000 $), выше end доля endFund/end (20%). Продажи = вся выручка до расчёта с брендами.
 // Остальное как в v6: люди в день по каналам × доля купивших × чек, плюс онлайн и второй этаж; расходы ступенями A→B→C→D; деньги, налоги и защита инвестора как в v5.
 const KEYS={0:'pes',50:'std',100:'opt',150:'max'};
-function mgmtFund(d,revenue){if(!d.mgmt)return 0;const su=revenue/d.rate,pts=d.mgmt.points;if(su<pts[0][0])return 0;let rate=pts.at(-1)[1];
- for(let i=1;i<pts.length;i++){const[a,ra]=pts[i-1],[b,rb]=pts[i];if(su<=b){rate=ra+(rb-ra)*(su-a)/(b-a);break;}}return su*rate*d.rate;}
+function mgmtFund(d,revenue){if(!d.mgmt)return 0;const su=revenue/d.rate,c=d.mgmt.curve;if(su<c.start)return 0;if(su>=c.end)return su*(c.endFund/c.end)*d.rate;
+ const k=(c.endFund-c.startFund)/Math.pow(c.end-c.start,c.power);return (c.startFund+k*Math.pow(su-c.start,c.power))*d.rate;}
 function simulate(d,position){
  const p=KEYS[+position]!==undefined?+position:50,k=KEYS[p],c=d.costs,check=d.checks[k];
  const sum=o=>Object.values(o).reduce((a,b)=>a+b,0),order=d.stages.order,sidx=s=>order.indexOf(s);
