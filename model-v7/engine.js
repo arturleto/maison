@@ -1,12 +1,13 @@
 (function(root){'use strict';
 // Финансовая модель Maison Sauvage, версия 7 (30.10.2026). Четыре расчёта: 0 пессимистичный, 50 реалистичный, 100 оптимистичный, 150 «если 100 человек в день».
 // Отличие от v6: управленческий фонд (управляющий и основатель) считается от продаж месяца во всех расчётах, с первого месяца, без привязки к возврату вложения.
-// Кривая d.mgmt.curve: ниже start (25 000 $) ноль; от start до flatTo (40 000 $) оклад растёт равномерно с startFund (600 $) до flatFund (750 $); дальше парабола flatFund + k × (продажи − flatTo)^power до endFund (16 000 $) при end (100 000 $); потолок cap (16 000 $). Продажи = вся выручка до расчёта с брендами.
+// Кривая d.mgmt.curve: ниже start (25 000 $) ноль; от start до flatTo (40 000 $) оклад растёт равномерно с startFund (600 $) до flatFund (750 $); дальше flatFund + k × (продажи − flatTo)^power до endFund при end (100 000 $); выше end прибавляется slope с каждого доллара продаж. Параметры подобраны под цели по инвестору: 160 000 / 200 000+ / 250 000 $. Продажи = вся выручка до расчёта с брендами.
 // Остальное как в v6: люди в день по каналам × доля купивших × чек, плюс онлайн и второй этаж; расходы ступенями A→B→C→D; деньги, налоги и защита инвестора как в v5.
 const KEYS={0:'pes',50:'std',100:'opt',150:'max'};
 function mgmtFund(d,revenue){if(!d.mgmt)return 0;const su=revenue/d.rate,c=d.mgmt.curve;if(su<c.start)return 0;
  if(su<=c.flatTo)return (c.startFund+(c.flatFund-c.startFund)*(su-c.start)/(c.flatTo-c.start))*d.rate;
- const k=(c.endFund-c.flatFund)/Math.pow(c.end-c.flatTo,c.power);return Math.min(c.cap,c.flatFund+k*Math.pow(su-c.flatTo,c.power))*d.rate;}
+ if(su<=c.end){const k=(c.endFund-c.flatFund)/Math.pow(c.end-c.flatTo,c.power);return (c.flatFund+k*Math.pow(su-c.flatTo,c.power))*d.rate;}
+ return (c.endFund+c.slope*(su-c.end))*d.rate;}
 function simulate(d,position){
  const p=KEYS[+position]!==undefined?+position:50,k=KEYS[p],c=d.costs,check=d.checks[k];
  const sum=o=>Object.values(o).reduce((a,b)=>a+b,0),order=d.stages.order,sidx=s=>order.indexOf(s);
