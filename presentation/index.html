@@ -48,6 +48,7 @@
 .trio figure { margin: 0; } .trio .ph { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 6px; display: block; }
 .trio figcaption { margin-top: 8px; font-size: 13px; line-height: 1.45; color: var(--text2); }
 @media (max-width: 700px) { .trio { grid-template-columns: 1fr 1fr; } .trio figure:last-child { grid-column: 1 / -1; } .trio figure:last-child .ph { aspect-ratio: 3 / 2; } }
+.brands { display:flex; flex-wrap:wrap; gap:10px; margin-top: clamp(22px,3vw,32px); } .brands .bt { padding:9px 14px; border:1px solid #d9cfc2; border-radius:999px; background:#fff; font-size:14.5px; white-space:nowrap; }
 .eyebrow-s { margin: 0 0 10px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #8a2a32; font-weight: 700; }
 .pairs.three { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2.5vw, 32px); }
 .pairs.three .pair { padding: 18px 20px; background: #fff; border: 1px solid #e3ddd3; border-radius: 6px; }
@@ -106,7 +107,7 @@
 <body>
 <header class="topbar"><button class="burger" id="toc-btn" aria-expanded="false" aria-controls="toc" aria-label="Оглавление"><span></span><span></span><span></span></button><a class="tb-name" href="#s1">Maison Sauvage</a><a class="tb-tg" href="https://t.me/maison_sauvage" target="_blank" rel="noopener">Telegram</a></header>
 <div class="toc-veil" id="toc-veil"></div>
-<nav class="toc" id="toc" aria-label="Оглавление"><div class="toc-head"><span>Оглавление</span><button class="toc-x" id="toc-x" aria-label="Закрыть оглавление">✕</button></div><div class="toc-g"><div class="toc-gt">Главное</div><a href="#s1"><span class="tn">01</span>Главное</a><a href="#s2"><span class="tn">02</span>Три сценария</a><a href="#s3"><span class="tn">03</span>Видеопрезентация</a><a href="#s4"><span class="tn">04</span>Что магазин уже сделал</a></div><div class="toc-g"><div class="toc-gt">Магазин</div><a href="#s5"><span class="tn">05</span>Здание: два этажа, 300 м²</a><a href="#s6"><span class="tn">06</span>Так магазин выглядит внутри</a><a href="#s7"><span class="tn">07</span>История магазина</a><a href="#s8"><span class="tn">08</span>Сейчас тяжело. Дальше легко</a><a href="#s9"><span class="tn">09</span>Январь почти без рекламы</a><a href="#s10"><span class="tn">10</span>Вход и фасад: как мы это видим</a><a href="#s11"><span class="tn">11</span>Бренды и гости магазина</a><a href="#s12"><span class="tn">12</span>Instagram</a></div><div class="toc-g"><div class="toc-gt">Продажи</div><a href="#s13"><span class="tn">13</span>Отчёты продавцов за всё время</a></div><div class="toc-g"><div class="toc-gt">Аренда и деньги</div><a href="#s14"><span class="tn">14</span>Аренда оплачена на 73%</a><a href="#s15"><span class="tn">15</span>На что пойдут деньги</a><a href="#s16"><span class="tn">16</span>События по выходным</a><a href="#s17"><span class="tn">17</span>Откуда люди</a></div><div class="toc-g"><div class="toc-gt">Доходность</div><a href="#s18"><span class="tn">18</span>Нижняя граница</a><a href="#s19"><span class="tn">19</span>Сравнение с другими вложениями</a><a href="#s20"><span class="tn">20</span>Почему доходность высокая</a><a href="#s21"><span class="tn">21</span>Войти можно от 10 700 $</a><a href="#s22"><span class="tn">22</span>Пример на 10 700 $</a></div><div class="toc-g"><div class="toc-gt">Сделка и защита</div><a href="#s23"><span class="tn">23</span>Как инвестор получает деньги</a><a href="#s24"><span class="tn">24</span>Защита 130 000 $</a><a href="#s25"><span class="tn">25</span>Как оформляем сделку</a><a href="#s26"><span class="tn">26</span>Если магазин закроется</a><a href="#s27"><span class="tn">27</span>План Б: пересдача здания</a></div><div class="toc-g"><div class="toc-gt">План и встреча</div><a href="#s28"><span class="tn">28</span>План на 90 дней</a><a href="#s29"><span class="tn">29</span>Сезонность Бали</a><a href="#s30"><span class="tn">30</span>Первым делом: товар</a><a href="#s31"><span class="tn">31</span>Дальше: свой бренд</a><a href="#s32"><span class="tn">32</span>Идём не вслепую</a><a href="#s33"><span class="tn">33</span>Риски и как мы их закрываем</a><a href="#s34"><span class="tn">34</span>Что покажем до сделки</a><a href="#s35"><span class="tn">35</span>Приезжайте в магазин</a></div></nav>
+<nav class="toc" id="toc" aria-label="Оглавление"><div class="toc-head"><span>Оглавление</span><button class="toc-x" id="toc-x" aria-label="Закрыть оглавление">✕</button></div><div class="toc-g"><div class="toc-gt">Главное</div><a href="#s1"><span class="tn">01</span>Главное</a><a href="#s2"><span class="tn">02</span>Три сценария</a><a href="#s3"><span class="tn">03</span>Видеопрезентация</a><a href="#s4"><span class="tn">04</span>Что магазин уже сделал</a></div><div class="toc-g"><div class="toc-gt">Магазин</div><a href="#s5"><span class="tn">05</span>Здание: два этажа, 300 м²</a><a href="#s6"><span class="tn">06</span>Так магазин выглядит внутри</a><a href="#s7"><span class="tn">07</span>История магазина</a><a href="#s8"><span class="tn">08</span>Что считаем, а что нет</a><a href="#s9"><span class="tn">09</span>Январь почти без рекламы</a><a href="#s10"><span class="tn">10</span>Вход и фасад: как мы это видим</a><a href="#s11"><span class="tn">11</span>Бренды и гости магазина</a><a href="#s12"><span class="tn">12</span>Бренды магазина</a><a href="#s13"><span class="tn">13</span>Instagram</a></div><div class="toc-g"><div class="toc-gt">Продажи</div><a href="#s14"><span class="tn">14</span>Отчёты продавцов за всё время</a></div><div class="toc-g"><div class="toc-gt">Аренда и деньги</div><a href="#s15"><span class="tn">15</span>Аренда оплачена на 73%</a><a href="#s16"><span class="tn">16</span>На что пойдут деньги</a><a href="#s17"><span class="tn">17</span>События по выходным</a><a href="#s18"><span class="tn">18</span>Откуда люди</a></div><div class="toc-g"><div class="toc-gt">Доходность</div><a href="#s19"><span class="tn">19</span>Нижняя граница</a><a href="#s20"><span class="tn">20</span>Почему доходность высокая</a><a href="#s21"><span class="tn">21</span>Войти можно от 10 700 $</a><a href="#s22"><span class="tn">22</span>Пример на 10 700 $</a></div><div class="toc-g"><div class="toc-gt">Сделка и защита</div><a href="#s23"><span class="tn">23</span>Как инвестор получает деньги</a><a href="#s24"><span class="tn">24</span>Защита 130 000 $</a><a href="#s25"><span class="tn">25</span>Как оформляем сделку</a><a href="#s26"><span class="tn">26</span>Если магазин закроется</a><a href="#s27"><span class="tn">27</span>План Б: пересдача здания</a></div><div class="toc-g"><div class="toc-gt">План и встреча</div><a href="#s28"><span class="tn">28</span>План на 90 дней</a><a href="#s29"><span class="tn">29</span>Сезонность Бали</a><a href="#s30"><span class="tn">30</span>Первым делом: товар</a><a href="#s31"><span class="tn">31</span>Дальше: свой бренд</a><a href="#s32"><span class="tn">32</span>Идём не вслепую</a><a href="#s33"><span class="tn">33</span>Риски и как мы их закрываем</a><a href="#s34"><span class="tn">34</span>Что покажем до сделки</a><a href="#s35"><span class="tn">35</span>Приезжайте в магазин</a></div></nav>
 <noscript><div><img src="https://mc.yandex.ru/watch/113750210" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <section class="page cover" id="s1" data-toc="Главное">
   <div class="inner">
@@ -120,7 +121,7 @@
       </div>
       <div class="offer">
         <p class="ask">Магазину нужен инвестор. Вложив 107 000 $, к июлю 2030 года вы получаете всего</p>
-        <p class="apr">от 130 000 $<br>до 203 578 $</p>
+        <p class="apr">от 130 000 $<br>до 204 336 $</p>
         <p class="sum">Вложение возвращается за 11-15 месяцев в реалистичном и оптимистичном сценариях. Войти можно от <b>10 700 $</b>, это доля 10%, вносить частями.</p>
         <ul class="pts">
           <li>Магазин открыт с октября 2025 года. Это вложение в действующий бизнес с результатом за плечами: продажи по дням, понятная финансовая модель и прозрачные цифры, а не гипотеза.</li>
@@ -149,7 +150,7 @@
   <div class="row"><span>Продажи в месяц в 2028</span><span>19 596 $</span></div>
   <div class="row"><span>Магазину с продаж и второго этажа</span><span>9 798 $</span></div>
   <div class="row"><span>Результат после расходов</span><span>4 713 $</span></div>
-  <div class="row gap-top"><span>Инвестору в месяц, в среднем до возврата</span><span>2 984 $</span></div>
+  <div class="row gap-top"><span>Инвестору в месяц, в среднем до возврата</span><span>2 992 $</span></div>
   <div class="row key-row"><span>Вложение вернётся</span><span>за 36 мес</span></div>
   <div class="row"><span>Дальше 15% до июня 2030</span><span>732 $ в месяц</span></div>
   <div class="row total"><span>Всего получит к июлю 2030</span><span>130 000 $</span></div>
@@ -163,11 +164,11 @@
   <div class="row"><span>Продажи в месяц в 2028</span><span>64 986 $</span></div>
   <div class="row"><span>Магазину с продаж и второго этажа</span><span>33 320 $</span></div>
   <div class="row"><span>Результат после расходов</span><span>13 445 $</span></div>
-  <div class="row gap-top"><span>Инвестору в месяц, в среднем до возврата</span><span>7 168 $</span></div>
+  <div class="row gap-top"><span>Инвестору в месяц, в среднем до возврата</span><span>7 219 $</span></div>
   <div class="row key-row"><span>Вложение вернётся</span><span>за 15 мес</span></div>
   <div class="row"><span>Дальше 15% до июня 2030</span><span>2 032 $ в месяц</span></div>
-  <div class="row total"><span>Всего получит к июлю 2030</span><span>162 996 $</span></div>
-  <div class="row"><span>Из них сверх вложенного</span><span>55 996 $</span></div>
+  <div class="row total"><span>Всего получит к июлю 2030</span><span>163 764 $</span></div>
+  <div class="row"><span>Из них сверх вложенного</span><span>56 764 $</span></div>
 </div>
 <div class="sc opt">
   <div class="name">Оптимистичный</div>
@@ -177,11 +178,11 @@
   <div class="row"><span>Продажи в месяц в 2028</span><span>113 806 $</span></div>
   <div class="row"><span>Магазину с продаж и второго этажа</span><span>58 557 $</span></div>
   <div class="row"><span>Результат после расходов</span><span>20 341 $</span></div>
-  <div class="row gap-top"><span>Инвестору в месяц, в среднем до возврата</span><span>9 851 $</span></div>
+  <div class="row gap-top"><span>Инвестору в месяц, в среднем до возврата</span><span>9 919 $</span></div>
   <div class="row key-row"><span>Вложение вернётся</span><span>за 11 мес</span></div>
   <div class="row"><span>Дальше 15% до июня 2030</span><span>3 017 $ в месяц</span></div>
-  <div class="row total"><span>Всего получит к июлю 2030</span><span>203 578 $</span></div>
-  <div class="row"><span>Из них сверх вложенного</span><span>96 578 $</span></div>
+  <div class="row total"><span>Всего получит к июлю 2030</span><span>204 336 $</span></div>
+  <div class="row"><span>Из них сверх вложенного</span><span>97 336 $</span></div>
 </div>
     </div>
     <a class="go big" href="financial-model/"><span class="go-ch go-l" aria-hidden="true">«</span><span class="go-body"><span class="go-t">Подробная финансовая модель</span><span class="go-s">Каждый месяц до июля 2030: откуда люди, расходы, налоги, выплаты. Четвёртый расчёт «если 100 человек в день». Всю таблицу можно скачать в Excel.</span><span class="go-hint">Нажмите, чтобы открыть страницу</span></span><span class="go-ch go-r" aria-hidden="true">»</span></a>
@@ -280,13 +281,14 @@
   <div class="pno">07 / 35</div>
 </section>
 
-<section class="page wine" id="s8" data-toc="Сейчас тяжело. Дальше легко">
+<section class="page wine" id="s8" data-toc="Что считаем, а что нет">
   <div class="inner">
-    <h2>Сейчас тяжело. Дальше легко</h2>
-    <p class="lede">Почему копились долги. По договору аренда за 5 лет и депозит вносятся вперёд, за первые два года.</p>
+    <h2>Четыре живых месяца и спад. Считаем только живые</h2>
+    <p class="lede">С октября 2025 по январь 2026 магазин жил и рос: 41 бренд, полные полки, три продавца, 24 233 $ продаж в декабре и 21 586 $ в январе. Это и есть магазин, который мы перезапускаем.</p>
+    <p class="lede">В феврале 2026 ушёл партнёр, который вёл магазин. Новый товар перестал приходить, полки редели, магазин не развивался, а спасался. Всё, что после февраля, это спад без товара, а не показатель спроса. Поэтому в расчёте его нет.</p>
     <div class="figs two">
-      <div class="fig"><div class="when-f">Платёж по первому графику договора, 2025-2026</div><div class="n amber">13 900-16 700 $</div><div class="t">аренда в месяц. Это больше доли магазина даже в лучший месяц. Поэтому задерживали выплаты брендам.</div></div>
-      <div class="fig"><div class="when-f">С мая 2027</div><div class="n amber">0 $</div><div class="t">аренда в месяц, до июля 2030 года. Самый большой расход магазина оплачен вперёд.</div></div>
+      <div class="fig"><div class="when-f">Октябрь 2025 - январь 2026</div><div class="n amber">24 233 $</div><div class="t">лучший месяц. С полными полками и без рекламы. Это пессимистичный сценарий модели: к нему возвращаемся в первые месяцы после сделки.</div></div>
+      <div class="fig"><div class="when-f">Февраль - октябрь 2026</div><div class="n amber">2 062 $</div><div class="t">продажи в октябре 2026 без товара на полках. Это спад, а не спрос. С вложением полки наполняются за месяц, и магазин идёт дальше декабря 2025, а не возвращается к нему.</div></div>
     </div>
   </div>
   <div class="pno">08 / 35</div>
@@ -335,7 +337,17 @@
   <div class="pno">11 / 35</div>
 </section>
 
-<section class="page wine" id="s12" data-toc="Instagram">
+<section class="page " id="s12" data-toc="Бренды магазина">
+  <div class="inner">
+    <h2>Бренды, с которыми работал магазин</h2>
+    <p class="lede">За год в магазине продавались вещи 72 брендов, все на реализации. Ниже те, что продавались чаще всего: локальные дизайнеры Бали и Индонезии, одежда, купальники, украшения, кожа. С приходом инвестора возвращаем бренды прошлой зимы и добавляем новые категории: интерьер, ароматы, косметика, подарки.</p>
+    <div class="brands"><span class="bt">Renude</span><span class="bt">Humans</span><span class="bt">Ayo</span><span class="bt">Crazy C</span><span class="bt">Mara Sireno</span><span class="bt">Josei</span><span class="bt">On Me</span><span class="bt">Amore Sample</span><span class="bt">Mutu</span><span class="bt">Sonn Studio</span><span class="bt">Kenny Parker</span><span class="bt">Inni</span><span class="bt">Pakhtusova</span><span class="bt">Soleil</span><span class="bt">Our Projects</span><span class="bt">Lavilune</span><span class="bt">Resonance</span><span class="bt">Twilm</span><span class="bt">Lut</span><span class="bt">Ivan Fotesko</span><span class="bt">Patricia Boss</span><span class="bt">Inside Out</span><span class="bt">Sueta</span><span class="bt">Jc</span><span class="bt">Bbh</span><span class="bt">Ilme</span><span class="bt">Shelly Beach</span><span class="bt">Funtome</span><span class="bt">Aime</span><span class="bt">Noir Mystique</span><span class="bt">White Cottage Avenue</span><span class="bt">Daydesign</span><span class="bt">Kalina</span><span class="bt">Kara</span><span class="bt">Not A Must</span><span class="bt">Non Solo Vintage</span><span class="bt">Deveria</span><span class="bt">Lyne</span><span class="bt">Faustine</span><span class="bt">Se Du Do</span><span class="bt">Snrd</span><span class="bt">Lyssai</span><span class="bt">Denim Project</span><span class="bt">Alkemi</span><span class="bt">In Nature</span><span class="bt">Septum Religion</span><span class="bt">Pagi Clothing</span><span class="bt">Desmond</span><span class="bt">Nine 22</span><span class="bt">Direro</span><span class="bt">Rubedo</span><span class="bt">Ona Design</span><span class="bt">Mystelle</span><span class="bt">Mysteria</span><span class="bt">Vivid Bird</span><span class="bt">Desu</span><span class="bt">Lili Ruden</span><span class="bt">Aglo</span></div>
+    <div class="cap">Названия как в ежедневных отчётах продавцов. Полный список по дням на странице отчётов.</div>
+  </div>
+  <div class="pno">12 / 35</div>
+</section>
+
+<section class="page wine" id="s13" data-toc="Instagram">
   <div class="inner">
     <h2>Instagram уже работает</h2>
     <p class="lede">Живые подписчики и много своего контента. Можете посмотреть сами.</p>
@@ -344,10 +356,10 @@
       <div class="c5"><div class="fig"><div class="n amber">2 540</div><div class="t">подписчиков, живые люди</div></div><div class="fig"><div class="n amber">256</div><div class="t">публикаций</div></div><a class="btn" href="https://www.instagram.com/maison.sauvage.bali/" target="_blank" rel="noopener">Открыть @maison.sauvage.bali</a><div class="cap">Данные профиля на 21 октября 2026 года.</div></div>
     </div>
   </div>
-  <div class="pno">12 / 35</div>
+  <div class="pno">13 / 35</div>
 </section>
 
-<section class="page panel" id="s13" data-toc="Отчёты продавцов за всё время">
+<section class="page panel" id="s14" data-toc="Отчёты продавцов за всё время">
   <div class="inner">
     <h2>Пик 24 233 $ в декабре. В феврале ушёл партнёр, и товар на полках стал постепенно заканчиваться</h2>
     <p class="lede">Выручка по месяцам по ежедневным отчётам продавцов, в долларах. Каждый вечер продавцы пишут, сколько людей зашло, сколько купило и на сколько. 420 отчётов с 1 октября 2025 по 27 октября 2026 собраны в одну таблицу.</p>
@@ -356,10 +368,10 @@
     <a class="go " href="otchety/"><span class="go-ch go-l" aria-hidden="true">«</span><span class="go-body"><span class="go-t">Все отчёты продавцов по дням</span><span class="go-s">420 ежедневных отчётов в одной таблице: посетители, покупки, выручка, проданные вещи, причины отказа. Файл для Excel.</span><span class="go-hint">Нажмите, чтобы открыть страницу</span></span><span class="go-ch go-r" aria-hidden="true">»</span></a>
     <a class="go light" href="vyruchka/"><span class="go-ch go-l" aria-hidden="true">«</span><span class="go-body"><span class="go-t">Выручка за всё время</span><span class="go-s">Графики по месяцам и дням, посетители, доля купивших, чек, бренды.</span><span class="go-hint">Нажмите, чтобы открыть страницу</span></span><span class="go-ch go-r" aria-hidden="true">»</span></a>
   </div>
-  <div class="pno">13 / 35</div>
+  <div class="pno">14 / 35</div>
 </section>
 
-<section class="page " id="s14" data-toc="Аренда оплачена на 73%">
+<section class="page " id="s15" data-toc="Аренда оплачена на 73%">
   <div class="inner">
     <h2>Аренда на 5 лет вместе с депозитом оплачена на 73%</h2>
     <p class="lede">По договору вся аренда за 5 лет и депозит за год вносятся вперёд. По новому графику, подписанному арендодателем, последний платёж 1 апреля 2027 года. После него до июля 2030 года за аренду платить не нужно.</p>
@@ -373,96 +385,82 @@
       <div class="c12">
         <div class="chart-h">Оплата по новому графику: 288 984 $ за 5 лет вместе с депозитом</div>
         <div class="money"><div class="paid" style="width:72.6%">внесено 209 792 $</div><div class="left" style="width:27.4%">79 192 $</div></div>
-        <div class="cap">Аренда 46 863 $ в год, цена зафиксирована на весь срок. Ноябрь 2026, 8 270 $, владельцы платят сами. Из вложения закрываются платежи с декабря 2026 по апрель 2027: 70 956 $. Залог 46 863 $ возвращается в конце срока, если договор не нарушен, и защищает доход инвестора.</div>
+        <div class="cap">Аренда 46 863 $ в год, цена зафиксирована на весь срок. Ноябрь 2026, 8 270 $, владельцы платят сами. Из вложения закрываются платежи с декабря 2026 по апрель 2027: 70 956 $, в них входят 7 806 $ за перенос графика платежей. Залог 46 863 $ возвращается в конце срока, если договор не нарушен, и защищает доход инвестора.</div>
       </div>
     </div>
   </div>
-  <div class="pno">14 / 35</div>
+  <div class="pno">15 / 35</div>
 </section>
 
-<section class="page " id="s15" data-toc="На что пойдут деньги">
+<section class="page " id="s16" data-toc="На что пойдут деньги">
   <div class="inner">
     <h2>На что пойдут 107 000 $</h2>
     <p class="lede">Четыре статьи и небольшой остаток. Первая сохраняет здание до 2030 года, вторая закрывает долг брендам, и они снова привозят товар на реализацию, третья делает магазин видимым с дороги, четвёртая оформляет сделку.</p>
     <div class="split">
       <div class="a" style="width:66.3%"><b>70 956 $</b><span>аренда</span></div>
       <div class="b" style="width:17.3%"><b>18 470 $</b><span>бренды</span></div>
-      <div class="c" style="width:7.4%"><b>7 906 $</b><span>запуск</span></div>
+      <div class="c" style="width:5.5%"><b>5 908 $</b><span>запуск</span></div>
       <div class="d" style="width:6.5%"><b>7 000 $</b><span>сделка</span></div>
-      <div class="r" style="width:2.5%" title="остаток 2 668 $"></div>
+      <div class="r" style="width:4.4%" title="остаток 4 667 $"></div>
     </div>
     <div class="scroll"><table class="tbl" style="min-width:0">
       <tr><td>Аренда с декабря 2026 по апрель 2027, пять платежей по графику</td><td>70 956 $</td></tr>
       <tr><td>Долг брендам, сразу</td><td>18 470 $</td></tr>
-      <tr><td>Запуск: входная группа и свет фасада, подарки для новых брендов, манекены, сигнализация, розыгрыш iPhone с налогом на приз, растения у входа</td><td>7 906 $</td></tr>
-      <tr><td>Оформление сделки в день поступления денег: 2 000 $ нотариусу, 5 000 $ посреднику, который подготовил материалы и привёл инвестора</td><td>7 000 $</td></tr>
-      <tr><td>Остаётся на счёте</td><td>2 668 $</td></tr>
+      <tr><td>Запуск: входная группа и свет фасада, подарки для новых брендов, манекены, сигнализация, растения у входа</td><td>5 908 $</td></tr>
+      <tr><td>Подготовка и оформление сделки в день поступления денег: 2 000 $ нотариусу, 5 000 $ за финансовую модель, презентацию, базу данных и переговоры</td><td>7 000 $</td></tr>
+      <tr><td>Остаётся на счёте</td><td>4 667 $</td></tr>
       <tr class="sum"><td>Итого</td><td>107 000 $</td></tr>
     </table></div>
     <div class="why"><h3>А деньги на рост?</h3><p>Реклама, события, кофе-уголок, стилист и менеджер по партнёрам оплачиваются из продаж и включаются ступенями, когда продажи два месяца подряд выше цели. До этого на рекламу идёт 1 000 $ в месяц.</p></div>
     <a class="go " href="kuda-pojdut-dengi/"><span class="go-ch go-l" aria-hidden="true">«</span><span class="go-body"><span class="go-t">На что пойдут деньги: по статьям</span><span class="go-s">Каждая статья с расчётом, датой и источником цены.</span><span class="go-hint">Нажмите, чтобы открыть страницу</span></span><span class="go-ch go-r" aria-hidden="true">»</span></a>
   </div>
-  <div class="pno">15 / 35</div>
+  <div class="pno">16 / 35</div>
 </section>
 
-<section class="page night" id="s16" data-toc="События по выходным">
+<section class="page night" id="s17" data-toc="События по выходным">
   <div class="inner">
     <div class="grid">
       <div class="c5"><video class="vid" src="video/ivent.mp4" poster="video/ivent.jpg" autoplay muted loop playsinline controls preload="metadata"></video></div>
       <div class="c7">
         <h2>События у магазина каждые выходные</h2>
         <p class="lede">На видео вечер у магазина: гости, музыка, показ вещей брендов. Такие встречи мы уже проводили. Теперь планируем делать их регулярно, каждые выходные.</p>
-        <p class="lede">По отчётам продавцов выходные это самые тихие дни: в воскресенье заходит 5,8 человека, в среду-пятницу по 7,3. Поэтому на выходные ставим события, которые приводят людей к магазину: маркет на парковке, фургон с едой, диджей, показы брендов, мастер-классы на втором этаже. Первый воскресный маркет поднял день с 2 до 8 посетителей за час до дождя.</p>
+        <p class="lede">По отчётам продавцов выходные это самые тихие дни: в воскресенье заходит 5,8 человека, в среду-пятницу по 7,3. Поэтому на выходные ставим события, которые приводят людей к магазину: вечера брендов, закрытые предпоказы коллекций, ужины на 20 человек на втором этаже, мастер-классы. Первый воскресный маркет поднял день с 2 до 8 посетителей за час до дождя.</p>
         <p class="lede">В модели это канал «маркеты и события». В реалистичном сценарии с марта 2027 он даёт 3,3 человека в день, в оптимистичном 6,3.</p>
       </div>
     </div>
   </div>
-  <div class="pno">16 / 35</div>
+  <div class="pno">17 / 35</div>
 </section>
 
-<section class="page panel" id="s17" data-toc="Откуда люди">
+<section class="page panel" id="s18" data-toc="Откуда люди">
   <div class="inner">
     <h2>Откуда люди и как растёт выручка</h2>
     <p class="lede">Продажи считаем от людей. Каждый человек в день приходит из конкретного канала, а расходы на канал включаем только после того, как предыдущий шаг дал продажи.</p>
     <div class="risks">
       <div class="risk"><h3>Прошлая зима</h3><p>8,8 человека в день с полными полками. Факт по отчётам. База всех сценариев.</p></div>
-      <div class="risk"><h3>Улица и район</h3><p>Вход, вывеска, свет фасада. Половина покупателей находит магазин с улицы. Мимо гуляют и едут, человек замечает магазин и заходит на третий раз.</p></div>
+      <div class="risk"><h3>Улица и район</h3><p>Вход, вывеска, свет фасада. Половина покупателей находит магазин с улицы. Мимо гуляют и иногда заходят, но больше к нам заезжают на байках и машинах: человек замечает магазин и заходит на третий раз.</p></div>
       <div class="risk"><h3>База 19 000 контактов</h3><p>Русскоязычные на Бали, по этой базе магазин не рекламировали ни разу. Русские 40% покупателей.</p></div>
-      <div class="risk"><h3>Маркеты и события</h3><p>Воскресный маркет на парковке и события на втором этаже. Первый маркет поднял день с 2 до 8 посетителей за час.</p></div>
+      <div class="risk"><h3>Вечера брендов и события</h3><p>Вечера брендов, предпоказы коллекций и ужины на втором этаже, воскресный маркет у магазина. Первый маркет поднял день с 2 до 8 посетителей за час.</p></div>
       <div class="risk"><h3>Партнёрки 10%</h3><p>Консьержи вилл и отелей, водители, стилисты, шопинг-туры по дизайн-магазинам. 80% покупателей туристы.</p></div>
       <div class="risk"><h3>Реклама и онлайн</h3><p>Таргет 1 000 $ в месяц с первого дня, потом доля продаж. Онлайн-продажи как второй поток к продажам в зале: сайт магазина, маркетплейсы и заказы через WhatsApp с доставкой. В модели это от 3% до 15% к продажам зала.</p></div>
     </div>
     <div class="cap">Лестница расходов: ступень B после двух месяцев продаж выше 20 000 $ (SMM, события, кофе-уголок), C после 30 000 $ (стилист, менеджер по партнёрам), D после 60 000 $ (четвёртый продавец, кофейня и события каждую неделю). В реалистичном сценарии ступени включаются в марте, июне и декабре 2027.</div>
     <a class="go " href="financial-model/#people"><span class="go-ch go-l" aria-hidden="true">«</span><span class="go-body"><span class="go-t">Каналы людей и лестница ступеней в модели</span><span class="go-s">Сколько человек в день даёт каждый канал по сценариям, что факт и что гипотеза, вклад каждого рычага в деньги инвестора.</span><span class="go-hint">Нажмите, чтобы открыть страницу</span></span><span class="go-ch go-r" aria-hidden="true">»</span></a>
   </div>
-  <div class="pno">17 / 35</div>
+  <div class="pno">18 / 35</div>
 </section>
 
-<section class="page night" id="s18" data-toc="Нижняя граница">
+<section class="page night" id="s19" data-toc="Нижняя граница">
   <div class="inner">
     <h2>Нижняя граница</h2>
     <p class="lede">Три числа, которые мы считаем честной проверкой любого сценария.</p>
     <div class="figs">
       <div class="fig"><div class="n amber">10 143 $</div><div class="t">продаж в месяц, и магазин сам покрывает свои расходы. Аренда уже оплачена.</div></div>
-      <div class="fig"><div class="n amber">15 388 $</div><div class="t">продаж в месяц в среднем за срок, и вложение возвращается полностью</div></div>
-      <div class="fig"><div class="n amber">16 630 $</div><div class="t">продаж в месяц в среднем за срок, и инвестор получает 130 000 $</div></div>
+      <div class="fig"><div class="n amber">15 280 $</div><div class="t">продаж в месяц в среднем за срок, и вложение возвращается полностью</div></div>
+      <div class="fig"><div class="n amber">16 522 $</div><div class="t">продаж в месяц в среднем за срок, и инвестор получает 130 000 $</div></div>
       <div class="fig"><div class="n amber">19 596 $</div><div class="t">продаж в месяц в пессимистичном сценарии в 2028 году</div></div>
     </div>
     <p class="lede">Прошлая зима с полными полками давала больше любой из этих границ. Вложение закрывает долг брендам, и товар возвращается на полки без покупки: бренды привозят его сами.</p>
-  </div>
-  <div class="pno">18 / 35</div>
-</section>
-
-<section class="page panel" id="s19" data-toc="Сравнение с другими вложениями">
-  <div class="inner">
-    <h2>Сравните с другими вложениями</h2>
-    <p class="lede">Одна база для всех: 107 000 $ с декабря 2026 по июль 2030 года.</p>
-    <div class="cmp-grid three">
-      <div class="cmp-card"><h3>Вклад в рупиях</h3><div class="cmp-row"><span>Деньги вернутся</span><b>они всегда на счёте</b></div><div class="cmp-row"><span>Получите к июлю 2030</span><b>до 22 000 $ дохода</b></div><div class="cmp-row"><span>У вас в июле 2030</span><b>вклад в рупиях, курс может измениться</b></div></div>
-      <div class="cmp-card"><h3>Вилла под сдачу</h3><div class="cmp-row"><span>Деньги вернутся</span><b>за 5-7 лет по обещаниям продавцов, за 13-25 лет по независимой оценке</b></div><div class="cmp-row"><span>Получите к июлю 2030</span><b>15 300-76 700 $ дохода, вложение ещё не вернулось</b></div><div class="cmp-row"><span>У вас в июле 2030</span><b>вилла, которая дешевеет: ремонт каждые 3 года во влажном климате</b></div></div>
-      <div class="cmp-card us"><h3>Maison Sauvage</h3><div class="cmp-row"><span>Деньги вернутся</span><b>за 11-15 месяцев в реалистичном и оптимистичном, за 36 в пессимистичном</b></div><div class="cmp-row"><span>Получите к июлю 2030</span><b>23 000 $-96 578 $ дохода, и вложение уже вернулось</b></div><div class="cmp-row"><span>У вас в июле 2030</span><b>аренда закончится, всё заработанное уже у вас</b></div></div>
-    </div>
-    <div class="cap">Вклад: ставка Банка Индонезии 5,75% на сентябрь 2026 года, по вкладам обычно ниже. Вилла: 15-20% в год обещают продавцы в объявлениях, около 8% грязными и 4% чистыми даёт независимый разбор вилл в Семиньяке (Bukit Vista). Магазин: расчёт модели, от пессимистичного до оптимистичного сценария.</div>
   </div>
   <div class="pno">19 / 35</div>
 </section>
@@ -490,12 +488,12 @@
     <div class="grid">
       <div class="c5 stack"><div class="fig"><div class="n">10 700 $</div><div class="t">минимальная сумма, доля 10%</div></div><div class="fig"><div class="n">частями</div><div class="t">деньги нужны не сразу, а по графику аренды до апреля 2027 года</div></div></div>
       <div class="c7"><div class="chart-h">Когда нужны деньги</div><table class="tbl" style="min-width:0">
-        <tr><td>1 декабря 2026: аренда, долг брендам, запуск и оформление сделки</td><td>41 095 $</td></tr>
+        <tr><td>1 декабря 2026: аренда, долг брендам, запуск и оформление сделки</td><td>39 096 $</td></tr>
         <tr><td>1 января 2027: аренда и растения у входа</td><td>14 334 $</td></tr>
         <tr><td>1 февраля 2027: аренда</td><td>16 540 $</td></tr>
         <tr><td>1 марта 2027: аренда</td><td>16 540 $</td></tr>
         <tr><td>1 апреля 2027: последний платёж аренды</td><td>15 823 $</td></tr>
-        <tr class="sum"><td>Итого с остатком на счёте 2 668 $</td><td>107 000 $</td></tr>
+        <tr class="sum"><td>Итого с остатком на счёте 4 667 $</td><td>107 000 $</td></tr>
       </table></div>
     </div>
     <div class="why"><h3>Если вкладывают несколько инвесторов</h3><p>Деньги тратим, только когда собрана вся сумма ближайшего платежа. До этого они лежат на отдельном счёте компании. Если к сроку платежа сумма не собрана, возвращаем деньги в течение 5 дней.</p><p>Все инвесторы равны. Выплаты, защита и план Б делятся пропорционально вложенному.</p></div>
@@ -508,11 +506,11 @@
     <h2>Пример на 10 700 $</h2>
     <p class="lede">Вложили 10 700 $ из 107 000 $, это доля 10%, и получаете десятую часть выплат инвестору. Срок возврата такой же, как у всей суммы. С каждым инвестором свой договор на его сумму.</p>
     <div class="ex-grid">
-      <div class="ex pes"><div class="ex-n">Пессимистичный</div><div class="ex-v">298 $<span>в месяц до возврата</span></div><div class="ex-r"><span>Вложение вернётся</span><b>за 36 мес</b></div><div class="ex-r"><span>Всего к июлю 2030</span><b>13 000 $</b></div><div class="ex-r"><span>Из них сверху</span><b>2 300 $</b></div></div>
-      <div class="ex std mid"><div class="ex-n">Реалистичный</div><div class="ex-v">717 $<span>в месяц до возврата</span></div><div class="ex-r"><span>Вложение вернётся</span><b>за 15 мес</b></div><div class="ex-r"><span>Всего к июлю 2030</span><b>16 300 $</b></div><div class="ex-r"><span>Из них сверху</span><b>5 600 $</b></div></div>
-      <div class="ex opt"><div class="ex-n">Оптимистичный</div><div class="ex-v">985 $<span>в месяц до возврата</span></div><div class="ex-r"><span>Вложение вернётся</span><b>за 11 мес</b></div><div class="ex-r"><span>Всего к июлю 2030</span><b>20 358 $</b></div><div class="ex-r"><span>Из них сверху</span><b>9 658 $</b></div></div>
+      <div class="ex pes"><div class="ex-n">Пессимистичный</div><div class="ex-v">299 $<span>в месяц до возврата</span></div><div class="ex-r"><span>Вложение вернётся</span><b>за 36 мес</b></div><div class="ex-r"><span>Всего к июлю 2030</span><b>13 000 $</b></div><div class="ex-r"><span>Из них сверху</span><b>2 300 $</b></div></div>
+      <div class="ex std mid"><div class="ex-n">Реалистичный</div><div class="ex-v">722 $<span>в месяц до возврата</span></div><div class="ex-r"><span>Вложение вернётся</span><b>за 15 мес</b></div><div class="ex-r"><span>Всего к июлю 2030</span><b>16 376 $</b></div><div class="ex-r"><span>Из них сверху</span><b>5 676 $</b></div></div>
+      <div class="ex opt"><div class="ex-n">Оптимистичный</div><div class="ex-v">992 $<span>в месяц до возврата</span></div><div class="ex-r"><span>Вложение вернётся</span><b>за 11 мес</b></div><div class="ex-r"><span>Всего к июлю 2030</span><b>20 434 $</b></div><div class="ex-r"><span>Из них сверху</span><b>9 734 $</b></div></div>
     </div>
-    <div class="cap">В пессимистичном 1 819 $ из суммы приходят при окончательном расчёте в июле 2030 по защите 130 000 $.</div>
+    <div class="cap">В пессимистичном 1 789 $ из суммы приходят при окончательном расчёте в июле 2030 по защите 130 000 $.</div>
   </div>
   <div class="pno">22 / 35</div>
 </section>
@@ -522,12 +520,12 @@
     <h2>Как инвестор получает деньги</h2>
     <p class="lede">Сколько инвестор получил нарастающим итогом, с декабря 2026 по июль 2030. Где линия пересекает пунктир, вложение вернулось.</p>
     <div class="grid">
-      <div class="c7"><svg class="chart" viewBox="0 0 360 200" role="img" aria-label="Сколько инвестор получил по месяцам, три сценария"><line class="grid-l" x1="40" x2="352" y1="178.0" y2="178.0"/><text x="36" y="181.0" text-anchor="end">0</text><line class="grid-l" x1="40" x2="352" y1="122.7" y2="122.7"/><text x="36" y="125.7" text-anchor="end">100k $</text><line class="grid-l" x1="40" x2="352" y1="67.3" y2="67.3"/><text x="36" y="70.3" text-anchor="end">200k $</text><line class="grid-l" x1="40" x2="352" y1="12.0" y2="12.0"/><text x="36" y="15.0" text-anchor="end">300k $</text><text x="40.0" y="194" text-anchor="start">дек 2026</text><text x="127.1" y="194" text-anchor="middle">дек 2027</text><text x="214.1" y="194" text-anchor="middle">дек 2028</text><text x="352" y="194" text-anchor="end">июл 2030</text><line class="avg inv-l" x1="40" x2="352" y1="118.8" y2="118.8"/><text class="lbl" x="350" y="131.8" text-anchor="end">вложено 107 000 $</text><polyline class="ln l-pes" points="40.0,178.0 47.3,178.0 54.5,178.0 61.8,178.0 69.0,178.0 76.3,178.0 83.5,176.7 90.8,175.1 98.0,173.6 105.3,172.0 112.6,170.6 119.8,168.8 127.1,167.1 134.3,165.5 141.6,163.1 148.8,160.9 156.1,158.6 163.3,156.6 170.6,154.6 177.9,152.7 185.1,150.7 192.4,148.8 199.6,146.9 206.9,144.8 214.1,142.6 221.4,140.5 228.7,138.1 235.9,135.9 243.2,133.6 250.4,131.6 257.7,129.6 264.9,127.7 272.2,125.7 279.4,123.8 286.7,121.9 294.0,119.7 301.2,118.6 308.5,118.2 315.7,117.7 323.0,117.3 330.2,116.9 337.5,116.5 344.7,116.1 352.0,106.1"/><text class="lbl" x="354" y="102.1" text-anchor="end">130 000 $</text><polyline class="ln l-std" points="40.0,178.0 47.3,178.0 54.5,178.0 61.8,177.8 69.0,174.7 76.3,169.7 83.5,164.4 90.8,159.5 98.0,154.4 105.3,149.3 112.6,144.4 119.8,139.1 127.1,133.9 134.3,129.3 141.6,123.1 148.8,118.5 156.1,117.3 163.3,116.2 170.6,115.1 177.9,114.0 185.1,112.9 192.4,111.8 199.6,110.8 206.9,109.6 214.1,108.5 221.4,107.4 228.7,106.2 235.9,105.1 243.2,104.0 250.4,102.9 257.7,101.8 264.9,100.7 272.2,99.6 279.4,98.5 286.7,97.4 294.0,96.2 301.2,95.1 308.5,94.0 315.7,92.8 323.0,91.7 330.2,90.5 337.5,89.3 344.7,88.1 352.0,87.8"/><text class="lbl" x="354" y="83.8" text-anchor="end">162 996 $</text><polyline class="ln l-opt" points="40.0,178.0 47.3,178.0 54.5,178.0 61.8,172.2 69.0,166.6 76.3,159.1 83.5,151.1 90.8,143.8 98.0,136.3 105.3,128.9 112.6,122.0 119.8,118.0 127.1,116.7 134.3,115.4 141.6,113.7 148.8,112.0 156.1,110.3 163.3,108.6 170.6,107.0 177.9,105.3 185.1,103.6 192.4,101.9 199.6,100.3 206.9,98.6 214.1,96.9 221.4,95.2 228.7,93.4 235.9,91.8 243.2,90.1 250.4,88.4 257.7,86.7 264.9,85.1 272.2,83.4 279.4,81.7 286.7,80.1 294.0,78.3 301.2,76.7 308.5,75.0 315.7,73.2 323.0,71.5 330.2,69.7 337.5,68.0 344.7,66.3 352.0,65.4"/><text class="lbl" x="354" y="61.4" text-anchor="end">203 578 $</text></svg><div class="key"><span><i class="l" style="background:var(--sc-pes)"></i>пессимистичный</span><span><i class="l" style="background:var(--sc-std)"></i>реалистичный</span><span><i class="l" style="background:var(--sc-opt)"></i>оптимистичный</span><span><i class="l dash"></i>вложено</span></div></div>
+      <div class="c7"><svg class="chart" viewBox="0 0 360 200" role="img" aria-label="Сколько инвестор получил по месяцам, три сценария"><line class="grid-l" x1="40" x2="352" y1="178.0" y2="178.0"/><text x="36" y="181.0" text-anchor="end">0</text><line class="grid-l" x1="40" x2="352" y1="122.7" y2="122.7"/><text x="36" y="125.7" text-anchor="end">100k $</text><line class="grid-l" x1="40" x2="352" y1="67.3" y2="67.3"/><text x="36" y="70.3" text-anchor="end">200k $</text><line class="grid-l" x1="40" x2="352" y1="12.0" y2="12.0"/><text x="36" y="15.0" text-anchor="end">300k $</text><text x="40.0" y="194" text-anchor="start">дек 2026</text><text x="127.1" y="194" text-anchor="middle">дек 2027</text><text x="214.1" y="194" text-anchor="middle">дек 2028</text><text x="352" y="194" text-anchor="end">июл 2030</text><line class="avg inv-l" x1="40" x2="352" y1="118.8" y2="118.8"/><text class="lbl" x="350" y="131.8" text-anchor="end">вложено 107 000 $</text><polyline class="ln l-pes" points="40.0,178.0 47.3,178.0 54.5,178.0 61.8,178.0 69.0,178.0 76.3,177.3 83.5,175.8 90.8,174.2 98.0,172.7 105.3,171.2 112.6,169.7 119.8,168.0 127.1,166.2 134.3,164.6 141.6,162.2 148.8,160.0 156.1,157.7 163.3,155.7 170.6,153.7 177.9,151.8 185.1,149.8 192.4,147.9 199.6,146.1 206.9,143.9 214.1,141.7 221.4,139.6 228.7,137.2 235.9,135.0 243.2,132.7 250.4,130.7 257.7,128.7 264.9,126.8 272.2,124.8 279.4,122.9 286.7,121.0 294.0,118.9 301.2,118.4 308.5,118.0 315.7,117.5 323.0,117.1 330.2,116.7 337.5,116.3 344.7,116.0 352.0,106.1"/><text class="lbl" x="354" y="102.1" text-anchor="end">130 000 $</text><polyline class="ln l-std" points="40.0,178.0 47.3,178.0 54.5,178.0 61.8,176.9 69.0,172.4 76.3,167.4 83.5,162.1 90.8,157.2 98.0,152.2 105.3,147.1 112.6,142.1 119.8,136.8 127.1,131.7 134.3,127.1 141.6,120.8 148.8,118.1 156.1,116.9 163.3,115.8 170.6,114.7 177.9,113.6 185.1,112.5 192.4,111.4 199.6,110.3 206.9,109.2 214.1,108.1 221.4,107.0 228.7,105.8 235.9,104.7 243.2,103.6 250.4,102.5 257.7,101.3 264.9,100.3 272.2,99.1 279.4,98.0 286.7,97.0 294.0,95.8 301.2,94.7 308.5,93.6 315.7,92.4 323.0,91.3 330.2,90.0 337.5,88.9 344.7,87.7 352.0,87.4"/><text class="lbl" x="354" y="83.4" text-anchor="end">163 764 $</text><polyline class="ln l-opt" points="40.0,178.0 47.3,178.0 54.5,177.1 61.8,171.4 69.0,164.4 76.3,156.8 83.5,148.9 90.8,141.6 98.0,134.1 105.3,126.6 112.6,119.7 119.8,117.6 127.1,116.3 134.3,115.0 141.6,113.3 148.8,111.6 156.1,109.9 163.3,108.2 170.6,106.5 177.9,104.9 185.1,103.2 192.4,101.5 199.6,99.9 206.9,98.2 214.1,96.5 221.4,94.8 228.7,93.0 235.9,91.4 243.2,89.7 250.4,88.0 257.7,86.3 264.9,84.7 272.2,83.0 279.4,81.3 286.7,79.6 294.0,77.9 301.2,76.2 308.5,74.5 315.7,72.7 323.0,71.1 330.2,69.3 337.5,67.6 344.7,65.9 352.0,64.9"/><text class="lbl" x="354" y="60.9" text-anchor="end">204 336 $</text></svg><div class="key"><span><i class="l" style="background:var(--sc-pes)"></i>пессимистичный</span><span><i class="l" style="background:var(--sc-std)"></i>реалистичный</span><span><i class="l" style="background:var(--sc-opt)"></i>оптимистичный</span><span><i class="l dash"></i>вложено</span></div></div>
       <div class="c5"><h3>Условия</h3><ul class="plain">
         <li>80% результата месяца инвестору, пока он не вернёт вложенное. Выплата каждый месяц за прошлый.</li>
-        <li>После возврата 15% результата каждый месяц, до конца аренды в июне 2030 года.</li>
+        <li>После возврата 15% результата каждый месяц, до конца аренды в июне 2030 года. Это не процент в год, а доля результата, когда вложение уже вернулось целиком и инвестор ничем не рискует.</li>
         <li>Если выплату пришлось урезать, чтобы сохранить резерв, остаток переносится на следующие месяцы.</li>
-        <li>Июль 2030: окончательный расчёт. Если инвестор получил меньше 130 000 $, деньги бизнеса на счёте идут ему до этой суммы. В пессимистичном это 18 188 $.</li>
+        <li>Июль 2030: окончательный расчёт. Если инвестор получил меньше 130 000 $, деньги бизнеса на счёте идут ему до этой суммы. В пессимистичном это 17 888 $.</li>
         <li>Если денег на счёте не хватило, разницу до 130 000 $ закрывает залог за аренду, 46 863 $. <a href="#s24">Как работает защита</a></li>
         <li>Доступ к ежедневным отчётам продавцов, сводкам и кассе.</li>
       </ul></div>
@@ -554,8 +552,8 @@
         </svg>
       </div>
       <div class="layers">
-        <div class="layer"><div class="ln">1</div><div><h3>Выплаты каждый месяц</h3><p>80% результата месяца инвестору, пока не вернулись 107 000 $. После возврата 15% до конца аренды. В реалистичном сценарии к июлю 2030 это 162 996 $, и защита не нужна.</p></div></div>
-        <div class="layer"><div class="ln">2</div><div><h3>Деньги на счёте магазина</h3><p>Июль 2030, окончательный расчёт. Если инвестор получил меньше 130 000 $, все деньги бизнеса на счёте, включая резерв, идут ему до этой суммы. В пессимистичном сценарии так приходят 18 188 $.</p></div></div>
+        <div class="layer"><div class="ln">1</div><div><h3>Выплаты каждый месяц</h3><p>80% результата месяца инвестору, пока не вернулись 107 000 $. После возврата 15% до конца аренды. В реалистичном сценарии к июлю 2030 это 163 764 $, и защита не нужна.</p></div></div>
+        <div class="layer"><div class="ln">2</div><div><h3>Деньги на счёте магазина</h3><p>Июль 2030, окончательный расчёт. Если инвестор получил меньше 130 000 $, все деньги бизнеса на счёте, включая резерв, идут ему до этой суммы. В пессимистичном сценарии так приходят 17 888 $.</p></div></div>
         <div class="layer gold"><div class="ln">3</div><div><h3>Залог за аренду, 46 863 $</h3><p>По договору аренды компания внесла арендодателю залог 850 млн IDR. Арендодатель возвращает его через 30 дней после окончания аренды, в августе 2030. Если после расчёта инвестору всё ещё не хватает до 130 000 $, разницу закрывает залог. Он уже внесён, это не обещание из будущей прибыли.</p></div></div>
       </div>
     </div>
@@ -575,8 +573,8 @@
       <div class="risk"><h3>Компания</h3><p>PT Maison Sauvage Bali, компания с иностранным капиталом (PT PMA). Договор с инвестором подписывает компания.</p></div>
       <div class="risk"><h3>Форма договора</h3><p>Долговой договор. Условия выплат: 80% результата до возврата вложения, потом 15% до конца аренды, защита до 130 000 $ при окончательном расчёте, разницу закрывает залог за аренду.</p></div>
       <div class="risk"><h3>Платим напрямую</h3><p>Аренду переводим напрямую арендодателю, долги брендам напрямую брендам по сверке. На каждый платёж квитанция.</p></div>
-      <div class="risk"><h3>Документы</h3><p>На индонезийском и английском, по праву Индонезии, у нотариуса. Оформление сделки оплачивается из вложения: 2 000 $ нотариусу и 5 000 $ посреднику, который подготовил модель, презентацию и привёл инвестора. Инвестор может привлечь своего юриста.</p></div>
-      <div class="risk"><h3>Арендодатель подтверждает</h3><p>Новый график платежей арендодатель уже подписал. До первого платежа он письменно подтверждает, что договор действует, и даёт согласие на пересдачу здания в пользу инвестора. Без этого письма деньги не переводим.</p></div>
+      <div class="risk"><h3>Документы</h3><p>На индонезийском и английском, по праву Индонезии, у нотариуса. Подготовка и оформление сделки оплачиваются из вложения: 2 000 $ нотариусу и 5 000 $ за финансовую модель, презентацию, базу данных и переговоры. Инвестор может привлечь своего юриста.</p></div>
+      <div class="risk"><h3>Арендодатель подтверждает</h3><p>Новый график платежей арендодатель уже подписал. До первого платежа он письменно подтверждает, что договор действует, даёт согласие на пересдачу здания в пользу инвестора и на выплату залога инвестору. Право на залог переуступается инвестору у нотариуса. Без этих документов деньги не переводим.</p></div>
       <div class="risk"><h3>Контроль</h3><p>Каждый месяц отчёт о результате и выплате, выписки банка и терминала. Доступ к ежедневным отчётам продавцов.</p></div>
     </div>
   </div>
@@ -588,7 +586,7 @@
     <h2>Если магазин закроется</h2>
     <p class="lede">Больше 65% вложения уходит на аренду. После этого здание оплачено до июля 2030 года. У такой аренды есть цена, по договору это 3 905 $ за каждый оставшийся месяц. В любой момент она больше, чем инвестору осталось получить назад.</p>
     <div class="grid">
-      <div class="c7"><div class="chart-h">Оплаченная аренда и невозвращённая часть вложения</div><svg class="chart" viewBox="0 0 360 200" role="img" aria-label="Оплаченная аренда и невозвращённая часть вложения"><line class="grid-l" x1="40" x2="352" y1="178.0" y2="178.0"/><text x="36" y="181.0" text-anchor="end">0</text><line class="grid-l" x1="40" x2="352" y1="131.9" y2="131.9"/><text x="36" y="134.9" text-anchor="end">50k $</text><line class="grid-l" x1="40" x2="352" y1="85.8" y2="85.8"/><text x="36" y="88.8" text-anchor="end">100k $</text><line class="grid-l" x1="40" x2="352" y1="39.7" y2="39.7"/><text x="36" y="42.7" text-anchor="end">150k $</text><text x="40.0" y="194" text-anchor="start">дек 2026</text><text x="127.1" y="194" text-anchor="middle">дек 2027</text><text x="214.1" y="194" text-anchor="middle">дек 2028</text><text x="352" y="194" text-anchor="end">июл 2030</text><line class="avg inv-l" x1="40" x2="352" y1="79.3" y2="79.3"/><text class="lbl" x="350" y="74.3" text-anchor="end">вложено 107 000 $</text><polyline class="ln l-lease" points="40.0,23.1 47.3,26.7 54.5,30.3 61.8,33.9 69.0,37.6 76.3,41.2 83.5,44.8 90.8,48.4 98.0,52.0 105.3,55.6 112.6,59.2 119.8,62.8 127.1,66.4 134.3,70.0 141.6,73.6 148.8,77.2 156.1,80.8 163.3,84.4 170.6,88.0 177.9,91.6 185.1,95.2 192.4,98.8 199.6,102.4 206.9,106.0 214.1,109.6 221.4,113.2 228.7,116.8 235.9,120.4 243.2,124.0 250.4,127.6 257.7,131.2 264.9,134.8 272.2,138.4 279.4,142.0 286.7,145.6 294.0,149.2 301.2,152.8 308.5,156.4 315.7,160.0 323.0,163.6 330.2,167.2 337.5,170.8 344.7,174.4 352.0,178.0"/><text class="lbl" x="47.3" y="19.1">аренда 167 915 $</text><polyline class="ln l-pes" points="40.0,79.3 47.3,79.3 54.5,79.3 61.8,79.3 69.0,79.3 76.3,79.3 83.5,81.6 90.8,84.1 98.0,86.7 105.3,89.2 112.6,91.7 119.8,94.6 127.1,97.5 134.3,100.2 141.6,104.2 148.8,107.8 156.1,111.7 163.3,115.0 170.6,118.3 177.9,121.5 185.1,124.8 192.4,128.0 199.6,131.1 206.9,134.7 214.1,138.4 221.4,141.9 228.7,145.9 235.9,149.5 243.2,153.4 250.4,156.7 257.7,160.0 264.9,163.2 272.2,166.5 279.4,169.7 286.7,172.8 294.0,176.4 301.2,178.0"/><polyline class="ln l-std" points="40.0,79.3 47.3,79.3 54.5,79.3 61.8,79.7 69.0,84.8 76.3,93.1 83.5,102.0 90.8,110.1 98.0,118.6 105.3,127.1 112.6,135.4 119.8,144.2 127.1,152.8 134.3,160.5 141.6,170.8 148.8,178.0"/></svg><div class="key"><span><i class="l" style="background:var(--amber)"></i>оплаченная аренда по цене договора</span><span><i class="l" style="background:var(--sc-pes)"></i>не вернулось, пессимистичный</span><span><i class="l" style="background:var(--sc-std)"></i>не вернулось, реалистичный</span></div><div class="cap">Даже если магазин закроется в первый же месяц, оплаченная аренда по цене договора больше вложения.</div></div>
+      <div class="c7"><div class="chart-h">Оплаченная аренда и невозвращённая часть вложения</div><svg class="chart" viewBox="0 0 360 200" role="img" aria-label="Оплаченная аренда и невозвращённая часть вложения"><line class="grid-l" x1="40" x2="352" y1="178.0" y2="178.0"/><text x="36" y="181.0" text-anchor="end">0</text><line class="grid-l" x1="40" x2="352" y1="131.9" y2="131.9"/><text x="36" y="134.9" text-anchor="end">50k $</text><line class="grid-l" x1="40" x2="352" y1="85.8" y2="85.8"/><text x="36" y="88.8" text-anchor="end">100k $</text><line class="grid-l" x1="40" x2="352" y1="39.7" y2="39.7"/><text x="36" y="42.7" text-anchor="end">150k $</text><text x="40.0" y="194" text-anchor="start">дек 2026</text><text x="127.1" y="194" text-anchor="middle">дек 2027</text><text x="214.1" y="194" text-anchor="middle">дек 2028</text><text x="352" y="194" text-anchor="end">июл 2030</text><line class="avg inv-l" x1="40" x2="352" y1="79.3" y2="79.3"/><text class="lbl" x="350" y="74.3" text-anchor="end">вложено 107 000 $</text><polyline class="ln l-lease" points="40.0,23.1 47.3,26.7 54.5,30.3 61.8,33.9 69.0,37.6 76.3,41.2 83.5,44.8 90.8,48.4 98.0,52.0 105.3,55.6 112.6,59.2 119.8,62.8 127.1,66.4 134.3,70.0 141.6,73.6 148.8,77.2 156.1,80.8 163.3,84.4 170.6,88.0 177.9,91.6 185.1,95.2 192.4,98.8 199.6,102.4 206.9,106.0 214.1,109.6 221.4,113.2 228.7,116.8 235.9,120.4 243.2,124.0 250.4,127.6 257.7,131.2 264.9,134.8 272.2,138.4 279.4,142.0 286.7,145.6 294.0,149.2 301.2,152.8 308.5,156.4 315.7,160.0 323.0,163.6 330.2,167.2 337.5,170.8 344.7,174.4 352.0,178.0"/><text class="lbl" x="47.3" y="19.1">аренда 167 915 $</text><polyline class="ln l-pes" points="40.0,79.3 47.3,79.3 54.5,79.3 61.8,79.3 69.0,79.3 76.3,80.5 83.5,83.0 90.8,85.6 98.0,88.2 105.3,90.7 112.6,93.2 119.8,96.1 127.1,99.0 134.3,101.6 141.6,105.6 148.8,109.3 156.1,113.1 163.3,116.5 170.6,119.7 177.9,123.0 185.1,126.3 192.4,129.5 199.6,132.6 206.9,136.2 214.1,139.8 221.4,143.4 228.7,147.4 235.9,151.0 243.2,154.8 250.4,158.2 257.7,161.4 264.9,164.7 272.2,168.0 279.4,171.2 286.7,174.3 294.0,177.9 301.2,178.0"/><polyline class="ln l-std" points="40.0,79.3 47.3,79.3 54.5,79.3 61.8,81.1 69.0,88.6 76.3,96.9 83.5,105.8 90.8,113.9 98.0,122.4 105.3,130.9 112.6,139.2 119.8,147.9 127.1,156.6 134.3,164.2 141.6,174.6 148.8,178.0"/></svg><div class="key"><span><i class="l" style="background:var(--amber)"></i>оплаченная аренда по цене договора</span><span><i class="l" style="background:var(--sc-pes)"></i>не вернулось, пессимистичный</span><span><i class="l" style="background:var(--sc-std)"></i>не вернулось, реалистичный</span></div><div class="cap">Даже если магазин закроется в первый же месяц, оплаченная аренда по цене договора больше вложения.</div></div>
       <div class="c5"><ul class="plain">
         <li>Здание в аренде, а не в собственности. Аренда до 1 июля 2030 года, цена зафиксирована.</li>
         <li>Досрочно аренду не возвращают. Деньгами она становится через пересдачу с письменного согласия арендодателя. Это план Б.</li>
@@ -606,8 +604,8 @@
     <h2>План Б: пересдача здания</h2>
     <p class="lede">Если к 1 октября 2028 инвестор получил меньше 50 000 $, у него появляется право сдать здание другому арендатору и вернуть вложение из арендной платы.</p>
     <div class="risks">
-      <div class="risk"><h3>Когда включается</h3><p>Проверка 1 октября 2028. Если инвестор получил меньше 50 000 $, у владельцев 60 дней, чтобы закрыть разницу. В пессимистичном сценарии к этой дате инвестор получает 52 770 $, план Б не включается.</p></div>
-      <div class="risk"><h3>Что получает инвестор</h3><p>С 1 декабря 2028 до 30 июня 2030 компания сдаёт здание целиком или по этажам тому, кого выберет инвестор, это 19 месяцев. Арендная плата идёт инвестору, пока не вернётся вложение.</p></div>
+      <div class="risk"><h3>Когда включается</h3><p>Проверка 1 октября 2028. Если инвестор получил меньше 50 000 $, у владельцев 60 дней, чтобы закрыть разницу. В пессимистичном сценарии к этой дате инвестор получает 54 368 $, план Б не включается.</p></div>
+      <div class="risk"><h3>Что получает инвестор</h3><p>С 1 декабря 2028 до 30 июня 2030 компания сдаёт здание целиком или по этажам тому, кого выберет инвестор, это 19 месяцев. Арендная плата идёт инвестору, пока не вернётся вложение. Если магазин остановится раньше даты проверки, ждать её не нужно: арендатора ищем сразу.</p></div>
       <div class="risk"><h3>Хватит ли</h3><p>По цене договора пересдача за 19 месяцев даёт 74 580 $ после налога 10% и с продажей оборудования. На 30% дешевле 54 546 $. Недостающее до 130 000 $ закрывает залог за аренду 46 863 $: защита действует и после плана Б.</p></div>
       <div class="risk"><h3>Мебель и оборудование</h3><p>Передаются инвестору в залог по описи. Если право включилось, их можно продать в счёт долга.</p></div>
       <div class="risk"><h3>Согласие арендодателя</h3><p>Арендодатель уже подтвердил на словах, что согласен на пересдачу. Письменное согласие берём до подписания договора с инвестором и до первого платежа, в допсоглашении к договору аренды.</p></div>
@@ -624,7 +622,7 @@
     <p class="lede">С 1 декабря 2026, дня сделки, три шага по очереди. Дальше дорожная карта до конца аренды, 199 шагов и идей по времени.</p>
     <div class="steps">
       <div class="step"><h3>1. Полные полки и понятный вход</h3><div class="when-s">декабрь 2026</div><ul><li>Долг брендам закрыт в первый день, полки полные к середине декабря.</li><li>Вывеска, лайтбокс и свет фасада: с дороги видно, что это магазин одежды.</li><li>Таргет 1 000 $, рассылка по базе, блогеры по бартеру.</li></ul><p class="res">Итог: уровень прошлой зимы. Это пессимистичный сценарий.</p></div>
-      <div class="step"><h3>2. Новогодний сезон</h3><div class="when-s">декабрь 2026 - январь 2027</div><ul><li>Розыгрыш iPhone, новогодний декор, акции.</li><li>Воскресные маркеты на парковке.</li><li>CRM: контакт каждого покупателя.</li></ul></div>
+      <div class="step"><h3>2. Новогодний сезон</h3><div class="when-s">декабрь 2026 - январь 2027</div><ul><li>Новогодний декор, вечера брендов, предпоказы коллекций.</li><li>Воскресные маркеты на парковке.</li><li>CRM: контакт каждого покупателя.</li></ul></div>
       <div class="step"><h3>3. Рост ступенями</h3><div class="when-s">2027 и дальше</div><ul><li>Последние платежи аренды до апреля 2027.</li><li>Ступень B: SMM, события, кофе-уголок. C: стилист, партнёрки, онлайн. D: кофейня и события каждую неделю.</li><li>Каждый шаг после того, как предыдущий дал продажи.</li></ul><p class="res">Итог: реалистичный сценарий, а при двойной отдаче каналов оптимистичный.</p></div>
     </div>
     <a class="go " href="plan/"><span class="go-ch go-l" aria-hidden="true">«</span><span class="go-body"><span class="go-t">План на 90 дней и дорожная карта до 2030</span><span class="go-s">Все шаги с датами и статусами, сделанное отмечено. Банк идей.</span><span class="go-hint">Нажмите, чтобы открыть страницу</span></span><span class="go-ch go-r" aria-hidden="true">»</span></a>
