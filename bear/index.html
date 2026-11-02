@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Maison Sauvage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Prata&family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:#fff;color:#111;font-family:Manrope,system-ui,sans-serif;display:flex;flex-direction:column;min-height:100dvh}
+.photo{flex:1 1 42vh;min-height:220px;background:url(zal-2.jpg) center/cover}
+.box{padding:30px 26px calc(30px + env(safe-area-inset-bottom));text-align:center;max-width:460px;width:100%;margin:0 auto}
+.logo{font-family:Prata,Georgia,serif;font-size:20px;line-height:1.08;letter-spacing:.09em}
+.rule{width:44px;height:1px;background:#111;margin:16px auto}
+h1{font-family:"Pinyon Script",cursive;font-weight:400;font-size:44px;line-height:1.1;margin-bottom:12px}
+p{font-size:16px;line-height:1.5;font-weight:500;color:#333}
+.btn{display:block;margin-top:24px;padding:18px 16px;background:#111;color:#fff;text-decoration:none;font-weight:700;font-size:17px;border-radius:999px}
+.alt{display:inline-block;margin-top:16px;color:#333;font-size:15px}
+</style>
+</head>
+<body>
+<div class="photo" role="img" aria-label="Maison Sauvage, second floor"></div>
+<div class="box">
+  <div class="logo">MAISON<br>SAUVAGE</div>
+  <div class="rule"></div>
+  <h1 id="title"></h1>
+  <p id="line"></p>
+  <a class="btn" id="go" rel="noopener"></a>
+  <a class="alt" id="alt" href="https://www.instagram.com/maison.sauvage.bali/" rel="noopener">Instagram</a>
+</div>
+<script>
+/* Номер WhatsApp ставится здесь, только цифры с кодом страны: "6281234567890".
+   Пока пусто, кнопка ведёт в Instagram. Напечатанные карточки менять не надо. */
+var WA = "";
+var IG = "https://ig.me/m/maison.sauvage.bali";
+var n = (new URLSearchParams(location.search).get("n") || "").replace(/\D/g, "").slice(0, 2);
+var id = (navigator.language || "").toLowerCase().indexOf("id") === 0;
+var T = id
+  ? {title: "Halo!", line: "Toko multibrand di Umalas, Bali. 72 brand di tahun pertama. Rating 4,9 di Google.",
+     wa: "Sapa kami di WhatsApp", ig: "Sapa kami di Instagram"}
+  : {title: "Hello!", line: "Multibrand store in Umalas, Bali. 72 brands in our first year. Rated 4.9 on Google.",
+     wa: "Say hello on WhatsApp", ig: "Say hello on Instagram"};
+var msg = id
+  ? "Halo Maison Sauvage! Beruang" + (n ? " No. " + n : "") + " sudah sampai. Boleh ceritakan lebih lanjut?"
+  : "Hi Maison Sauvage! Bear" + (n ? " No. " + n : "") + " found me. Please tell me more.";
+document.getElementById("title").textContent = T.title;
+document.getElementById("line").textContent = T.line;
+var go = document.getElementById("go");
+go.textContent = WA ? T.wa : T.ig;
+go.href = WA ? "https://wa.me/" + WA + "?text=" + encodeURIComponent(msg) : IG;
+if (!WA) document.getElementById("alt").style.display = "none";
+</script>
+</body>
+</html>

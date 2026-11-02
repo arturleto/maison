@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Вход</title>
+<style>
+:root { --bg:#f7f6f3; --card:#fff; --ink:#26221f; --muted:#746e67; --line:rgba(38,34,31,.14); --accent:#26221f; color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root { --bg:#1c1917; --card:#2b2724; --ink:#ede8e1; --muted:#a59d93; --line:rgba(237,232,225,.16); --accent:#ede8e1; color-scheme: dark; } }
+body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px 16px; box-sizing: border-box; background: var(--bg); color: var(--ink); font: 400 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+.box { width: min(400px, 100%); background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 28px 26px 24px; box-sizing: border-box; }
+h1 { font: 600 24px/1.2 Georgia, serif; margin: 0 0 8px; }
+p { margin: 0 0 18px; color: var(--muted); }
+input { width: 100%; box-sizing: border-box; font: inherit; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: transparent; color: inherit; }
+button { margin-top: 12px; width: 100%; font: 600 15px system-ui, -apple-system, sans-serif; padding: 13px; border: 0; border-radius: 999px; background: var(--accent); color: var(--bg); cursor: pointer; }
+button:disabled { opacity: .6; cursor: wait; }
+.err { color: #b3261e; font-size: 14px; margin-top: 10px; min-height: 20px; }
+a { color: inherit; }
+</style>
+</head>
+<body>
+<form class="box" id="f" hidden>
+  <h1 id="t">Рабочие материалы</h1>
+  <p id="s">Вход только для команды.</p>
+  <input type="password" id="pw" placeholder="Пароль" autocomplete="current-password">
+  <button id="b" type="submit">Открыть</button>
+  <div class="err" id="e"></div>
+</form>
+<script>
+(function () {
+var BASE = '/maison/', HOME = 'materialy/', SALT = 'HoXLGVUSND7YoZW5nsLGOw==', ITER = 300000;
+var enc = function (s) { return new TextEncoder().encode(s); };
+var u8 = function (b) { return Uint8Array.from(atob(b), function (c) { return c.charCodeAt(0); }); };
+var b64 = function (buf) { return btoa(String.fromCharCode.apply(null, new Uint8Array(buf))); };
+var hex = function (buf) { return Array.prototype.map.call(new Uint8Array(buf), function (x) { return ('0' + x.toString(16)).slice(-2); }).join(''); };
+var MIME = { css: 'text/css', js: 'text/javascript', json: 'application/json', csv: 'text/csv', txt: 'text/plain', jpg: 'image/jpeg', jpeg: 'image/jpeg', png: 'image/png', webp: 'image/webp', svg: 'image/svg+xml', mp3: 'audio/mpeg', mp4: 'video/mp4', pdf: 'application/pdf', xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' };
+function mime(p) { var m = /\.([a-z0-9]+)$/i.exec(p); return (m && MIME[m[1].toLowerCase()]) || 'application/octet-stream'; }
+
+async function derive(pw) {
+  var km = await crypto.subtle.importKey('raw', enc(pw), 'PBKDF2', false, ['deriveBits']);
+  var bits = await crypto.subtle.deriveBits({ name: 'PBKDF2', salt: u8(SALT), iterations: ITER, hash: 'SHA-256' }, km, 256);
+  var mk = await crypto.subtle.importKey('raw', bits, { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+  return b64(await crypto.subtle.sign('HMAC', mk, enc('enc'))) + '.' + b64(await crypto.subtle.sign('HMAC', mk, enc('name')));
+}
+async function keys(s) {
+  var p = s.split('.');
+  return [await crypto.subtle.importKey('raw', u8(p[0]), { name: 'AES-GCM' }, false, ['decrypt']),
+          await crypto.subtle.importKey('raw', u8(p[1]), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign'])];
+}
+async function get(k, path) {
+  var name = hex(await crypto.subtle.sign('HMAC', k[1], enc(path))).slice(0, 32);
+  var r = await fetch(BASE + 'v/' + name, { cache: 'no-cache' });
+  if (!r.ok) return null;
+  var b = await r.arrayBuffer();
+  return crypto.subtle.decrypt({ name: 'AES-GCM', iv: new Uint8Array(b, 0, 12) }, k[0], new Uint8Array(b, 12));
+}
+function rel() {
+  var p = location.pathname;
+  try { p = decodeURIComponent(p); } catch (e) {}
+  if (p.indexOf(BASE) !== 0) return '';
+  return p.slice(BASE.length).normalize('NFC');
+}
+async function open(s) {
+  var k = await keys(s);
+  if (!(await get(k, '__check__'))) throw new Error('key');
+  var p = rel();
+  if (p === '' || p === 'index.html' || p === '404.html') { location.replace(BASE + HOME); return; }
+  if (p.slice(-1) === '/') p += 'index.html';
+  else if (!/\.[A-Za-z0-9]+$/.test(p.split('/').pop())) { location.replace(location.pathname + '/' + location.search + location.hash); return; }
+  var b = await get(k, p);
+  if (b) {
+    if (/\.html?$/i.test(p)) { var html = new TextDecoder().decode(b); window.__msv = s; document.open(); document.write(html); document.close(); }
+    else location.replace(URL.createObjectURL(new Blob([b], { type: mime(p) })));
+    return;
+  }
+  var r = await get(k, '__redirects__');
+  if (r) {
+    var m = JSON.parse(new TextDecoder().decode(r));
+    for (var pre in m) if (p.indexOf(pre) === 0) { location.replace(m[pre] + p.slice(pre.length).replace(/index\.html$/, '') + location.search + location.hash); return; }
+  }
+  show('Страница не найдена', 'Такого адреса нет. <a href="' + BASE + HOME + '">Все материалы</a>', false);
+}
+function show(title, text, form) {
+  document.getElementById('t').textContent = title;
+  document.getElementById('s').innerHTML = text;
+  document.getElementById('pw').hidden = document.getElementById('b').hidden = !form;
+  document.getElementById('f').hidden = false;
+  if (form) document.getElementById('pw').focus();
+}
+document.getElementById('f').addEventListener('submit', async function (ev) {
+  ev.preventDefault();
+  var b = document.getElementById('b'), e = document.getElementById('e');
+  b.disabled = true; e.textContent = '';
+  try {
+    var s = await derive(document.getElementById('pw').value.trim());
+    var k = await keys(s);
+    if (!(await get(k, '__check__'))) throw new Error('key');
+    try { localStorage.setItem('msv', s); } catch (x) {}
+    await open(s);
+  } catch (x) {
+    b.disabled = false;
+    e.textContent = 'Пароль не подошёл.';
+  }
+});
+(function () {
+  var s = null;
+  try { s = localStorage.getItem('msv'); } catch (e) {}
+  if (!s) { show('Рабочие материалы', 'Вход только для команды.', true); return; }
+  open(s).catch(function () {
+    try { localStorage.removeItem('msv'); } catch (e) {}
+    show('Рабочие материалы', 'Вход только для команды.', true);
+  });
+})();
+})();
+</script>
+</body>
+</html>
